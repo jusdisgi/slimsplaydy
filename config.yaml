@@ -1,14 +1,15 @@
 units:
   # Proxy Spacing Variables
   # PG1316S keycaps are smaller than chocs...
-  # These dimensions come from: https://docs.holykeebs.com/datasheets/PG1316_1U.pdf
-  kx: 16
-  ky: 16
+  # According to https://docs.holykeebs.com/datasheets/PG1316_1U.pdf they are actually 16x16mm
+  # but per Mike Holscher this 17x17 spacing works better.
+  kx: 17
+  ky: 17
   # Padding Variables
   px: kx + 2
   py: ky + 2
-  $default_height: 16
-  $default_width: 16
+  $default_height: 17
+  $default_width: 17
 points:
   zones:
     hand:
@@ -18,47 +19,30 @@ points:
         spread: 1kx
       columns:
         pinky:
-          key:
-            column_net: D5
-            mirror.column_net: D3
         ring:
           key:
-            stagger: 9
+            stagger: 8
             splay: -4
             spread: kx+2
-            column_net: D3
-            mirror.column_net: D5
         middle:
           key:
             stagger: 7
             splay: -3
             spread: kx+1
-            column_net: D1
-            mirror.column_net: D9
         index:
           key:
             stagger: -4
             splay: -2
             spread: kx+0.8
-            column_net: D8
-            mirror.column_net: D2
         inner:
           key:
             stagger: -2
             splay: -1
             spread: kx+0.6
-            column_net: D10
-            mirror.column_net: D1
       rows:
         bottom:
-          row_net: D4
-          mirror.row_net: D4
         home:
-          row_net: D2
-          mirror.row_net: D8
         top:
-          row_net: D0
-          mirror.row_net: D10
     thumb:
       key:
         padding: 1ky
@@ -70,18 +54,12 @@ points:
         near:
           key:
             splay: -15
-            column_net: D8
-            mirror.column_net: D2
         far:
           key:
             splay: -15
             shift: [3,-2]
-            column_net: D10
-            mirror.column_net: D1
       rows:
         fan:
-          row_net: D9
-          mirror.row_net: D0
   rotate: 10
   mirror: &mirror
     ref: thumb_far_fan
@@ -100,26 +78,24 @@ outlines:
       operation: stack
       points:
         - ref: thumb_far_fan
-          shift: [0.6px,-0.6py] 
+          shift: [9,-9] 
         - ref: hand_pinky_bottom
-          shift: [38,-0.6py]
+          shift: [36,-9]
         - ref: hand_pinky_bottom
-          shift: [-0.6px,-0.6py]
+          shift: [-9,-9]
         - ref: hand_pinky_top
-          shift: [-0.6px,0.5py]
-        - ref: hand_ring_top
-          shift: [-0.5px,0.5py]
+          shift: [-9,9]
         - ref: hand_middle_top
-          shift: [-0.5px,0.5py]
+          shift: [-9,9]
         - ref: hand_middle_top
-          shift: [0.5px,0.5py]
+          shift: [9,9]
         - ref: hand_inner_top
-          shift: [0.5px,0.5py]
+          shift: [9,9]
         - ref: hand_inner_top
-          shift: [35,0.5py]
+          shift: [29,9]
         - ref: hand_inner_bottom
-          shift: [35,-14]
-      fillet: 8
+          shift: [29,-22.3]
+      fillet: 3
   combo:
     - name: board_left
     - operation: subtract
@@ -154,7 +130,7 @@ outlines:
     - operation: subtract
       name: keys
 pcbs:
-  splave-ferris_pg1316s_left_unrouted:
+  slimsplaydy_left_unrouted:
     outlines:
       main:
         outline: board_left
@@ -163,23 +139,13 @@ pcbs:
         what: switch_pg1316s
         where: /^hand|^thumb/
         params:
-          from: "{{column_net}}"
-          to: "{{colrow}}"
-      diode:
-        what: diode_smd_sod323f
-        where: /^hand|^thumb/
-        params:
-          side: F
-          from: "{{colrow}}"
-          to: "{{row_net}}"
-        adjust:
-          shift: [0, 2.5]
-          rotate: 180
-      xiao:
-          what: mcu_xiao_smd
+          from: GND
+          to: "{{name}}"
+      nicenano:
+          what: mcu_nice_nano
           where:
             ref: hand_inner_top
-            shift: [22,-3]
+            shift: [18.5,-9]
             rotate: 0
       power:
         what: slider
@@ -196,7 +162,7 @@ pcbs:
           ref: thumb_far_fan
           shift: [1,11]
           rotate: -90
-  splave-ferris_pg1316s_right_unrouted:
+  slimsplaydy_right_unrouted:
     outlines:
       main:
         outline: board_right
@@ -205,23 +171,13 @@ pcbs:
         what: switch_pg1316s
         where: /^mirror/
         params:
-          from: "{{column_net}}"
-          to: "{{colrow}}"
-      diode:
-        what: diode_smd_sod323f
-        where: /^mirror/
-        params:
-          side: F
-          from: "{{colrow}}"
-          to: "{{row_net}}"
-        adjust:
-          shift: [0, 2.5]
-          rotate: 180
-      xiao:
-          what: mcu_xiao_smd
+          from: GND
+          to: "{{name}}"
+      nicenano:
+          what: mcu_nice_nano
           where:
             ref: mirror_hand_inner_top
-            shift: [22,-3]
+            shift: [19,-8.5]
             rotate: 0
       power:
         what: slider
@@ -239,7 +195,7 @@ pcbs:
           ref: mirror_thumb_far_fan
           shift: [1,11]
           rotate: -90
-  splave-ferris_pg1316s_unrouted:
+  slimsplaydy_unrouted:
     outlines:
       left:
         outline: board_left
@@ -250,23 +206,13 @@ pcbs:
         what: switch_pg1316s
         where: true
         params:
-          from: "{{column_net}}"
-          to: "{{colrow}}"
-      diode:
-        what: diode_smd_sod323f
-        where: true
-        params:
-          side: F
-          from: "{{colrow}}"
-          to: "{{row_net}}"
-        adjust:
-          shift: [0, 2.5]
-          rotate: 180
-      xiao_left:
-          what: mcu_xiao_smd
+          from: GND
+          to: "{{name}}"
+      nicenano_left:
+          what: mcu_nice_nano
           where:
             ref: hand_inner_top
-            shift: [22,-3]
+            shift: [19,-8.5]
             rotate: 0
       power_left:
         what: slider
@@ -283,11 +229,11 @@ pcbs:
           ref: thumb_far_fan
           shift: [1,11]
           rotate: -90
-      xiao_right:
-          what: mcu_xiao_smd
+      nicenano_right:
+          what: mcu_nice_nano
           where:
             ref: mirror_hand_inner_top
-            shift: [22,-3]
+            shift: [19,-8.5]
             rotate: 0
       power_right:
         what: slider
