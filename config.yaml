@@ -78,11 +78,11 @@ outlines:
       operation: stack
       points:
         - ref: thumb_far_fan
-          shift: [9,-9] 
-        - ref: hand_pinky_bottom
-          shift: [36,-9]
-        - ref: hand_pinky_bottom
+          shift: [9,-9]
+        - ref: thumb_near_fan
           shift: [-9,-9]
+        - ref: hand_pinky_bottom
+          shift: [-9,-9.7]
         - ref: hand_pinky_top
           shift: [-9,9]
         - ref: hand_middle_top
@@ -105,26 +105,24 @@ outlines:
       operation: stack
       points:
         - ref: mirror_thumb_far_fan
-          shift: [0.6px,-0.6py]
+          shift: [9,-9] 
+        - ref: mirror_thumb_near_fan
+          shift: [-9,-9]
         - ref: mirror_hand_pinky_bottom
-          shift: [38,-0.6py]
-        - ref: mirror_hand_pinky_bottom
-          shift: [-0.6px,-0.6py]
+          shift: [-9,-9]
         - ref: mirror_hand_pinky_top
-          shift: [-0.6px,0.5py]
-        - ref: mirror_hand_ring_top
-          shift: [-0.5px,0.5py]
+          shift: [-9,9]
         - ref: mirror_hand_middle_top
-          shift: [-0.5px,0.5py]
+          shift: [-9,9]
         - ref: mirror_hand_middle_top
-          shift: [0.5px,0.5py]
+          shift: [9,9]
         - ref: mirror_hand_inner_top
-          shift: [0.5px,0.5py]
+          shift: [9,9]
         - ref: mirror_hand_inner_top
-          shift: [35,0.5py]
+          shift: [29,9]
         - ref: mirror_hand_inner_bottom
-          shift: [35,-14]
-      fillet: 8
+          shift: [29,-22.3]
+      fillet: 3
   combo_right:
     - name: board_right
     - operation: subtract
@@ -153,8 +151,8 @@ pcbs:
           from: BAT_P
           to: BAT
         where:
-          ref: thumb_far_fan
-          shift: [7.25,14]
+          ref: hand_inner_bottom
+          shift: [20,-15]
           rotate: -90
       battcon:
         what: battery_connector_molex_pico_ezmate_1x02
@@ -162,6 +160,12 @@ pcbs:
           ref: thumb_far_fan
           shift: [1,11]
           rotate: -90
+      battery: 
+        what: battery_301230
+        where:
+          ref: hand_inner_bottom
+          shift: [-47,-12]
+          rotate: 0
   slimsplaydy_right_unrouted:
     outlines:
       main:
@@ -177,7 +181,7 @@ pcbs:
           what: mcu_nice_nano
           where:
             ref: mirror_hand_inner_top
-            shift: [19,-8.5]
+            shift: [18.5,-9]
             rotate: 0
       power:
         what: slider
@@ -212,7 +216,7 @@ pcbs:
           what: mcu_nice_nano
           where:
             ref: hand_inner_top
-            shift: [19,-8.5]
+            shift: [18.5,-9]
             rotate: 0
       power_left:
         what: slider
@@ -233,7 +237,7 @@ pcbs:
           what: mcu_nice_nano
           where:
             ref: mirror_hand_inner_top
-            shift: [19,-8.5]
+            shift: [18.5,-9]
             rotate: 0
       power_right:
         what: slider
