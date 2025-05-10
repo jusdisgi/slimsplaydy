@@ -1,0 +1,6 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+B1,SW_TACT_ALPS_SKQGABE010,1,,
+CONN1,battery_connector_molex_pico_ezmate_1x02,1,,
+"S1, S10, S11, S12, S13, S14, S15, S16, S17, S2, S3, S4, S5, S6, S7, S8, S9",CPG1316S01D02_mikeholscher,17,,
+T1,SPDT_C128955,1,,
+"XX1, XX2",Pad_Single_BAT-,2,,
