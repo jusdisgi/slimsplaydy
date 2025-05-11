@@ -92,27 +92,23 @@ outlines:
         - ref: hand_inner_top
           shift: [9,9]
         - ref: hand_inner_top
-          shift: [29,9]
+          shift: [31,9]
         - ref: hand_inner_bottom
-          shift: [29,-22.3]
+          shift: [31,-22.3]
       fillet: 3
   slot_left:
     - what: polygon
       operation: stack
       points:
         - ref: hand_inner_top
-          shift: [13,9]
+          shift: [12.5,9]
         - ref: hand_inner_top
-          shift: [13,-21]
+          shift: [12.5,-25.5]
         - ref: hand_inner_top
-          shift: [17.2,-21]
+          shift: [24.5,-25.5]
         - ref: hand_inner_top
-          shift: [17.2,-17.8]
-        - ref: hand_inner_top
-          shift: [24,-17.8]
-        - ref: hand_inner_top
-          shift: [24,9]
-  combo:
+          shift: [24.5,9]
+  combo_left:
     - name: board_left
     - operation: subtract
       name: slot_left
@@ -121,11 +117,11 @@ outlines:
       operation: stack
       points:
         - ref: mirror_thumb_far_fan
-          shift: [9,-9] 
+          shift: [9,-9]
         - ref: mirror_thumb_near_fan
           shift: [-9,-9]
         - ref: mirror_hand_pinky_bottom
-          shift: [-9,-9]
+          shift: [-9,-9.7]
         - ref: mirror_hand_pinky_top
           shift: [-9,9]
         - ref: mirror_hand_middle_top
@@ -135,19 +131,31 @@ outlines:
         - ref: mirror_hand_inner_top
           shift: [9,9]
         - ref: mirror_hand_inner_top
-          shift: [29,9]
+          shift: [31,9]
         - ref: mirror_hand_inner_bottom
-          shift: [29,-22.3]
+          shift: [31,-22.3]
       fillet: 3
+  slot_right:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_hand_inner_top
+          shift: [12.5,9]
+        - ref: mirror_hand_inner_top
+          shift: [12.5,-25.5]
+        - ref: mirror_hand_inner_top
+          shift: [24.5,-25.5]
+        - ref: mirror_hand_inner_top
+          shift: [24.5,9]
   combo_right:
     - name: board_right
     - operation: subtract
-      name: keys
+      name: slot_right
 pcbs:
   slimsplaydy_left_unrouted:
     outlines:
       main:
-        outline: combo
+        outline: combo_left
     footprints:
       pg1316s:
         what: switch_pg1316s
@@ -163,42 +171,35 @@ pcbs:
             rotate: 0
           params:
             reverse_mount: true
-            include_extra_pins: true
             P1: D1
             P1_label: D1
-            P0: D0
+            P0: thumb_far_fan
             P0_label: D0
-            P2: D2
+            P2: thumb_near_fan
             P2_label: D2
-            P3: D3
+            P3: hand_pinky_bottom
             P3_label: D3
-            P4: thumb_far_fan
+            P4: hand_ring_bottom
             P4_label: D4
-            P5: thumb_near_fan
+            P5: hand_inner_bottom
             P5_label: D5
-            P6: hand_pinky_bottom
+            P6: hand_index_bottom
             P6_label: D6
-            P7: hand_ring_bottom
+            P7: hand_pinky_home
             P7_label: D7
             P8: hand_middle_bottom
             P8_label: D8            
-            P9: hand_index_bottom
+            P9: hand_pinky_top
             P9_label: D9
-            P101: hand_inner_bottom
-            P101_label: "101"
-            P102: hand_pinky_home
-            P102_label: "102"
-            P107: hand_ring_home
-            P107_label: "107"
-            P10: hand_middle_home
+            P10: hand_ring_home
             P10_label: D10
-            P16: hand_index_home
+            P16: hand_ring_top
             P16_label: D16
             P14: hand_inner_home
             P14_label: D14
-            P15: hand_pinky_top
+            P15: hand_index_home
             P15_label: D15
-            P18: hand_ring_top
+            P18: hand_middle_home
             P18_label: D18
             P19: hand_middle_top
             P19_label: D19
@@ -238,7 +239,7 @@ pcbs:
         what: pad_single
         where:
           ref: hand_inner_bottom
-          shift: [-60.5,-14]
+          shift: [-59.75,-14.5]
           rotate: 0
         params:
           P1: BAT_P
@@ -246,7 +247,7 @@ pcbs:
         what: pad_single
         where:
           ref: hand_inner_bottom
-          shift: [-60.5,-17]
+          shift: [-59.75,-17.5]
           rotate: 0
         params:
           P1: GND
@@ -254,12 +255,12 @@ pcbs:
         what: battery_301230
         where:
           ref: hand_inner_bottom
-          shift: [-47,-12]
+          shift: [-30,-19]
           rotate: 0
   slimsplaydy_right_unrouted:
     outlines:
       main:
-        outline: board_right
+        outline: combo_right
     footprints:
       pg1316s:
         what: switch_pg1316s
@@ -268,33 +269,105 @@ pcbs:
           from: GND
           to: "{{name}}"
       nicenano:
-          what: mcu_nice_nano
+          what: mcu_nice_nano_smd
           where:
             ref: mirror_hand_inner_top
             shift: [18.5,-9]
             rotate: 0
+          params:
+            reverse_mount: true
+            P1: mirror_hand_middle_top
+            P1_label: D1
+            P0: mirror_hand_index_top
+            P0_label: D0
+            P2: mirror_hand_inner_top
+            P2_label: D2
+            P3: mirror_hand_ring_top
+            P3_label: D3
+            P4: mirror_hand_pinky_top
+            P4_label: D4
+            P5: mirror_hand_middle_home
+            P5_label: D5
+            P6: mirror_hand_index_home
+            P6_label: D6
+            P7: mirror_hand_inner_home
+            P7_label: D7
+            P8: mirror_hand_ring_home
+            P8_label: D8            
+            P9: mirror_hand_pinky_home
+            P9_label: D9
+            P10: mirror_hand_pinky_bottom
+            P10_label: D10
+            P16: mirror_hand_middle_bottom
+            P16_label: D16
+            P14: mirror_hand_index_bottom
+            P14_label: D14
+            P15: mirror_hand_inner_bottom
+            P15_label: D15
+            P18: mirror_hand_ring_bottom
+            P18_label: D18
+            P19: mirror_thumb_near_fan
+            P19_label: D19
+            P20: mirror_thumb_far_fan
+            P20_label: D20
+            P21: D21
+            P21_label: D21
+            VCC: 3V3
+            VCC_label: 3V3
+            RAW: BAT
+            RAW_label: BAT
       power:
         what: slider
         params:
-          #intentionally reversed from left side for routing ease.
-          from: BAT
-          to: BAT_P
+          from: BAT_P
+          to: BAT
         where:
-          ref: mirror_thumb_far_fan
-          shift: [7.25,14]
-          rotate: -90
+          ref: mirror_hand_inner_bottom
+          shift: [-53,-22]
+          rotate: 180
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: mirror_hand_inner_bottom
+          shift: [-35,-8]
+          rotate: 0
       battcon:
         what: battery_connector_molex_pico_ezmate_1x02
         where:
-          ref: mirror_thumb_far_fan
-          shift: [1,11]
-          rotate: -90
+          ref: mirror_hand_inner_bottom
+          shift: [-56,-16 ]
+          rotate: 90
+      batsolder_neg:
+        what: pad_single
+        where:
+          ref: mirror_hand_inner_bottom
+          shift: [-59.75,-14.5]
+          rotate: 0
+        params:
+          P1: GND
+      batsolder_pos:
+        what: pad_single
+        where:
+          ref: mirror_hand_inner_bottom
+          shift: [-59.75,-17.5]
+          rotate: 0
+        params:
+          P1: BAT_P
+      battery:  
+        what: battery_301230
+        where:
+          ref: mirror_hand_inner_bottom
+          shift: [-30,-19]
+          rotate: 0
   slimsplaydy_unrouted:
     outlines:
       left:
-        outline: board_left
+        outline: combo_left
       right:
-        outline: board_right
+        outline: combo_right
     footprints:
       pg1316s:
         what: switch_pg1316s
@@ -303,7 +376,7 @@ pcbs:
           from: GND
           to: "{{name}}"
       nicenano_left:
-          what: mcu_nice_nano
+          what: mcu_nice_nano_smd
           where:
             ref: hand_inner_top
             shift: [18.5,-9]
@@ -314,9 +387,9 @@ pcbs:
           from: BAT_P
           to: BAT
         where:
-          ref: thumb_far_fan
-          shift: [7.25,14]
-          rotate: -90
+          ref: hand_inner_bottom
+          shift: [-53,-22]
+          rotate: 180
       battcon_left:
         what: battery_connector_molex_pico_ezmate_1x02
         where:
@@ -324,7 +397,7 @@ pcbs:
           shift: [1,11]
           rotate: -90
       nicenano_right:
-          what: mcu_nice_nano
+          what: mcu_nice_nano_smd
           where:
             ref: mirror_hand_inner_top
             shift: [18.5,-9]
@@ -336,9 +409,9 @@ pcbs:
           from: BAT
           to: BAT_P
         where:
-          ref: mirror_thumb_far_fan
-          shift: [7.25,14]
-          rotate: -90
+          ref: mirror_hand_inner_bottom
+          shift: [-53,-22]
+          rotate: 180
       battcon_right:
         what: battery_connector_molex_pico_ezmate_1x02
         where:
