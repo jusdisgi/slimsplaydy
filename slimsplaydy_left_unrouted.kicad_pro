@@ -267,11 +267,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "GND"
+        "pattern": "hand_pinky_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "hand_pinky_bottom"
+        "pattern": "GND"
       },
       {
         "netclass": "Default",

@@ -161,8 +161,10 @@ pcbs:
         what: switch_pg1316s
         where: /^hand|^thumb/
         params:
-          from: GND
-          to: "{{name}}"
+          from: "{{name}}"
+          to: GND
+          reversable: false
+          side: 'F'
       nicenano:
           what: mcu_nice_nano_smd
           where:
@@ -266,8 +268,10 @@ pcbs:
         what: switch_pg1316s
         where: /^mirror/
         params:
-          from: GND
-          to: "{{name}}"
+          reversable: false
+          side: 'F'
+          from: "{{name}}"
+          to: GND
       nicenano:
           what: mcu_nice_nano_smd
           where:
@@ -373,8 +377,8 @@ pcbs:
         what: switch_pg1316s
         where: true
         params:
-          from: GND
-          to: "{{name}}"
+          from: "{{name}}"
+          to: GND
       nicenano_left:
           what: mcu_nice_nano_smd
           where:
