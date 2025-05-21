@@ -158,7 +158,7 @@ pcbs:
         outline: combo_left
     footprints:
       pg1316s:
-        what: switch_pg1316s_dev
+        what: switch_pg1316s
         where: /^hand|^thumb/
         params:
           from: "{{name}}"
