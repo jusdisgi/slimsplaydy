@@ -114,15 +114,15 @@ if (frontside) {
   }
 
   if (p.small_mp) {    
-    fp.push(`(pad "3" smd roundrect (at -6.05 -5.875 ${p.r}) (size 1.4 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-    fp.push(`(pad "3" smd roundrect (at -6.05 5.875 ${p.r}) (size 1.4 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-    fp.push(`(pad "3" smd roundrect (at 6.05 -5.875 ${p.r}) (size 1.4 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-    fp.push(`(pad "3" smd roundrect (at 6.05 5.875 ${p.r}) (size 1.4 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
+    fp.push(`(pad "3" smd roundrect (at -6.05 -5.875 ${p.r}) (size 1.4 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+    fp.push(`(pad "3" smd roundrect (at -6.05 5.875 ${p.r}) (size 1.4 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+    fp.push(`(pad "3" smd roundrect (at 6.05 -5.875 ${p.r}) (size 1.4 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+    fp.push(`(pad "3" smd roundrect (at 6.05 5.875 ${p.r}) (size 1.4 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
   } else {
-    fp.push(`(pad "3" smd roundrect (at -6.35 -6 ${p.r}) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-    fp.push(`(pad "3" smd roundrect (at -6.35 6 ${p.r}) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-    fp.push(`(pad "3" smd roundrect (at 6.35 -6 ${p.r}) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-    fp.push(`(pad "3" smd roundrect (at 6.35 6 ${p.r}) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
+    fp.push(`(pad "3" smd roundrect (at -6.35 -6 ${p.r}) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+    fp.push(`(pad "3" smd roundrect (at -6.35 6 ${p.r}) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+    fp.push(`(pad "3" smd roundrect (at 6.35 -6 ${p.r}) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+    fp.push(`(pad "3" smd roundrect (at 6.35 6 ${p.r}) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
   }
 }
 if (backside) {
@@ -146,15 +146,15 @@ if (backside) {
   }
 
 if (p.small_mp) {
-  fp.push(`(pad "3" smd roundrect (at -6.05 -5.875 ${p.r}) (size 1.4 1.75) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-  fp.push(`(pad "3" smd roundrect (at -6.05 5.875 ${p.r}) (size 1.4 1.75) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-  fp.push(`(pad "3" smd roundrect (at 6.05 -5.875 ${p.r}) (size 1.4 1.75) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-  fp.push(`(pad "3" smd roundrect (at 6.05 5.875 ${p.r}) (size 1.4 1.75) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
+  fp.push(`(pad "3" smd roundrect (at -6.05 -5.875 ${p.r}) (size 1.4 1.75) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+  fp.push(`(pad "3" smd roundrect (at -6.05 5.875 ${p.r}) (size 1.4 1.75) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+  fp.push(`(pad "3" smd roundrect (at 6.05 -5.875 ${p.r}) (size 1.4 1.75) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+  fp.push(`(pad "3" smd roundrect (at 6.05 5.875 ${p.r}) (size 1.4 1.75) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
 } else {
-  fp.push(`(pad "3" smd roundrect (at -6.35 -6 ${p.r}) (size 2 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`)
-  fp.push(`(pad "3" smd roundrect (at -6.35 6 ${p.r}) (size 2 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-  fp.push(`(pad "3" smd roundrect (at 6.35 -6 ${p.r}) (size 2 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
-  fp.push(`(pad "3" smd roundrect (at 6.35 6 ${p.r}) (size 2 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.1785714286) (thermal_bridge_angle 45))`);
+  fp.push(`(pad "3" smd roundrect (at -6.35 -6 ${p.r}) (size 2 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`)
+  fp.push(`(pad "3" smd roundrect (at -6.35 6 ${p.r}) (size 2 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+  fp.push(`(pad "3" smd roundrect (at 6.35 -6 ${p.r}) (size 2 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+  fp.push(`(pad "3" smd roundrect (at 6.35 6 ${p.r}) (size 2 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
 }
   
 }
