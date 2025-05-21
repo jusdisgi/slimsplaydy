@@ -158,13 +158,17 @@ pcbs:
         outline: combo_left
     footprints:
       pg1316s:
-        what: switch_pg1316s
+        what: switch_pg1316s_dev
         where: /^hand|^thumb/
         params:
           from: "{{name}}"
           to: GND
           reversable: false
           side: 'F'
+          large_p1: false
+          square_p1: true
+          square_p2: true
+          small_mp: false
       nicenano:
           what: mcu_nice_nano_smd
           where:
