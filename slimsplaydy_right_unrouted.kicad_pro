@@ -267,11 +267,11 @@
       },
       {
         "netclass": "Default",
-        "pattern": "GND"
+        "pattern": "mirror_hand_pinky_bottom"
       },
       {
         "netclass": "Default",
-        "pattern": "mirror_hand_pinky_bottom"
+        "pattern": "GND"
       },
       {
         "netclass": "Default",
@@ -339,7 +339,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "BAT"
+        "pattern": "RAW"
       },
       {
         "netclass": "Default",

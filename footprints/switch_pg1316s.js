@@ -41,7 +41,7 @@
 //        will) which can require cleanup and/or damage reflow equipment! Use at your 
 //        risk, and consider mitigations such as aluminum foil on the hotplate.
 // **!!** NOTE: When reversible = true, vias are placed at the center of the
-//        front side pads. For some pad configurations this may put them off-center on
+//        *front side* pads. For some pad configurations this may put them off-center on
 //        the back side. This is unavoidable inasmuch as the centers of the pads are not
 //        aligned, but if you desire a different via position consider placing the vias
 //        manually in KiCad.
@@ -55,6 +55,14 @@
 //        Size in mm of via holes in P3 mounting point pads. No effect if mp_vias = false.
 //        Please note same solder leakage note as above.
 //        NOTE: see above warning re: solder leakage.
+//    model_filename: default is '\${MODELS}/PG1316S--装配体.STEP'
+//        KiCad file location for 3D model file.
+//    model_xyz_offset: default is [-4.75, -6.25, -10.25]
+//        Spatial offset for 3D model.
+//    model_xyz_rotation: default is [0, 0, 0]
+//        Rotation for 3D model.
+//    model_xyz_scale: [1, 1, 1]
+//        Scale factors for 3D model.
 
 module.exports = {
   params: {
@@ -71,7 +79,11 @@ module.exports = {
     pad_vias: false,
     pad_via_size: 0.8,
     mp_vias: false,
-    mp_via_size: 0.6
+    mp_via_size: 0.6,
+    model_filename: '\${MODELS}/PG1316S--装配体.STEP',
+    model_xyz_offset: [-4.75, -6.25, -10.25],
+    model_xyz_rotation: [0, 0, 0],
+    model_xyz_scale: [1, 1, 1],
   },
   body: p => {
     const fp = [];
@@ -174,7 +186,7 @@ if (backside) {
 }
 
 //3D Model
-fp.push(`(model "\${MODELS}/PG1316S--装配体.STEP" (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))`);
+fp.push(`(model ${p.model_filename} (offset (xyz ${p.model_xyz_offset[0]} ${p.model_xyz_offset[1]} ${p.model_xyz_offset[2]})) (scale (xyz ${p.model_xyz_scale[0]} ${p.model_xyz_scale[1]} ${p.model_xyz_scale[2]})) (rotate (xyz ${p.model_xyz_rotation[0]} ${p.model_xyz_rotation[1]} ${p.model_xyz_rotation[2]})))`);
 
     fp.push(')');
     return fp.join('\n');

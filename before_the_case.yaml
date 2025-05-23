@@ -1,4 +1,7 @@
 units:
+  # This is just the config file saved off before I started
+  # messing around with the outlines and such to make the case.
+  
   # Proxy Spacing Variables
   # PG1316S keycaps are smaller than chocs...
   # According to https://docs.holykeebs.com/datasheets/PG1316_1U.pdf they are actually 16x16mm
@@ -60,7 +63,7 @@ points:
             shift: [3,-2]
       rows:
         fan:
-  rotate: 11
+  rotate: 10
   mirror: &mirror
     ref: thumb_far_fan
     distance: 3kx
@@ -72,93 +75,42 @@ outlines:
   keys:
     - what: rectangle
       where: true
-      size: [kx,ky]
-  #This one is just a reference useful for placing things; hence no right side version
-  key_poly_left:
-    - what: polygon
-      operation: stack
-      points:
-        - ref: thumb_far_fan
-          shift: [8.5,8.5]
-        - ref: thumb_far_fan
-          shift: [8.5,-8.5]
-        - ref: thumb_far_fan
-          shift: [-8.5,-8.5]
-        - ref: thumb_near_fan
-          shift: [8.5,-8.5]
-        - ref: thumb_near_fan
-          shift: [-8.5,-8.5]
-        - ref: thumb_near_fan
-          shift: [-8.5,8.5]
-        - ref: hand_index_bottom
-          shift: [8.5,-8.5]
-        - ref: hand_index_bottom
-          shift: [-8.5,-8.5]
-        - ref: hand_middle_bottom
-          shift: [8.5,-8.5]
-        - ref: hand_middle_bottom
-          shift: [-8.5,-8.5]
-        - ref: hand_ring_bottom
-          shift: [8.5,-8.5]
-        - ref: hand_ring_bottom
-          shift: [-8.5,-8.5]
-        - ref: hand_pinky_bottom
-          shift: [8.5,-8.5]
-        - ref: hand_pinky_bottom
-          shift: [-8.5,-8.5]
-        - ref: hand_pinky_top
-          shift: [-8.5,8.5]
-        - ref: hand_ring_top
-          shift: [-8.5,8.5]
-        - ref: hand_middle_top
-          shift: [-8.5,8.5]
-        - ref: hand_middle_top
-          shift: [8.5,8.5]
-        - ref: hand_index_top
-          shift: [8.5,8.5]
-        - ref: hand_inner_top
-          shift: [8.5,8.5]
-        - ref: hand_inner_bottom
-          shift: [8.5,-8.5]
-        - ref: thumb_near_fan
-          shift: [8.5,8.5]
-        - ref: thumb_far_fan
-          shift: [-8.5,8.5]
+      size: [kx-0.5,ky-0.5]
   board_left:
     - what: polygon
       operation: stack
       points:
         - ref: thumb_far_fan
-          shift: [12.5,-12.6]
+          shift: [9,-9]
         - ref: thumb_near_fan
-          shift: [-10,-12.6]
+          shift: [-9,-9]
         - ref: hand_pinky_bottom
-          shift: [-12.9,-12.5]
+          shift: [-9,-9.7]
         - ref: hand_pinky_top
-          shift: [-12.9,11.7]
+          shift: [-9,9]
         - ref: hand_middle_top
-          shift: [-11,11.5]
+          shift: [-9,9]
         - ref: hand_middle_top
-          shift: [11,11.5]
+          shift: [9,9]
         - ref: hand_inner_top
-          shift: [12.5,11.4]
+          shift: [9,9]
         - ref: hand_inner_top
-          shift: [32,11.4]
+          shift: [31,9]
         - ref: hand_inner_bottom
-          shift: [32,-24.1]
+          shift: [31,-22.3]
       fillet: 3
   slot_left:
     - what: polygon
       operation: stack
       points:
         - ref: hand_inner_top
-          shift: [12.5,11.5]
+          shift: [12.5,9]
         - ref: hand_inner_top
-          shift: [12.5,-23]
+          shift: [12.5,-25.5]
         - ref: hand_inner_top
-          shift: [24.5,-23]
+          shift: [24.5,-25.5]
         - ref: hand_inner_top
-          shift: [24.5,11.5]
+          shift: [24.5,9]
   combo_left:
     - name: board_left
     - operation: subtract
@@ -168,36 +120,36 @@ outlines:
       operation: stack
       points:
         - ref: mirror_thumb_far_fan
-          shift: [12.5,-12.6]
+          shift: [9,-9]
         - ref: mirror_thumb_near_fan
-          shift: [-10,-12.6]
+          shift: [-9,-9]
         - ref: mirror_hand_pinky_bottom
-          shift: [-12.9,-12.5]
+          shift: [-9,-9.7]
         - ref: mirror_hand_pinky_top
-          shift: [-12.9,11.7]
+          shift: [-9,9]
         - ref: mirror_hand_middle_top
-          shift: [-11,11.5]
+          shift: [-9,9]
         - ref: mirror_hand_middle_top
-          shift: [11,11.5]
+          shift: [9,9]
         - ref: mirror_hand_inner_top
-          shift: [12.5,11.4]
+          shift: [9,9]
         - ref: mirror_hand_inner_top
-          shift: [32,11.4]
+          shift: [31,9]
         - ref: mirror_hand_inner_bottom
-          shift: [32,-24.1]
+          shift: [31,-22.3]
       fillet: 3
   slot_right:
     - what: polygon
       operation: stack
       points:
         - ref: mirror_hand_inner_top
-          shift: [12.5,11.5]
+          shift: [12.5,9]
         - ref: mirror_hand_inner_top
-          shift: [12.5,-23]
+          shift: [12.5,-25.5]
         - ref: mirror_hand_inner_top
-          shift: [24.5,-23]
+          shift: [24.5,-25.5]
         - ref: mirror_hand_inner_top
-          shift: [24.5,11.5]
+          shift: [24.5,9]
   combo_right:
     - name: board_right
     - operation: subtract
@@ -207,10 +159,6 @@ pcbs:
     outlines:
       main:
         outline: combo_left
-      rawout:
-        outline: raw
-      keyout:
-        outline: key_poly_left
     footprints:
       pg1316s:
         what: switch_pg1316s
@@ -229,17 +177,13 @@ pcbs:
           pad_via_size: 0.4
           mp_vias: true
           mp_via_size: 0.4
-          model_filename: '\${MODELS}/PG1316S.STEP'
       nicenano:
           what: mcu_nice_nano_smd
           where:
             ref: hand_inner_top
-            shift: [18.5,-6.4]
+            shift: [18.5,-9]
             rotate: 0
           params:
-            mcu_3dmodel_filename: '\${MODELS}/nice_nano_v2.step'
-            mcu_3dmodel_xyz_rotation: [180, 0, 90]
-            mcu_3dmodel_xyz_offset: [0, 0, 1.2]
             reverse_mount: true
             P1: D1
             P1_label: D1
@@ -279,41 +223,38 @@ pcbs:
             P21_label: D21
             VCC: 3V3
             VCC_label: 3V3
+            RAW: BAT
+            RAW_label: BAT
       power:
-        what: power_switch_smd_side
+        what: slider
         params:
-          from: RAW
-          to: BAT_P
-          switch_3dmodel_filename: '\${MODELS}/SSSS811101.STEP'
-          switch_3dmodel_xyz_rotation: [-90, 0, -90]
-          invert_behavior: true
+          from: BAT_P
+          to: BAT
         where:
           ref: hand_inner_bottom
-          shift: [30,-12]
-          rotate: 0
+          shift: [-53,-22]
+          rotate: 180
       reset:
-        what: reset_switch_smd_side
+        what: button
         params:
           from: GND
           to: RST
-          reset_switch_3dmodel_filename: '\${MODELS}/EVQPU-MD-02K.STEP'
-          reset_switch_3dmodel_xyz_rotation: [-90, 0, 180]
         where:
           ref: hand_inner_bottom
-          shift: [30,-2]
-          rotate: -90
+          shift: [-35,-8]
+          rotate: 0
       battcon:
         what: battery_connector_molex_pico_ezmate_1x02
         where:
           ref: hand_inner_bottom
-          shift: [-36,-10]
-          rotate: 96
+          shift: [-56,-16]
+          rotate: 90
       batsolder_pos:
         what: pad
         where:
           ref: hand_inner_bottom
-          shift: [-39.8,-9]
-          rotate: 6
+          shift: [-59.75,-14.5]
+          rotate: 0
         params:
           width: 1.3
           height: 0.8
@@ -324,8 +265,8 @@ pcbs:
         what: pad
         where:
           ref: hand_inner_bottom
-          shift: [-39.5,-12]
-          rotate: 6
+          shift: [-59.75,-17.5]
+          rotate: 0
         params:
           width: 1.3
           height: 0.8
@@ -336,107 +277,38 @@ pcbs:
         what: battery_301230
         where:
           ref: hand_inner_bottom
-          shift: [-32,-19]
-          rotate: 6
+          shift: [-30,-19]
+          rotate: 0
       mp_1:
         what: mounting_hole_npth
         where:
           ref: hand_inner_top
-          shift: [0,10.8]
-      #Top Right Corner
+          shift: [10.5,9.5]
       mp_2:
         what: mounting_hole_npth
         where:
           ref: hand_inner_top
-          shift: [29.8,6]
+          shift: [29,6]
       mp_3:
         what: mounting_hole_npth
         where:
           ref: hand_inner_bottom
-          shift: [11,7]
+          shift: [11,5]
       mp_4:
         what: mounting_hole_npth
         where:
           ref: hand_inner_bottom
-          shift: [28,7]
+          shift: [28,5]
       mp_5:
         what: mounting_hole_npth
         where:
           ref: hand_inner_bottom
-          shift: [13,-10]
+          shift: [11,-8]
       mp_6:
         what: mounting_hole_npth
         where:
           ref: hand_inner_bottom
           shift: [28,-21]
-      # Bottom Right Corner
-      mp_7:
-        what: mounting_hole_npth
-        where:
-          ref: thumb_far_fan
-          shift: [10,-10.5]
-      mp_8:
-        what: mounting_hole_npth
-        where:
-          ref: thumb_near_fan
-          shift: [0,-11.2]
-      mp_85:
-        what: mounting_hole_npth
-        where:
-          ref: thumb_near_fan
-          shift: [-11,-10]
-      mp_9:
-        what: mounting_hole_npth
-        where:
-          ref: hand_inner_bottom
-          shift: [-11,-9]
-      mp_10:
-        what: mounting_hole_npth
-        where:
-          ref: hand_middle_bottom
-          shift: [7,-11]
-      mp_11:
-        what: mounting_hole_npth
-        where:
-          ref: hand_middle_bottom
-          shift: [-6.8,-11]
-      mp_12:
-        what: mounting_hole_npth
-        where:
-          ref: hand_pinky_bottom
-          shift: [18,-16.5]
-      #Bottom Left Corner
-      mp_13:
-        what: mounting_hole_npth
-        where:
-          ref: hand_pinky_bottom
-          shift: [-10.3,-10.5]
-      mp_14:
-        what: mounting_hole_npth
-        where:
-          ref: hand_pinky_home
-          shift: [-10.7,0]
-      #Top Left Corner
-      mp_15:
-        what: mounting_hole_npth
-        where:
-          ref: hand_pinky_top
-          shift: [-10.5,10]
-      mp_16:
-        what: mounting_hole_npth
-        where:
-          ref: hand_ring_top
-          shift: [-11,7.5]
-      mp_17:
-        what: mounting_hole_npth
-        where:
-          ref: hand_middle_top
-          shift: [-11,9]
-      mp_18:
-        what: mounting_hole_npth
-        where:
-          ref: hand_middle_top
-          shift: [11,9]
   slimsplaydy_right_unrouted:
     outlines:
       main:
@@ -459,17 +331,13 @@ pcbs:
           pad_via_size: 0.4
           mp_vias: true
           mp_via_size: 0.4
-          model_filename: '\${MODELS}/PG1316S.STEP'
       nicenano:
           what: mcu_nice_nano_smd
           where:
             ref: mirror_hand_inner_top
-            shift: [18.5,-6.4]
+            shift: [18.5,-9]
             rotate: 0
           params:
-            mcu_3dmodel_filename: '\${MODELS}/nice_nano_v2.step'
-            mcu_3dmodel_xyz_rotation: [180, 0, 90]
-            mcu_3dmodel_xyz_offset: [0, 0, 1.2]
             reverse_mount: true
             P1: mirror_hand_middle_top
             P1_label: D1
@@ -509,40 +377,37 @@ pcbs:
             P21_label: D21
             VCC: 3V3
             VCC_label: 3V3
+            RAW: BAT
+            RAW_label: BAT
       power:
-        what: power_switch_smd_side
+        what: slider
         params:
-          from: RAW
-          to: BAT_P
-          switch_3dmodel_filename: '\${MODELS}/SSSS811101.STEP'
-          switch_3dmodel_xyz_rotation: [-90, 0, -90]
-          invert_behavior: false
+          from: BAT_P
+          to: BAT
         where:
           ref: mirror_hand_inner_bottom
-          shift: [30,-12]
+          shift: [-53,-22]
           rotate: 180
       reset:
-        what: reset_switch_smd_side
+        what: button
         params:
           from: GND
           to: RST
-          reset_switch_3dmodel_filename: '\${MODELS}/EVQPU-MD-02K.STEP'
-          reset_switch_3dmodel_xyz_rotation: [-90, 0, 180]
         where:
           ref: mirror_hand_inner_bottom
-          shift: [30,-2]
-          rotate: -90
+          shift: [-35,-8]
+          rotate: 0
       battcon:
         what: battery_connector_molex_pico_ezmate_1x02
         where:
           ref: mirror_hand_inner_bottom
-          shift: [-54,-18 ]
+          shift: [-56,-16 ]
           rotate: 90
       batsolder_neg:
         what: pad
         where:
           ref: mirror_hand_inner_bottom
-          shift: [-57.75,-16.5]
+          shift: [-59.75,-14.5]
           rotate: 0
         params:
           width: 1.3
@@ -554,7 +419,7 @@ pcbs:
         what: pad
         where:
           ref: mirror_hand_inner_bottom
-          shift: [-57.75,-19.5]
+          shift: [-59.75,-17.5]
           rotate: 0
         params:
           width: 1.3
@@ -568,97 +433,70 @@ pcbs:
           ref: mirror_hand_inner_bottom
           shift: [-30,-19]
           rotate: 0
-      mp_1:
-        what: mounting_hole_npth
+  slimsplaydy_unrouted:
+    outlines:
+      left:
+        outline: combo_left
+      right:
+        outline: combo_right
+    footprints:
+      pg1316s:
+        what: switch_pg1316s
+        where: true
+        params:
+          from: "{{name}}"
+          to: GND
+          reversible: false
+          side: 'F'
+          large_p1: false
+          square_p1: true
+          square_p2: true
+          shift_p2: false
+          small_mp: false
+          pad_vias: true
+          pad_via_size: 0.4
+          mp_vias: true
+          mp_via_size: 0.4
+      nicenano_left:
+          what: mcu_nice_nano_smd
+          where:
+            ref: hand_inner_top
+            shift: [18.5,-9]
+            rotate: 0
+      power_left:
+        what: slider
+        params:
+          from: BAT_P
+          to: BAT
         where:
-          ref: mirror_hand_inner_top
-          shift: [0,10.8]
-      #Top Right Corner
-      mp_2:
-        what: mounting_hole_npth
+          ref: hand_inner_bottom
+          shift: [-53,-22]
+          rotate: 180
+      battcon_left:
+        what: battery_connector_molex_pico_ezmate_1x02
         where:
-          ref: mirror_hand_inner_top
-          shift: [29.8,6]
-      mp_3:
-        what: mounting_hole_npth
+          ref: thumb_far_fan
+          shift: [1,11]
+          rotate: -90
+      nicenano_right:
+          what: mcu_nice_nano_smd
+          where:
+            ref: mirror_hand_inner_top
+            shift: [18.5,-9]
+            rotate: 0
+      power_right:
+        what: slider
+        params:
+          #intentionally reversed from left side for routing ease.
+          from: BAT
+          to: BAT_P
         where:
           ref: mirror_hand_inner_bottom
-          shift: [11,7]
-      mp_4:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_inner_bottom
-          shift: [28,7]
-      mp_5:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_inner_bottom
-          shift: [13,-10]
-      mp_6:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_inner_bottom
-          shift: [28,-21]
-      # Bottom Right Corner
-      mp_7:
-        what: mounting_hole_npth
+          shift: [-53,-22]
+          rotate: 180
+      battcon_right:
+        what: battery_connector_molex_pico_ezmate_1x02
         where:
           ref: mirror_thumb_far_fan
-          shift: [10,-10.5]
-      mp_8:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_thumb_near_fan
-          shift: [-5.5,-11]
-      mp_9:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_inner_bottom
-          shift: [-11,-9]
-      mp_10:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_middle_bottom
-          shift: [7,-11]
-      mp_11:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_middle_bottom
-          shift: [-7,-11]
-      mp_12:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_pinky_bottom
-          shift: [22,-16.5]
-      #Bottom Left Corner
-      mp_13:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_pinky_bottom
-          shift: [-10.3,-10.5]
-      mp_14:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_pinky_home
-          shift: [-10.7,0]
-      #Top Left Corner
-      mp_15:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_pinky_top
-          shift: [-10.5,10]
-      mp_16:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_ring_top
-          shift: [-11,7.5]
-      mp_17:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_middle_top
-          shift: [-11,9]
-      mp_18:
-        what: mounting_hole_npth
-        where:
-          ref: mirror_hand_middle_top
-          shift: [11,9]
+          shift: [1,11]
+          rotate: -90

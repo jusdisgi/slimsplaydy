@@ -339,7 +339,7 @@
       },
       {
         "netclass": "Default",
-        "pattern": "BAT"
+        "pattern": "RAW"
       },
       {
         "netclass": "Default",
@@ -475,7 +475,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "slimsplaydy_left_unrouted.step",
       "svg": "",
       "vrml": ""
     },
