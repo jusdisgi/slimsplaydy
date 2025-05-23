@@ -229,7 +229,7 @@ pcbs:
           pad_via_size: 0.4
           mp_vias: true
           mp_via_size: 0.4
-          model_filename: '\${MODELS}/PG1316S.STEP'
+          key_3dmodel_filename: '\${MODELS}/PG1316S.STEP'
       nicenano:
           what: mcu_nice_nano_smd
           where:
@@ -459,7 +459,7 @@ pcbs:
           pad_via_size: 0.4
           mp_vias: true
           mp_via_size: 0.4
-          model_filename: '\${MODELS}/PG1316S.STEP'
+          key_3dmodel_filename: '\${MODELS}/PG1316S.STEP'
       nicenano:
           what: mcu_nice_nano_smd
           where:
