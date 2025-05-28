@@ -1,95 +1,84 @@
 
 
-(kicad_pcb (version 20171130) (host pcbnew 5.1.6)
-
-  (page A3)
+(kicad_pcb
+  (version 20240108)
+  (generator "ergogen")
+  (generator_version "4.1.0")
+  (general
+    (thickness 1.6)
+    (legacy_teardrops no)
+  )
+  (paper "A3")
   (title_block
     (title "slimsplaydy_right_unrouted")
+    (date "2025-05-27")
     (rev "v1.0.0")
     (company "Unknown")
   )
 
-  (general
-    (thickness 1.6)
-  )
-
   (layers
-    (0 F.Cu signal)
-    (31 B.Cu signal)
-    (32 B.Adhes user)
-    (33 F.Adhes user)
-    (34 B.Paste user)
-    (35 F.Paste user)
-    (36 B.SilkS user)
-    (37 F.SilkS user)
-    (38 B.Mask user)
-    (39 F.Mask user)
-    (40 Dwgs.User user)
-    (41 Cmts.User user)
-    (42 Eco1.User user)
-    (43 Eco2.User user)
-    (44 Edge.Cuts user)
-    (45 Margin user)
-    (46 B.CrtYd user)
-    (47 F.CrtYd user)
-    (48 B.Fab user)
-    (49 F.Fab user)
+    (0 "F.Cu" signal)
+    (31 "B.Cu" signal)
+    (32 "B.Adhes" user "B.Adhesive")
+    (33 "F.Adhes" user "F.Adhesive")
+    (34 "B.Paste" user)
+    (35 "F.Paste" user)
+    (36 "B.SilkS" user "B.Silkscreen")
+    (37 "F.SilkS" user "F.Silkscreen")
+    (38 "B.Mask" user)
+    (39 "F.Mask" user)
+    (40 "Dwgs.User" user "User.Drawings")
+    (41 "Cmts.User" user "User.Comments")
+    (42 "Eco1.User" user "User.Eco1")
+    (43 "Eco2.User" user "User.Eco2")
+    (44 "Edge.Cuts" user)
+    (45 "Margin" user)
+    (46 "B.CrtYd" user "B.Courtyard")
+    (47 "F.CrtYd" user "F.Courtyard")
+    (48 "B.Fab" user)
+    (49 "F.Fab" user)
   )
 
   (setup
-    (last_trace_width 0.25)
-    (trace_clearance 0.2)
-    (zone_clearance 0.508)
-    (zone_45_only no)
-    (trace_min 0.2)
-    (via_size 0.8)
-    (via_drill 0.4)
-    (via_min_size 0.4)
-    (via_min_drill 0.3)
-    (uvia_size 0.3)
-    (uvia_drill 0.1)
-    (uvias_allowed no)
-    (uvia_min_size 0.2)
-    (uvia_min_drill 0.1)
-    (edge_width 0.05)
-    (segment_width 0.2)
-    (pcb_text_width 0.3)
-    (pcb_text_size 1.5 1.5)
-    (mod_edge_width 0.12)
-    (mod_text_size 1 1)
-    (mod_text_width 0.15)
-    (pad_size 1.524 1.524)
-    (pad_drill 0.762)
     (pad_to_mask_clearance 0.05)
-    (aux_axis_origin 0 0)
-    (visible_elements FFFFFF7F)
+    (allow_soldermask_bridges_in_footprints no)
     (pcbplotparams
-      (layerselection 0x010fc_ffffffff)
-      (usegerberextensions false)
-      (usegerberattributes true)
-      (usegerberadvancedattributes true)
-      (creategerberjobfile true)
-      (excludeedgelayer true)
-      (linewidth 0.100000)
-      (plotframeref false)
-      (viasonmask false)
+      (layerselection 0x00010fc_ffffffff)
+      (plot_on_all_layers_selection 0x0000000_00000000)
+      (disableapertmacros no)
+      (usegerberextensions no)
+      (usegerberattributes yes)
+      (usegerberadvancedattributes yes)
+      (creategerberjobfile yes)
+      (dashed_line_dash_ratio 12.000000)
+      (dashed_line_gap_ratio 3.000000)
+      (svgprecision 4)
+      (plotframeref no)
+      (viasonmask no)
       (mode 1)
-      (useauxorigin false)
+      (useauxorigin no)
       (hpglpennumber 1)
       (hpglpenspeed 20)
       (hpglpendiameter 15.000000)
-      (psnegative false)
-      (psa4output false)
-      (plotreference true)
-      (plotvalue true)
-      (plotinvisibletext false)
-      (padsonsilk false)
-      (subtractmaskfromsilk false)
+      (pdf_front_fp_property_popups yes)
+      (pdf_back_fp_property_popups yes)
+      (dxfpolygonmode yes)
+      (dxfimperialunits yes)
+      (dxfusepcbnewfont yes)
+      (psnegative no)
+      (psa4output no)
+      (plotreference yes)
+      (plotvalue yes)
+      (plotfptext yes)
+      (plotinvisibletext no)
+      (sketchpadsonfab no)
+      (subtractmaskfromsilk no)
       (outputformat 1)
-      (mirror false)
+      (mirror no)
       (drillshape 1)
       (scaleselection 1)
-      (outputdirectory ""))
+      (outputdirectory "")
+    )
   )
 
   (net 0 "")
@@ -144,68 +133,8 @@
 (net 49 "MCU1_12")
 (net 50 "BAT_P")
 
-  (net_class Default "This is the default net class."
-    (clearance 0.2)
-    (trace_width 0.25)
-    (via_dia 0.8)
-    (via_drill 0.4)
-    (uvia_dia 0.3)
-    (uvia_drill 0.1)
-    (add_net "")
-(add_net "mirror_hand_pinky_bottom")
-(add_net "GND")
-(add_net "mirror_hand_pinky_home")
-(add_net "mirror_hand_pinky_top")
-(add_net "mirror_hand_ring_bottom")
-(add_net "mirror_hand_ring_home")
-(add_net "mirror_hand_ring_top")
-(add_net "mirror_hand_middle_bottom")
-(add_net "mirror_hand_middle_home")
-(add_net "mirror_hand_middle_top")
-(add_net "mirror_hand_index_bottom")
-(add_net "mirror_hand_index_home")
-(add_net "mirror_hand_index_top")
-(add_net "mirror_hand_inner_bottom")
-(add_net "mirror_hand_inner_home")
-(add_net "mirror_hand_inner_top")
-(add_net "mirror_thumb_near_fan")
-(add_net "mirror_thumb_far_fan")
-(add_net "RAW")
-(add_net "RST")
-(add_net "3V3")
-(add_net "D21")
-(add_net "P101")
-(add_net "P102")
-(add_net "P107")
-(add_net "MCU1_24")
-(add_net "MCU1_1")
-(add_net "MCU1_23")
-(add_net "MCU1_2")
-(add_net "MCU1_22")
-(add_net "MCU1_3")
-(add_net "MCU1_21")
-(add_net "MCU1_4")
-(add_net "MCU1_20")
-(add_net "MCU1_5")
-(add_net "MCU1_19")
-(add_net "MCU1_6")
-(add_net "MCU1_18")
-(add_net "MCU1_7")
-(add_net "MCU1_17")
-(add_net "MCU1_8")
-(add_net "MCU1_16")
-(add_net "MCU1_9")
-(add_net "MCU1_15")
-(add_net "MCU1_10")
-(add_net "MCU1_14")
-(add_net "MCU1_11")
-(add_net "MCU1_13")
-(add_net "MCU1_12")
-(add_net "BAT_P")
-  )
-
   (footprint "PG1316S"
-(at 330.91987090000003 141.7956297 -11)
+(at 221.860257 0 -11)
 (layer "F.Cu")
 (property "Reference" "S1" hide (at 0 0 -11) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -223,7 +152,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 334.16362380000004 125.1079676 -11)
+(at 225.1040099 -16.6876621 -11)
 (layer "F.Cu")
 (property "Reference" "S2" hide (at 0 0 -11) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -241,7 +170,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 337.40737670000004 108.4203055 -11)
+(at 228.3477628 -33.3753242 -11)
 (layer "F.Cu")
 (property "Reference" "S3" hide (at 0 0 -11) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -259,7 +188,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 313.79542630000003 130.3172413 -6)
+(at 204.73581249999998 -11.4783884 -6)
 (layer "F.Cu")
 (property "Reference" "S4" hide (at 0 0 -6) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -277,7 +206,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 315.57241020000004 113.4103691 -6)
+(at 206.51279639999998 -28.3852606 -6)
 (layer "F.Cu")
 (property "Reference" "S5" hide (at 0 0 -6) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -295,7 +224,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 317.3493942 96.5034968 -6)
+(at 208.2897803 -45.2921329 -6)
 (layer "F.Cu")
 (property "Reference" "S6" hide (at 0 0 -6) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -313,7 +242,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 296.62573140000006 121.4740757 -3)
+(at 187.56611759999998 -20.321554 -3)
 (layer "F.Cu")
 (property "Reference" "S7" hide (at 0 0 -3) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -331,7 +260,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 297.5154427 104.4973736 -3)
+(at 188.4558288 -37.2982561 -3)
 (layer "F.Cu")
 (property "Reference" "S8" hide (at 0 0 -3) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -349,7 +278,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 298.40515400000004 87.5206715 -3)
+(at 189.3455401 -54.2749582 -3)
 (layer "F.Cu")
 (property "Reference" "S9" hide (at 0 0 -3) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -367,7 +296,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 278.64078190000004 124.5370139 -1)
+(at 169.581168 -17.2586158 -1)
 (layer "F.Cu")
 (property "Reference" "S10" hide (at 0 0 -1) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -385,7 +314,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 278.9374728 107.5396031 -1)
+(at 169.877859 -34.2560266 -1)
 (layer "F.Cu")
 (property "Reference" "S11" hide (at 0 0 -1) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -403,7 +332,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 279.23416380000003 90.5421923 -1)
+(at 170.1745499 -51.2534375 -1)
 (layer "F.Cu")
 (property "Reference" "S12" hide (at 0 0 -1) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -421,7 +350,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 261.0085577 126.2295469 0)
+(at 151.9489438 -15.5660828 0)
 (layer "F.Cu")
 (property "Reference" "S13" hide (at 0 0 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -439,7 +368,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 261.0085577 109.2295469 0)
+(at 151.9489438 -32.5660828 0)
 (layer "F.Cu")
 (property "Reference" "S14" hide (at 0 0 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -457,7 +386,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 261.0085577 92.2295469 0)
+(at 151.9489438 -49.5660828 0)
 (layer "F.Cu")
 (property "Reference" "S15" hide (at 0 0 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -475,7 +404,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 263.5085577 146.2295469 15)
+(at 154.4489438 4.4339172 15)
 (layer "F.Cu")
 (property "Reference" "S16" hide (at 0 0 15) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -493,7 +422,7 @@
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 245.4897424 153.8615215 30)
+(at 136.4301285 12.0658917 30)
 (layer "F.Cu")
 (property "Reference" "S17" hide (at 0 0 30) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -515,7 +444,7 @@
     
   (footprint "ceoloide:mcu_nice_nano"
     (layer "F.Cu")
-    (at 242.50855769999998 98.62954690000001 0)
+    (at 133.4489438 -43.1660828 0)
     (property "Reference" "MCU1"
       (at 0 -15 0)
       (layer "F.SilkS")
@@ -695,7 +624,7 @@
     
     
     
-    (model \${MODELS}/nice_nano_v2.step
+    (model \${KIM_MODELS}/Nice_Nano_V2.step
       (offset (xyz 0 0 1.2))
       (scale (xyz 1 1 1))
       (rotate (xyz 180 0 90))
@@ -709,7 +638,7 @@
 
   (footprint "ceoloide:power_switch_smd_side"
     (layer "F.Cu")
-    (at 231.00855769999998 138.2295469 -180)
+    (at 121.9489438 -3.5660828 -180)
     (property "Reference" "PWR1"
       (at -3.6 0 -270)
       (layer "F.SilkS")
@@ -748,7 +677,7 @@
     (fp_line (start 1.425 2.85) (end 1.425 -2.85) (layer "F.SilkS") (stroke (width 0.12) (type solid)))
     (fp_line (start -1.425 -1.4) (end -1.425 -1.6) (layer "F.SilkS") (stroke (width 0.12) (type solid)))
     
-    (model \${MODELS}/SSSS811101.STEP
+    (model \${KIM_MODELS}/Switch_Power.step
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 -90))
@@ -761,7 +690,7 @@
 
   (footprint "ceoloide:reset_switch_smd_side"
     (layer "F.Cu")
-    (at 231.00855769999998 128.2295469 90)
+    (at 121.9489438 -13.5660828 90)
     (property "Reference" "RST1"
       (at 0 0 90)
       (layer "F.SilkS")
@@ -791,7 +720,7 @@
     (fp_line (start 2.35 -1.5) (end 2.35 -1.75) (stroke (width 0.1) (type solid)) (layer "F.SilkS"))
     (fp_line (start 2.35 1.5) (end 2.35 1.75) (stroke (width 0.1) (type solid)) (layer "F.SilkS"))
     
-    (model \${MODELS}/EVQPU-MD-02K.STEP
+    (model \${KIM_MODELS}/Switch_Reset.step
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 180))
@@ -802,7 +731,7 @@
 
   (footprint "ceoloide:battery_connector_molex_pico_ezmate_1x02"
     (layer "F.Cu")
-    (at 315.0085577 144.2295469 -90)
+    (at 205.9489438 2.4339172 -90)
     (property "Reference" "CONN1"
       (at 0.1 3.9 -90)
       (layer "F.SilkS")
@@ -846,13 +775,15 @@
     (fp_line (start 0.75 2.52) (end 2.1 2.52) (layer "F.Fab") (stroke (width 0.1) (type solid)))
     (fp_line (start 0.45 2.02) (end 0.75 2.52) (layer "F.Fab") (stroke (width 0.1) (type solid)))
     
-  )
+    (model \${KIM_MODELS}/Molex_Ezmate_Pico_Socket_2pin.step (offset (xyz 0 0 1.6)) (scale (xyz 1 1 1)) (rotate (xyz -90 0 0)))
+    
+    )
     
 
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 318.7585577 142.7295469 0)
+            (at 209.6989438 0.9339171999999998 0)
 
             
             (fp_text reference "PAD1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -870,7 +801,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 318.7585577 145.7295469 0)
+            (at 209.6989438 3.9339172 0)
 
             
             (fp_text reference "PAD2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -885,7 +816,7 @@
     
         
 (footprint "Battery_301230"
-(at 291.0085577 145.2295469 0)
+(at 181.9489438 3.4339172 0)
 (layer "F.Cu")
 (property "Reference" "XX1" hide (at 0 0 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (descr "Lithium Polymer Battery, 3x12x32mm including BMS.")
@@ -897,7 +828,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 261.0085577 81.4295469 0)
+    (at 151.9489438 -60.3660828 0)
     (property "Reference" "MH1"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -915,7 +846,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 231.20855769999997 86.2295469 0)
+    (at 122.1489438 -55.5660828 0)
     (property "Reference" "MH2"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -933,7 +864,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 250.00855769999998 119.2295469 0)
+    (at 140.9489438 -22.5660828 0)
     (property "Reference" "MH3"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -951,7 +882,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 233.00855769999998 119.2295469 0)
+    (at 123.9489438 -22.5660828 0)
     (property "Reference" "MH4"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -969,7 +900,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 248.00855769999998 136.2295469 0)
+    (at 138.9489438 -5.5660828 0)
     (property "Reference" "MH5"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -987,7 +918,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 233.00855769999998 147.2295469 0)
+    (at 123.9489438 5.4339172 0)
     (property "Reference" "MH6"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -1005,7 +936,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 242.0794884 167.9547882 30)
+    (at 133.0198745 26.1591584 30)
     (property "Reference" "MH7"
       (at 0 2.55 30)
       (layer "F.SilkS")
@@ -1023,7 +954,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 271.6681592 155.4312262 15)
+    (at 162.6085453 13.6355965 15)
     (property "Reference" "MH8"
       (at 0 2.55 15)
       (layer "F.SilkS")
@@ -1041,7 +972,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 272.0085577 135.2295469 0)
+    (at 162.9489438 -6.5660828 0)
     (property "Reference" "MH9"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -1059,7 +990,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 289.05962910000005 132.0926489 -3)
+    (at 180.00001529999997 -9.702980799999999 -3)
     (property "Reference" "MH10"
       (at 0 2.55 -3)
       (layer "F.SilkS")
@@ -1077,7 +1008,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 303.04044260000006 132.8253523 -3)
+    (at 193.98082879999998 -8.970277399999999 -3)
     (property "Reference" "MH11"
       (at 0 2.55 -3)
       (layer "F.SilkS")
@@ -1095,7 +1026,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 306.17572440000004 153.7946803 -11)
+    (at 197.1161105 11.9990506 -11)
     (property "Reference" "MH12"
       (at 0 2.55 -11)
       (layer "F.SilkS")
@@ -1113,7 +1044,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 339.0271364 154.06804780000002 -11)
+    (at 229.9675225 12.2724181 -11)
     (property "Reference" "MH13"
       (at 0 2.55 -11)
       (layer "F.SilkS")
@@ -1131,7 +1062,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 344.66703470000004 127.1496239 -11)
+    (at 235.6074208 -14.646005800000001 -11)
     (property "Reference" "MH14"
       (at 0 2.55 -11)
       (layer "F.SilkS")
@@ -1149,7 +1080,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 349.62255210000006 100.6075281 -11)
+    (at 240.5629382 -41.1881016 -11)
     (property "Reference" "MH15"
       (at 0 2.55 -11)
       (layer "F.SilkS")
@@ -1167,7 +1098,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 329.0730985 90.19439569999999 -6)
+    (at 220.0134846 -51.601234 -6)
     (property "Reference" "MH16"
       (at 0 2.55 -6)
       (layer "F.SilkS")
@@ -1185,7 +1116,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 309.8611025 79.10870120000001 -3)
+    (at 200.8014886 -62.6869285 -3)
     (property "Reference" "MH17"
       (at 0 2.55 -3)
       (layer "F.SilkS")
@@ -1203,7 +1134,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 287.89125270000005 77.95731020000001 -3)
+    (at 178.8316388 -63.8383195 -3)
     (property "Reference" "MH18"
       (at 0 2.55 -3)
       (layer "F.SilkS")
@@ -1218,27 +1149,27 @@
     )
   )
   
-  (gr_line (start 229.4109296250259 151.02599510467078) (end 239.6320130164171 168.7172273576828) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 243.41220957070254 169.9735390661322) (end 275.8467139143455 156.06174825270108) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 277.062415893657 155.8190188044668) (end 338.69693997183776 156.49978359759623) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 341.67495507183787 154.07239359759615) (end 351.8815938727676 101.56378888899098) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 350.3590983310228 98.34999516651072) (end 310.58484213769293 76.93140617502172) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 309.31946408439046 76.57688430300186) (end 288.30364017956276 75.47549158418656) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 287.7427253879511 75.49869467687357) (end 248.70958777124173 80.80223240181266) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 236.50855769999998 80.8295469) (end 232.00855769999998 80.8295469) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 229.00855769999998 83.8295469) (end 229.00855769999998 149.52521926135455) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 242.2296410913912 167.2164515143665) (end 239.63201299139118 168.7172274143665) (angle -83.19832270704916) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 277.02928239365684 158.81883580446683) (end 277.06241589365686 155.81901880446682) (angle -23.84825054727105) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 338.73007347183784 153.49996659759626) (end 338.6969399718378 156.49978359759626) (angle -79.63281602829784) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 348.9367122727677 100.9913618889907) (end 351.8815937727677 101.5637888889907) (angle -72.69736651025104) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 309.16245607943785 79.57277289750151) (end 310.58484207943786 76.9314061975015) (angle -25.302630960957742) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 288.1466321746102 78.47138017868623) (end 288.3036401746102 75.47549157868623) (angle -10.737551380899276) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 248.3056809845827 77.8295469) (end 248.50855768458268 80.8226792) (angle -3.8599298277840717) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 232.00855769999998 83.8295469) (end 232.00855769999998 80.8295469) (angle -90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 232.00855769999998 149.52521926135455) (end 229.00855769999998 149.52521926135455) (angle -30.0171117328469) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 248.50855768458268 80.8226792) (end 248.50855769999998 115.2295469) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 248.50855769999998 115.2295469) (end 236.50855769999998 115.2295469) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 236.50855769999998 115.2295469) (end 236.50855769999998 80.8295469) (angle 90) (layer Edge.Cuts) (width 0.15))
+  (gr_line (start 120.35131572502586 9.230365401305221) (end 130.57239913431223 26.921597599801146) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 134.3525956730592 28.17790927202345) (end 166.78709992866297 14.266118587810297) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 168.00280189243583 14.023389103348823) (end 229.6373260718379 14.704153897596242) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 232.61534117183785 12.276763897596084) (end 242.8219799727676 -40.23184081100908) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 241.29948443102273 -43.44563453348931) (end 201.52522823769291 -64.86422352497827) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 200.25985018439036 -65.21874539699814) (end 179.2440262795626 -66.32013811581345) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 178.6831114879511 -66.29693502312645) (end 139.64997387124166 -60.993397298187325) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 127.4489438 -60.966082799999995) (end 122.9489438 -60.966082799999995) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 119.9489438 -57.966082799999995) (end 119.9489438 7.729589557989044) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 130.57239910928635 26.921597656484913) (mid 132.22388870928637 28.267718656484913) (end 134.35259570928636 28.177909256484913) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 168.0028018924358 14.023389103348826) (mid 167.3822761924358 14.081273003348826) (end 166.7870998924358 14.266118603348826) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 229.63732607183786 14.704153897596242) (mid 231.56588157183785 14.029713197596243) (end 232.61534107183786 12.276763897596242) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 242.82197987276763 -40.23184081100937) (mid 242.58825567276762 -42.08864541100937) (end 241.2994843727676 -43.445634411009365) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 201.52522817943785 -64.86422350249849) (mid 200.91218927943785 -65.11162080249848) (end 200.25985017943785 -65.21874540249848) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 179.24402627461012 -66.32013812131378) (mid 178.96302497461014 -66.32168602131378) (end 178.68311147461014 -66.29693502131377) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 139.4489437845826 -60.972950499999996) (mid 139.54963098458262 -60.98148079999999) (end 139.6499738845826 -60.9933973) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 122.9489438 -60.966082799999995) (mid 120.8276235 -60.087403099999996) (end 119.9489438 -57.966082799999995) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 119.9489438 7.729589557989044) (mid 120.0512823 8.506479357989043) (end 120.3513157 9.230365457989045) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 139.4489437845826 -60.972950499999996) (end 139.4489438 -26.566082799999997) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 139.4489438 -26.566082799999997) (end 127.4489438 -26.566082799999997) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 127.4489438 -26.566082799999997) (end 127.4489438 -60.966082799999995) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 
 )
 

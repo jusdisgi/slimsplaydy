@@ -56,6 +56,10 @@ module.exports = {
     include_silkscreen: true,
     include_fabrication: true,
     include_courtyard: true,
+    batcon_3dmodel_filename: '\${MODELS}/molex_pico_1x2.stp',
+    batcon_3dmodel_xyz_offset: [0, 0, 1.6],
+    batcon_3dmodel_xyz_rotation: [-90, 0, 0],
+    batcon_3dmodel_xyz_scale: [1, 1, 1],
     BAT_P: { type: 'net', value: 'BAT_P' },
     BAT_N: { type: 'net', value: 'GND' },
   },
@@ -151,8 +155,11 @@ module.exports = {
     (pad "1" smd roundrect (at 0.6 -1.875 ${180 + p.r}) (size 0.6 0.85) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) ${p.BAT_N.str})
     (pad "2" smd roundrect (at -0.6 -1.875 ${180 + p.r}) (size 0.6 0.85) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.25) ${p.BAT_P.str})
     `
+    const model = `
+    (model ${p.batcon_3dmodel_filename} (offset (xyz ${p.batcon_3dmodel_xyz_offset[0]} ${p.batcon_3dmodel_xyz_offset[1]} ${p.batcon_3dmodel_xyz_offset[2]})) (scale (xyz ${p.batcon_3dmodel_xyz_scale[0]} ${p.batcon_3dmodel_xyz_scale[1]} ${p.batcon_3dmodel_xyz_scale[2]})) (rotate (xyz ${p.batcon_3dmodel_xyz_rotation[0]} ${p.batcon_3dmodel_xyz_rotation[1]} ${p.batcon_3dmodel_xyz_rotation[2]})))
+    `
     const bottom = `
-  )
+    )
     `
     let final = top;
     if (p.side == "F" || p.reversible) {
@@ -167,6 +174,7 @@ module.exports = {
       if(p.include_courtyard) final += back_courtyard;
       if(p.include_fabrication) final += back_fabrication;
     }
+    final += model;
     final += bottom;
     return final;
   }

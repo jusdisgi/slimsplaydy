@@ -80,7 +80,7 @@ module.exports = {
     pad_via_size: 0.8,
     mp_vias: false,
     mp_via_size: 0.6,
-    key_3dmodel_filename: '\${MODELS}/PG1316S--装配体.STEP',
+    key_3dmodel_filename: '\${MODELS}/PG1316S--装配体.STEP', //Available at https://github.com/mikeholscher/zmk-config-mikefive/blob/main/files/footprint-and-cad/PG1316S--%E8%A3%85%E9%85%8D%E4%BD%93.STEP
     key_3dmodel_xyz_offset: [-4.75, -6.25, -10.25],
     key_3dmodel_xyz_rotation: [0, 0, 0],
     key_3dmodel_xyz_scale: [1, 1, 1],
