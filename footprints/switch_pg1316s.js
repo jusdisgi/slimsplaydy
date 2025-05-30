@@ -33,8 +33,15 @@
 //        which matches the datasheet pad size, but positioned fully on the switch
 //        contact, aligned to the outer edge.
 //    small_mp: default is false
-//        If true, Mounting pads (all labeled P3) will be sized 1.4mm X 1.75mm, instead
+//        If true, mounting pads (all labeled P3) will be sized 1.4mm X 1.75mm, instead
 //        of 2x2mm as per the Kailh datasheet. Recommended only if mp_vias is true.
+//    mp_gnd: default is false
+//        If true, mounting pads (all labeled P3) will be added to the GND net. Some
+//        people like to put a GND pour on F.Cu and add mount points to that net for
+//        improved mounting strength.
+//    mp_net: default is GND
+//        Sets the net if and only if mp_gnd is true. You almost certainly do not want
+//        to change this.
 //    pad_vias: default is false
 //        If true, vias will be created in the center of each data pad (i.e. P1 and P2).
 // **!!** NOTE: these vias can leak solder (and at the default size almost certainly 
@@ -76,6 +83,8 @@ module.exports = {
     square_p2: false,
     shift_p2: true,
     small_mp: false,
+    mp_gnd: false,
+    mp_net: { type: 'net', value: 'GND' }, // You really should not change this; set mp_gnd to false instead, there's no other net you want it attached to
     pad_vias: false,
     pad_via_size: 0.8,
     mp_vias: false,
@@ -125,29 +134,28 @@ if (frontside) {
 //Pad 1, Front Side; default net = 'from'
 //If/elseif/else for pad config; inline conditionals for via config
   if (p.large_p1) {
-    fp.push(`(pad "1" ${p.pad_vias ? 'thru_hole' : 'smd'} roundrect (at -1.55 2.65 ${p.r}) (size 3.25 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.from})`);
+    fp.push(`(pad "1" smd roundrect (at -1.55 2.65 ${p.r}) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.from})`);
   } else if (p.square_p1) {
-    fp.push(`(pad "1" ${p.pad_vias ? 'thru_hole' : 'smd'} roundrect (at -2.175 2.65 ${p.r}) (size 2 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.from})`); 
+    fp.push(`(pad "1" smd roundrect (at -2.175 2.65 ${p.r}) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.from})`); 
   } else {
-    fp.push(`(pad "1" ${p.pad_vias ? 'thru_hole' : 'smd'} rect (at -2.5 2.65 ${p.r}) (size 1.55 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "F.Cu" "F.Paste" "F.Mask") (thermal_bridge_angle 45) ${p.from})`);
+    fp.push(`(pad "1" smd rect (at -2.5 2.65 ${p.r}) (size 1.55 2) (layers "F.Cu" "F.Paste" "F.Mask") (thermal_bridge_angle 45) ${p.from})`);
   }
 
 //Pad 2, Front Side; default net = 'to'
-//If/elseif/else for pad config; inline conditionals for via config  
   if (p.square_p2) {
-    fp.push(`(pad "2" ${p.pad_vias ? 'thru_hole' : 'smd'} roundrect (at 1.55 2.65 ${p.r}) (size 2 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.to})`);
+    fp.push(`(pad "2" smd roundrect (at 1.55 2.65 ${p.r}) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.to})`);
   } else if (p.shift_p2) {
-    fp.push(`(pad "2" ${p.pad_vias ? 'thru_hole' : 'smd'} rect (at 1.775 2.65 ${p.r}) (size 1.55 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "F.Cu" "F.Paste" "F.Mask") (thermal_bridge_angle 45) ${p.to})`);
+    fp.push(`(pad "2" smd rect (at 1.775 2.65 ${p.r}) (size 1.55 2) (layers "F.Cu" "F.Paste" "F.Mask") (thermal_bridge_angle 45) ${p.to})`);
   } else {
-    fp.push(`(pad "2" ${p.pad_vias ? 'thru_hole' : 'smd'} rect (at 2.5 2.65 ${p.r}) (size 1.55 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "F.Cu" "F.Paste" "F.Mask") (thermal_bridge_angle 45) ${p.to})`);
+    fp.push(`(pad "2" smd rect (at 2.5 2.65 ${p.r}) (size 1.55 2) (layers "F.Cu" "F.Paste" "F.Mask") (thermal_bridge_angle 45) ${p.to})`);
   }
 
 //Front Side Mount Points, all labeled P3; no net
 //Inline conditionals for smaller pad config
-  fp.push(`(pad "3" ${p.mp_vias ? 'thru_hole' : 'smd'} roundrect (at ${p.small_mp ? "-6.05 -5.875" : "-6.35 -6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) ${p.mp_vias ? `(drill ${p.mp_via_size})` : ''} (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
-  fp.push(`(pad "3" ${p.mp_vias ? 'thru_hole' : 'smd'} roundrect (at ${p.small_mp ? "-6.05 5.875" : "-6.35 6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) ${p.mp_vias ? `(drill ${p.mp_via_size})` : ''} (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
-  fp.push(`(pad "3" ${p.mp_vias ? 'thru_hole' : 'smd'} roundrect (at ${p.small_mp ? "6.05 -5.875" : "6.35 -6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) ${p.mp_vias ? `(drill ${p.mp_via_size})` : ''} (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
-  fp.push(`(pad "3" ${p.mp_vias ? 'thru_hole' : 'smd'} roundrect (at ${p.small_mp ? "6.05 5.875" : "6.35 6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) ${p.mp_vias ? `(drill ${p.mp_via_size})` : ''} (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
+  fp.push(`(pad "3" smd roundrect (at ${p.small_mp ? "-6.05 -5.875" : "-6.35 -6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.mp_gnd ? `${p.mp_net}` : ''})`);
+  fp.push(`(pad "3" smd roundrect (at ${p.small_mp ? "-6.05 5.875" : "-6.35 6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.mp_gnd ? `${p.mp_net}` : ''})`);
+  fp.push(`(pad "3" smd roundrect (at ${p.small_mp ? "6.05 -5.875" : "6.35 -6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.mp_gnd ? `${p.mp_net}` : ''})`);
+  fp.push(`(pad "3" smd roundrect (at ${p.small_mp ? "6.05 5.875" : "6.35 6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.mp_gnd ? `${p.mp_net}` : ''})`);
 }
 
 // Edge Cut, Back Side (side = 'B' and/or reversible = true)
@@ -156,25 +164,21 @@ if (backside) {
   fp.push(`(fp_circle (center 5.8 2.75) (end 6.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))`);
 
 //Pad 1, Back Side; default net = 'from'
-//If/elseif/else for pad config; inline conditionals for via config
-//Note vias are not placed if reversible = true (they are on Front)
   if (p.large_p1) {
-    fp.push(`(pad "1" ${(p.pad_vias && !p.reversible) ? 'thru_hole' : 'smd'} roundrect (at 1.55 2.65 ${p.r}) (size 3.25 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.from})`);
+    fp.push(`(pad "1" smd roundrect (at 1.55 2.65 ${p.r}) (size 3.25 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.from})`);
   } else if (p.square_p1) {
-    fp.push(`(pad "1" ${(p.pad_vias && !p.reversible) ? 'thru_hole' : 'smd'} roundrect (at 2.175 2.65 ${p.r}) (size 2 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.from})`);
+    fp.push(`(pad "1" smd roundrect (at 2.175 2.65 ${p.r}) (size 2 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.from})`);
   } else {
-    fp.push(`(pad "1" ${(p.pad_vias && !p.reversible) ? 'thru_hole' : 'smd'} rect (at 2.5 2.65 ${p.r}) (size 1.55 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "B.Cu" "B.Paste" "B.Mask") (thermal_bridge_angle 45) ${p.from})`);
+    fp.push(`(pad "1" smd rect (at 2.5 2.65 ${p.r}) (size 1.55 2) (layers "B.Cu" "B.Paste" "B.Mask") (thermal_bridge_angle 45) ${p.from})`);
   }
 
 //Pad 2, Back Side; default net = 'to'
-//If/elseif/else for pad config; inline conditionals for via config
-//Note vias are not placed if reversible = true (they are on Front)
   if (p.square_p2) {
-    fp.push(`(pad "2" ${(p.pad_vias && !p.reversible) ? 'thru_hole' : 'smd'} roundrect (at -1.55 2.65 ${p.r}) (size 2 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.to})`);
+    fp.push(`(pad "2" smd roundrect (at -1.55 2.65 ${p.r}) (size 2 2) (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) ${p.to})`);
   } else if (p.shift_p2) {
-    fp.push(`(pad "2" ${(p.pad_vias && !p.reversible) ? 'thru_hole' : 'smd'} rect (at -1.775 2.65 ${p.r}) (size 1.55 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "B.Cu" "B.Paste" "B.Mask") (thermal_bridge_angle 45) ${p.to})`);
+    fp.push(`(pad "2" smd rect (at -1.775 2.65 ${p.r}) (size 1.55 2) (layers "B.Cu" "B.Paste" "B.Mask") (thermal_bridge_angle 45) ${p.to})`);
   } else {
-    fp.push(`(pad "2" ${(p.pad_vias && !p.reversible) ? 'thru_hole' : 'smd'} rect (at -2.5 2.65 ${p.r}) (size 1.55 2) ${p.pad_vias ? `(drill ${p.pad_via_size})` : ''} (layers "B.Cu" "B.Paste" "B.Mask") (thermal_bridge_angle 45) ${p.to})`);
+    fp.push(`(pad "2" smd rect (at -2.5 2.65 ${p.r}) (size 1.55 2) (layers "B.Cu" "B.Paste" "B.Mask") (thermal_bridge_angle 45) ${p.to})`);
   }
 
 //Back Side Mount Points, all labeled P3; no net
@@ -183,6 +187,41 @@ if (backside) {
   fp.push(`(pad "3" ${p.mp_vias ? 'thru_hole' : 'smd'} roundrect (at ${p.small_mp ? "-6.05 5.875" : "-6.35 6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) ${p.mp_vias ? `(drill ${p.mp_via_size})` : ''} (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
   fp.push(`(pad "3" ${p.mp_vias ? 'thru_hole' : 'smd'} roundrect (at ${p.small_mp ? "6.05 -5.875" : "6.35 -6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) ${p.mp_vias ? `(drill ${p.mp_via_size})` : ''} (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);
   fp.push(`(pad "3" ${p.mp_vias ? 'thru_hole' : 'smd'} roundrect (at ${p.small_mp ? "6.05 5.875" : "6.35 6" } ${p.r}) (size ${p.small_mp ? "1.4 1.75" : "2 2"}) ${p.mp_vias ? `(drill ${p.mp_via_size})` : ''} (layers "B.Cu" "B.Paste" "B.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))`);  
+}
+
+//Data Pad vias.
+if (p.pad_vias) {
+  if (frontside) { // Remember "frontside" includes reversable!
+    if (p.large_p1) {
+      fp.push(`(pad "" thru_hole circle (at -1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+    } else if (p.square_p1) {
+      fp.push(`(pad "" thru_hole circle (at -2.175 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+    } else {
+      fp.push(`(pad "" thru_hole circle (at -2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+    }
+    if (p.square_p2) {
+      fp.push(`(pad "" thru_hole circle (at 1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+    } else if (p.shift_p2) {
+      fp.push(`(pad "" thru_hole circle (at 1.775 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+    } else {
+      fp.push(`(pad "" thru_hole circle (at 2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+    }
+  } else { //If it ain't frontside, must be backside ONLY 
+    if (p.large_p1) {
+      fp.push(`(pad "" thru_hole circle (at 1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+    } else if (p.square_p1) {
+      fp.push(`(pad "" thru_hole circle (at 2.175 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+    } else {
+      fp.push(`(pad "" thru_hole circle (at 2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+    }
+    if (p.square_p2) {
+      fp.push(`(pad "" thru_hole circle (at -1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+    } else if (p.shift_p2) {
+      fp.push(`(pad "" thru_hole circle (at -1.775 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+    } else {
+      fp.push(`(pad "" thru_hole circle (at -2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+    }
+  }
 }
 
 //3D Model

@@ -11,7 +11,7 @@
   (paper "A3")
   (title_block
     (title "slimsplaydy_right_unrouted")
-    (date "2025-05-27")
+    (date "2025-05-30")
     (rev "v1.0.0")
     (company "Unknown")
   )
@@ -134,7 +134,7 @@
 (net 50 "BAT_P")
 
   (footprint "PG1316S"
-(at 221.860257 0 -11)
+(at 330.91987090000003 141.7956297 -11)
 (layer "F.Cu")
 (property "Reference" "S1" hide (at 0 0 -11) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -143,16 +143,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 1 "mirror_hand_pinky_bottom"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -11) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 1 "mirror_hand_pinky_bottom"))
+(pad "2" smd roundrect (at 1.55 2.65 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -11) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 1 "mirror_hand_pinky_bottom"))
+(pad "" thru_hole circle (at 1.55 2.65 -11) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 225.1040099 -16.6876621 -11)
+(at 334.16362380000004 125.1079676 -11)
 (layer "F.Cu")
 (property "Reference" "S2" hide (at 0 0 -11) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -161,16 +163,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 3 "mirror_hand_pinky_home"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -11) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 3 "mirror_hand_pinky_home"))
+(pad "2" smd roundrect (at 1.55 2.65 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -11) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 3 "mirror_hand_pinky_home"))
+(pad "" thru_hole circle (at 1.55 2.65 -11) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 228.3477628 -33.3753242 -11)
+(at 337.40737670000004 108.4203055 -11)
 (layer "F.Cu")
 (property "Reference" "S3" hide (at 0 0 -11) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -179,16 +183,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 4 "mirror_hand_pinky_top"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -11) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -11) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 4 "mirror_hand_pinky_top"))
+(pad "2" smd roundrect (at 1.55 2.65 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -11) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -11) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 4 "mirror_hand_pinky_top"))
+(pad "" thru_hole circle (at 1.55 2.65 -11) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 204.73581249999998 -11.4783884 -6)
+(at 313.79542630000003 130.3172413 -6)
 (layer "F.Cu")
 (property "Reference" "S4" hide (at 0 0 -6) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -197,16 +203,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 5 "mirror_hand_ring_bottom"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -6) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 5 "mirror_hand_ring_bottom"))
+(pad "2" smd roundrect (at 1.55 2.65 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -6) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 5 "mirror_hand_ring_bottom"))
+(pad "" thru_hole circle (at 1.55 2.65 -6) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 206.51279639999998 -28.3852606 -6)
+(at 315.57241020000004 113.4103691 -6)
 (layer "F.Cu")
 (property "Reference" "S5" hide (at 0 0 -6) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -215,16 +223,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 6 "mirror_hand_ring_home"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -6) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 6 "mirror_hand_ring_home"))
+(pad "2" smd roundrect (at 1.55 2.65 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -6) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 6 "mirror_hand_ring_home"))
+(pad "" thru_hole circle (at 1.55 2.65 -6) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 208.2897803 -45.2921329 -6)
+(at 317.3493942 96.5034968 -6)
 (layer "F.Cu")
 (property "Reference" "S6" hide (at 0 0 -6) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -233,16 +243,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 7 "mirror_hand_ring_top"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -6) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -6) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 7 "mirror_hand_ring_top"))
+(pad "2" smd roundrect (at 1.55 2.65 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -6) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -6) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 7 "mirror_hand_ring_top"))
+(pad "" thru_hole circle (at 1.55 2.65 -6) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 187.56611759999998 -20.321554 -3)
+(at 296.62573140000006 121.4740757 -3)
 (layer "F.Cu")
 (property "Reference" "S7" hide (at 0 0 -3) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -251,16 +263,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 8 "mirror_hand_middle_bottom"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -3) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 8 "mirror_hand_middle_bottom"))
+(pad "2" smd roundrect (at 1.55 2.65 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -3) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 8 "mirror_hand_middle_bottom"))
+(pad "" thru_hole circle (at 1.55 2.65 -3) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 188.4558288 -37.2982561 -3)
+(at 297.5154427 104.4973736 -3)
 (layer "F.Cu")
 (property "Reference" "S8" hide (at 0 0 -3) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -269,16 +283,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 9 "mirror_hand_middle_home"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -3) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 9 "mirror_hand_middle_home"))
+(pad "2" smd roundrect (at 1.55 2.65 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -3) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 9 "mirror_hand_middle_home"))
+(pad "" thru_hole circle (at 1.55 2.65 -3) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 189.3455401 -54.2749582 -3)
+(at 298.40515400000004 87.5206715 -3)
 (layer "F.Cu")
 (property "Reference" "S9" hide (at 0 0 -3) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -287,16 +303,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 10 "mirror_hand_middle_top"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -3) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -3) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 10 "mirror_hand_middle_top"))
+(pad "2" smd roundrect (at 1.55 2.65 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -3) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -3) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 10 "mirror_hand_middle_top"))
+(pad "" thru_hole circle (at 1.55 2.65 -3) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 169.581168 -17.2586158 -1)
+(at 278.64078190000004 124.5370139 -1)
 (layer "F.Cu")
 (property "Reference" "S10" hide (at 0 0 -1) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -305,16 +323,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 11 "mirror_hand_index_bottom"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -1) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 11 "mirror_hand_index_bottom"))
+(pad "2" smd roundrect (at 1.55 2.65 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -1) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 11 "mirror_hand_index_bottom"))
+(pad "" thru_hole circle (at 1.55 2.65 -1) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 169.877859 -34.2560266 -1)
+(at 278.9374728 107.5396031 -1)
 (layer "F.Cu")
 (property "Reference" "S11" hide (at 0 0 -1) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -323,16 +343,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 12 "mirror_hand_index_home"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -1) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 12 "mirror_hand_index_home"))
+(pad "2" smd roundrect (at 1.55 2.65 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -1) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 12 "mirror_hand_index_home"))
+(pad "" thru_hole circle (at 1.55 2.65 -1) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 170.1745499 -51.2534375 -1)
+(at 279.23416380000003 90.5421923 -1)
 (layer "F.Cu")
 (property "Reference" "S12" hide (at 0 0 -1) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -341,16 +363,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 13 "mirror_hand_index_top"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 -1) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 -1) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 13 "mirror_hand_index_top"))
+(pad "2" smd roundrect (at 1.55 2.65 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 -1) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 -1) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 13 "mirror_hand_index_top"))
+(pad "" thru_hole circle (at 1.55 2.65 -1) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 151.9489438 -15.5660828 0)
+(at 261.0085577 126.2295469 0)
 (layer "F.Cu")
 (property "Reference" "S13" hide (at 0 0 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -359,16 +383,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 14 "mirror_hand_inner_bottom"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 0) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 14 "mirror_hand_inner_bottom"))
+(pad "2" smd roundrect (at 1.55 2.65 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 0) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 14 "mirror_hand_inner_bottom"))
+(pad "" thru_hole circle (at 1.55 2.65 0) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 151.9489438 -32.5660828 0)
+(at 261.0085577 109.2295469 0)
 (layer "F.Cu")
 (property "Reference" "S14" hide (at 0 0 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -377,16 +403,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 15 "mirror_hand_inner_home"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 0) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 15 "mirror_hand_inner_home"))
+(pad "2" smd roundrect (at 1.55 2.65 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 0) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 15 "mirror_hand_inner_home"))
+(pad "" thru_hole circle (at 1.55 2.65 0) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 151.9489438 -49.5660828 0)
+(at 261.0085577 92.2295469 0)
 (layer "F.Cu")
 (property "Reference" "S15" hide (at 0 0 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -395,16 +423,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 16 "mirror_hand_inner_top"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 0) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 0) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 16 "mirror_hand_inner_top"))
+(pad "2" smd roundrect (at 1.55 2.65 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 0) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 0) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 16 "mirror_hand_inner_top"))
+(pad "" thru_hole circle (at 1.55 2.65 0) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 154.4489438 4.4339172 15)
+(at 263.5085577 146.2295469 15)
 (layer "F.Cu")
 (property "Reference" "S16" hide (at 0 0 15) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -413,16 +443,18 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 15) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 17 "mirror_thumb_near_fan"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 15) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 15) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 15) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 15) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 15) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 15) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 17 "mirror_thumb_near_fan"))
+(pad "2" smd roundrect (at 1.55 2.65 15) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 15) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 15) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 15) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 15) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 15) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 17 "mirror_thumb_near_fan"))
+(pad "" thru_hole circle (at 1.55 2.65 15) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 (footprint "PG1316S"
-(at 136.4301285 12.0658917 30)
+(at 245.4897424 153.8615215 30)
 (layer "F.Cu")
 (property "Reference" "S17" hide (at 0 0 30) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (attr smd)
@@ -431,12 +463,14 @@
 (fp_poly (pts (xy 3.8 -3.5) (xy 3.8 -1.65) (xy 3.3 -1.15) (xy -2.2 -1.15) (xy -2.2 -3.9) (xy 2.2 -3.9) (xy 2.2 -3.5)) (stroke (width 0.1) (type solid)) (fill none) (layer "Dwgs.User") )
 (fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
 (fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))
-(pad "1" thru_hole roundrect (at -2.175 2.65 30) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 18 "mirror_thumb_far_fan"))
-(pad "2" thru_hole roundrect (at 1.55 2.65 30) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
-(pad "3" thru_hole roundrect (at -6.35 -6 30) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at -6.35 6 30) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 -6 30) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
-(pad "3" thru_hole roundrect (at 6.35 6 30) (size 2 2) (drill 0.4) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45))
+(pad "1" smd roundrect (at -1.55 2.65 30) (size 3.25 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 18 "mirror_thumb_far_fan"))
+(pad "2" smd roundrect (at 1.55 2.65 30) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) (net 2 "GND"))
+(pad "3" smd roundrect (at -6.35 -6 30) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at -6.35 6 30) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 -6 30) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "3" smd roundrect (at 6.35 6 30) (size 2 2) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.125) (thermal_bridge_angle 45) )
+(pad "" thru_hole circle (at -1.55 2.65 30) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 18 "mirror_thumb_far_fan"))
+(pad "" thru_hole circle (at 1.55 2.65 30) (size 0.4 0.4) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill 0.4) (thermal_bridge_angle 45) (net 2 "GND"))
 (model \${MODELS}/PG1316S.STEP (offset (xyz -4.75 -6.25 -10.25)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )
 
@@ -444,7 +478,7 @@
     
   (footprint "ceoloide:mcu_nice_nano"
     (layer "F.Cu")
-    (at 133.4489438 -43.1660828 0)
+    (at 242.50855769999998 98.62954690000001 0)
     (property "Reference" "MCU1"
       (at 0 -15 0)
       (layer "F.SilkS")
@@ -638,7 +672,7 @@
 
   (footprint "ceoloide:power_switch_smd_side"
     (layer "F.Cu")
-    (at 121.9489438 -3.5660828 -180)
+    (at 231.00855769999998 138.2295469 -180)
     (property "Reference" "PWR1"
       (at -3.6 0 -270)
       (layer "F.SilkS")
@@ -690,7 +724,7 @@
 
   (footprint "ceoloide:reset_switch_smd_side"
     (layer "F.Cu")
-    (at 121.9489438 -13.5660828 90)
+    (at 231.00855769999998 128.2295469 90)
     (property "Reference" "RST1"
       (at 0 0 90)
       (layer "F.SilkS")
@@ -731,7 +765,7 @@
 
   (footprint "ceoloide:battery_connector_molex_pico_ezmate_1x02"
     (layer "F.Cu")
-    (at 205.9489438 2.4339172 -90)
+    (at 315.0085577 144.2295469 -90)
     (property "Reference" "CONN1"
       (at 0.1 3.9 -90)
       (layer "F.SilkS")
@@ -783,7 +817,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 209.6989438 0.9339171999999998 0)
+            (at 318.7585577 142.7295469 0)
 
             
             (fp_text reference "PAD1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -801,7 +835,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 209.6989438 3.9339172 0)
+            (at 318.7585577 145.7295469 0)
 
             
             (fp_text reference "PAD2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -816,7 +850,7 @@
     
         
 (footprint "Battery_301230"
-(at 181.9489438 3.4339172 0)
+(at 291.0085577 145.2295469 0)
 (layer "F.Cu")
 (property "Reference" "XX1" hide (at 0 0 0) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
 (descr "Lithium Polymer Battery, 3x12x32mm including BMS.")
@@ -828,7 +862,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 151.9489438 -60.3660828 0)
+    (at 261.0085577 81.4295469 0)
     (property "Reference" "MH1"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -846,7 +880,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 122.1489438 -55.5660828 0)
+    (at 231.20855769999997 86.2295469 0)
     (property "Reference" "MH2"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -864,7 +898,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 140.9489438 -22.5660828 0)
+    (at 250.00855769999998 119.2295469 0)
     (property "Reference" "MH3"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -882,7 +916,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 123.9489438 -22.5660828 0)
+    (at 233.00855769999998 119.2295469 0)
     (property "Reference" "MH4"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -900,7 +934,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 138.9489438 -5.5660828 0)
+    (at 248.00855769999998 136.2295469 0)
     (property "Reference" "MH5"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -918,7 +952,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 123.9489438 5.4339172 0)
+    (at 233.00855769999998 147.2295469 0)
     (property "Reference" "MH6"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -936,7 +970,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 133.0198745 26.1591584 30)
+    (at 242.0794884 167.9547882 30)
     (property "Reference" "MH7"
       (at 0 2.55 30)
       (layer "F.SilkS")
@@ -954,7 +988,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 162.6085453 13.6355965 15)
+    (at 271.6681592 155.4312262 15)
     (property "Reference" "MH8"
       (at 0 2.55 15)
       (layer "F.SilkS")
@@ -972,7 +1006,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 162.9489438 -6.5660828 0)
+    (at 272.0085577 135.2295469 0)
     (property "Reference" "MH9"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -990,7 +1024,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 180.00001529999997 -9.702980799999999 -3)
+    (at 289.05962910000005 132.0926489 -3)
     (property "Reference" "MH10"
       (at 0 2.55 -3)
       (layer "F.SilkS")
@@ -1008,7 +1042,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 193.98082879999998 -8.970277399999999 -3)
+    (at 303.04044260000006 132.8253523 -3)
     (property "Reference" "MH11"
       (at 0 2.55 -3)
       (layer "F.SilkS")
@@ -1026,7 +1060,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 197.1161105 11.9990506 -11)
+    (at 306.17572440000004 153.7946803 -11)
     (property "Reference" "MH12"
       (at 0 2.55 -11)
       (layer "F.SilkS")
@@ -1044,7 +1078,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 229.9675225 12.2724181 -11)
+    (at 339.0271364 154.06804780000002 -11)
     (property "Reference" "MH13"
       (at 0 2.55 -11)
       (layer "F.SilkS")
@@ -1062,7 +1096,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 235.6074208 -14.646005800000001 -11)
+    (at 344.66703470000004 127.1496239 -11)
     (property "Reference" "MH14"
       (at 0 2.55 -11)
       (layer "F.SilkS")
@@ -1080,7 +1114,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 240.5629382 -41.1881016 -11)
+    (at 349.62255210000006 100.6075281 -11)
     (property "Reference" "MH15"
       (at 0 2.55 -11)
       (layer "F.SilkS")
@@ -1098,7 +1132,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 220.0134846 -51.601234 -6)
+    (at 329.0730985 90.19439569999999 -6)
     (property "Reference" "MH16"
       (at 0 2.55 -6)
       (layer "F.SilkS")
@@ -1116,7 +1150,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 200.8014886 -62.6869285 -3)
+    (at 309.8611025 79.10870120000001 -3)
     (property "Reference" "MH17"
       (at 0 2.55 -3)
       (layer "F.SilkS")
@@ -1134,7 +1168,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 178.8316388 -63.8383195 -3)
+    (at 287.89125270000005 77.95731020000001 -3)
     (property "Reference" "MH18"
       (at 0 2.55 -3)
       (layer "F.SilkS")
@@ -1149,27 +1183,27 @@
     )
   )
   
-  (gr_line (start 120.35131572502586 9.230365401305221) (end 130.57239913431223 26.921597599801146) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 134.3525956730592 28.17790927202345) (end 166.78709992866297 14.266118587810297) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 168.00280189243583 14.023389103348823) (end 229.6373260718379 14.704153897596242) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 232.61534117183785 12.276763897596084) (end 242.8219799727676 -40.23184081100908) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 241.29948443102273 -43.44563453348931) (end 201.52522823769291 -64.86422352497827) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 200.25985018439036 -65.21874539699814) (end 179.2440262795626 -66.32013811581345) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 178.6831114879511 -66.29693502312645) (end 139.64997387124166 -60.993397298187325) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 127.4489438 -60.966082799999995) (end 122.9489438 -60.966082799999995) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 119.9489438 -57.966082799999995) (end 119.9489438 7.729589557989044) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 130.57239910928635 26.921597656484913) (mid 132.22388870928637 28.267718656484913) (end 134.35259570928636 28.177909256484913) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 168.0028018924358 14.023389103348826) (mid 167.3822761924358 14.081273003348826) (end 166.7870998924358 14.266118603348826) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 229.63732607183786 14.704153897596242) (mid 231.56588157183785 14.029713197596243) (end 232.61534107183786 12.276763897596242) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 242.82197987276763 -40.23184081100937) (mid 242.58825567276762 -42.08864541100937) (end 241.2994843727676 -43.445634411009365) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 201.52522817943785 -64.86422350249849) (mid 200.91218927943785 -65.11162080249848) (end 200.25985017943785 -65.21874540249848) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 179.24402627461012 -66.32013812131378) (mid 178.96302497461014 -66.32168602131378) (end 178.68311147461014 -66.29693502131377) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 139.4489437845826 -60.972950499999996) (mid 139.54963098458262 -60.98148079999999) (end 139.6499738845826 -60.9933973) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 122.9489438 -60.966082799999995) (mid 120.8276235 -60.087403099999996) (end 119.9489438 -57.966082799999995) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 119.9489438 7.729589557989044) (mid 120.0512823 8.506479357989043) (end 120.3513157 9.230365457989045) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 139.4489437845826 -60.972950499999996) (end 139.4489438 -26.566082799999997) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 139.4489438 -26.566082799999997) (end 127.4489438 -26.566082799999997) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 127.4489438 -26.566082799999997) (end 127.4489438 -60.966082799999995) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+  (gr_line (start 229.4109296250259 151.02599510467078) (end 239.6320130164171 168.7172273576828) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 243.41220957070254 169.9735390661322) (end 275.8467139143455 156.06174825270108) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 277.062415893657 155.8190188044668) (end 338.69693997183776 156.49978359759623) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 341.67495507183787 154.07239359759615) (end 351.8815938727676 101.56378888899098) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 350.3590983310228 98.34999516651072) (end 310.58484213769293 76.93140617502172) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 309.31946408439046 76.57688430300186) (end 288.30364017956276 75.47549158418656) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 287.7427253879511 75.49869467687357) (end 248.70958777124173 80.80223240181266) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 236.50855769999998 80.8295469) (end 232.00855769999998 80.8295469) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 229.00855769999998 83.8295469) (end 229.00855769999998 149.52521926135455) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 239.63201299139118 168.7172274143665) (mid 241.2835025913912 170.0633484143665) (end 243.4122095913912 169.9735390143665) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 277.06241589365686 155.81901880446682) (mid 276.44189019365683 155.87690270446683) (end 275.84671389365684 156.06174830446682) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 338.6969399718378 156.49978359759626) (mid 340.62549547183784 155.82534289759624) (end 341.67495497183785 154.07239359759626) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 351.8815937727677 101.5637888889907) (mid 351.6478695727677 99.7069842889907) (end 350.3590982727677 98.3499952889907) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 310.58484207943786 76.9314061975015) (mid 309.97180317943787 76.68400889750151) (end 309.31946407943786 76.57688429750151) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 288.3036401746102 75.47549157868623) (mid 288.0226388746102 75.47394367868623) (end 287.7427253746102 75.49869467868623) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 248.50855768458268 80.8226792) (mid 248.6092448845827 80.81414889999999) (end 248.70958778458268 80.8022324) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 232.00855769999998 80.8295469) (mid 229.88723739999998 81.7082266) (end 229.00855769999998 83.8295469) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 229.00855769999998 149.52521926135455) (mid 229.11089619999998 150.30210906135454) (end 229.41092959999997 151.02599516135456) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 248.50855768458268 80.8226792) (end 248.50855769999998 115.2295469) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 248.50855769999998 115.2295469) (end 236.50855769999998 115.2295469) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 236.50855769999998 115.2295469) (end 236.50855769999998 80.8295469) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 
 )
 
