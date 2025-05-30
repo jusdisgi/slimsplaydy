@@ -52,15 +52,20 @@
 //        the back side. This is unavoidable inasmuch as the centers of the pads are not
 //        aligned, but if you desire a different via position consider placing the vias
 //        manually in KiCad.
-//    pad_via_size: default is 0.8
-//        Size in mm of via holes in P1 and P2. No effect if pad_vias = false.
+//    pad_via_size: default is 1.2
+//        Size in mm of via (plating) in P1 and P2. No effect if pad_vias = false.
+//        NOTE: see above warning re: solder leakage.
+//    pad_via_hole: default is 0.8
+//        Size in mm of via hole (drilling) in P1 and P2. No effect if pad_vias = false.
 //        NOTE: see above warning re: solder leakage.
 //    mp_vias: default is false
 //        If true, vias will be created in the center of each mounting pad (all P3).
 //        NOTE: see above warning re: solder leakage.
-//    mp_via_size: default is 0.6
-//        Size in mm of via holes in P3 mounting point pads. No effect if mp_vias = false.
-//        Please note same solder leakage note as above.
+//    mp_via_size: default is 1.0
+//        Size in mm of via (plating) in P3 mounting point pads. No effect if mp_vias = false.
+//        NOTE: see above warning re: solder leakage.
+//    mp_via_hole: default is 0.6
+//        Size in mm of via hole (drilling) in P3 mounting pads. No effect if mp_vias = false.
 //        NOTE: see above warning re: solder leakage.
 //    key_3dmodel_filename: default is '\${MODELS}/PG1316S--装配体.STEP'
 //        KiCad file location for 3D model file.
@@ -86,9 +91,11 @@ module.exports = {
     mp_gnd: false,
     mp_net: { type: 'net', value: 'GND' }, // You really should not change this; set mp_gnd to false instead, there's no other net you want it attached to
     pad_vias: false,
-    pad_via_size: 0.8,
+    pad_via_size: 1.2,
+    pad_via_hole: 0.8,
     mp_vias: false,
-    mp_via_size: 0.6,
+    mp_via_size: 1.0,
+    mp_via_hole: 0.6,
     key_3dmodel_filename: '\${MODELS}/PG1316S--装配体.STEP', //Available at https://github.com/mikeholscher/zmk-config-mikefive/blob/main/files/footprint-and-cad/PG1316S--%E8%A3%85%E9%85%8D%E4%BD%93.STEP
     key_3dmodel_xyz_offset: [-4.75, -6.25, -10.25],
     key_3dmodel_xyz_rotation: [0, 0, 0],
@@ -101,6 +108,8 @@ module.exports = {
     const flip = (backside && !frontside);
 
     if (!backside && !frontside) throw new Error('unsupported side: ' + p.side);
+    if (p.mp_via_size < p.mp_via_hole + 0.1) p.mp_via_size = p.mp_via_hole + 0.1;
+    if (p.pad_via_size < p.pad_via_hole + 0.1) p.mp_via_size = p.mp_via_hole + 0.1;
 
 fp.push(`(footprint "PG1316S"`);
 fp.push(p.at);
@@ -193,35 +202,43 @@ if (backside) {
 if (p.pad_vias) {
   if (frontside) { // Remember "frontside" includes reversable!
     if (p.large_p1) {
-      fp.push(`(pad "" thru_hole circle (at -1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+      fp.push(`(pad "" thru_hole circle (at -1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.from})`);
     } else if (p.square_p1) {
-      fp.push(`(pad "" thru_hole circle (at -2.175 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+      fp.push(`(pad "" thru_hole circle (at -2.175 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.from})`);
     } else {
-      fp.push(`(pad "" thru_hole circle (at -2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+      fp.push(`(pad "" thru_hole circle (at -2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.from})`);
     }
     if (p.square_p2) {
-      fp.push(`(pad "" thru_hole circle (at 1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+      fp.push(`(pad "" thru_hole circle (at 1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.to})`);
     } else if (p.shift_p2) {
-      fp.push(`(pad "" thru_hole circle (at 1.775 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+      fp.push(`(pad "" thru_hole circle (at 1.775 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.to})`);
     } else {
-      fp.push(`(pad "" thru_hole circle (at 2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+      fp.push(`(pad "" thru_hole circle (at 2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.to})`);
     }
   } else { //If it ain't frontside, must be backside ONLY 
     if (p.large_p1) {
-      fp.push(`(pad "" thru_hole circle (at 1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+      fp.push(`(pad "" thru_hole circle (at 1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.from})`);
     } else if (p.square_p1) {
-      fp.push(`(pad "" thru_hole circle (at 2.175 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+      fp.push(`(pad "" thru_hole circle (at 2.175 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.from})`);
     } else {
-      fp.push(`(pad "" thru_hole circle (at 2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.from})`);
+      fp.push(`(pad "" thru_hole circle (at 2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.from})`);
     }
     if (p.square_p2) {
-      fp.push(`(pad "" thru_hole circle (at -1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+      fp.push(`(pad "" thru_hole circle (at -1.55 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.to})`);
     } else if (p.shift_p2) {
-      fp.push(`(pad "" thru_hole circle (at -1.775 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+      fp.push(`(pad "" thru_hole circle (at -1.775 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.to})`);
     } else {
-      fp.push(`(pad "" thru_hole circle (at -2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_size}) (thermal_bridge_angle 45) ${p.to})`);
+      fp.push(`(pad "" thru_hole circle (at -2.5 2.65 ${p.r}) (size ${p.pad_via_size} ${p.pad_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.pad_via_hole}) (thermal_bridge_angle 45) ${p.to})`);
     }
   }
+}
+
+//Mounting Point Vias
+if (p.mp_vias) {
+  fp.push(`(pad "" thru_hole circle (at ${p.small_mp ? "-6.05 -5.875" : "-6.35 -6" } ${p.r}) (size ${p.mp_via_size} ${p.mp_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.mp_via_hole}) (thermal_bridge_angle 45) ${p.mp_gnd ? `${p.mp_net}` : ''})`);
+  fp.push(`(pad "" thru_hole circle (at ${p.small_mp ? "-6.05 5.875" : "-6.35 6" } ${p.r}) (size ${p.mp_via_size} ${p.mp_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.mp_via_hole}) (thermal_bridge_angle 45) ${p.mp_gnd ? `${p.mp_net}` : ''})`);
+  fp.push(`(pad "" thru_hole circle (at ${p.small_mp ? "6.05 -5.875" : "6.35 -6" } ${p.r}) (size ${p.mp_via_size} ${p.mp_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.mp_via_hole}) (thermal_bridge_angle 45) ${p.mp_gnd ? `${p.mp_net}` : ''})`);
+  fp.push(`(pad "" thru_hole circle (at ${p.small_mp ? "6.05 5.875" : "6.35 6" } ${p.r}) (size ${p.mp_via_size} ${p.mp_via_size}) (layers "F.Cu" "B.Cu" "F.Paste" "B.Paste" "F.Mask" "B.Mask") (drill ${p.mp_via_hole}) (thermal_bridge_angle 45) ${p.mp_gnd ? `${p.mp_net}` : ''})`);
 }
 
 //3D Model
