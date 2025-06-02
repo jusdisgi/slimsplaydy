@@ -137,8 +137,14 @@ fp.push(`(fp_poly (pts (xy ${(flip ? -3.8 : 3.8)} -3.5) (xy ${(flip ? -3.8 : 3.8
 
 // Edge Cuts, Front Side (side = 'F' and/or reversible = true)
 if (frontside) {
-  fp.push(`(fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))`);
-  fp.push(`(fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))`);
+
+  // These were the originals from Mike's kicad footprint. Changed to drilled holes to improve fabrication accuracy.
+  // fp.push(`(fp_circle (center -5.8 2.75) (end -5.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))`);
+  // fp.push(`(fp_circle (center 5.8 -2.75) (end 6.4 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))`);
+
+  fp.push(`(pad "" np_thru_hole circle (at -5.8 2.75) (size 1 1) (drill 1) (layers "*.Cu" "*.Mask"))`);
+  fp.push(`(pad "" np_thru_hole circle (at 5.8 -2.75) (size 1.2 1.2) (drill 1.2) (layers "*.Cu" "*.Mask"))`);
+  
 
 //Pad 1, Front Side; default net = 'from'
 //If/elseif/else for pad config; inline conditionals for via config
@@ -169,8 +175,12 @@ if (frontside) {
 
 // Edge Cut, Back Side (side = 'B' and/or reversible = true)
 if (backside) {
-  fp.push(`(fp_circle (center -5.8 -2.75) (end -5.2 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))`);
-  fp.push(`(fp_circle (center 5.8 2.75) (end 6.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))`);
+  // fp.push(`(fp_circle (center -5.8 -2.75) (end -5.2 -2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))`);
+  // fp.push(`(fp_circle (center 5.8 2.75) (end 6.3 2.75) (stroke (width 0.1) (type default)) (fill none) (layer "Edge.Cuts"))`);
+
+  fp.push(`(pad "" np_thru_hole circle (at -5.8 -2.75) (size 1 1) (drill 1) (layers "*.Cu" "*.Mask"))`);
+  fp.push(`(pad "" np_thru_hole circle (at 5.8 2.75) (size 1.2 1.2) (drill 1.2) (layers "*.Cu" "*.Mask"))`);
+
 
 //Pad 1, Back Side; default net = 'from'
   if (p.large_p1) {
