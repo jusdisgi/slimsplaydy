@@ -1,8 +1,6 @@
 ﻿Designator,Footprint,Quantity,Value,LCSC Part #
-B1,SW_TACT_ALPS_SKQGABE010,1,,
 CONN1,battery_connector_molex_pico_ezmate_1x02,1,,
-"MH1, MH10, MH11, MH12, MH13, MH14, MH15, MH16, MH17, MH18, MH2, MH3, MH4, MH5, MH6, MH7, MH8, MH9",mounting_hole_npth,18,,
-"PAD1, PAD2",SMDPad,2,,
+"MH1, MH10, MH11, MH12, MH13, MH14, MH15, MH16, MH17, MH18, MH19, MH2, MH3, MH4, MH5, MH6, MH7, MH8, MH9",mounting_hole_npth,19,,
+PWR1,power_switch_smd_side,1,,
+RST1,reset_switch_smd_side,1,,
 "S1, S10, S11, S12, S13, S14, S15, S16, S17, S2, S3, S4, S5, S6, S7, S8, S9",PG1316S,17,,
-T1,SPDT_C128955,1,,
-XX1,Battery_301230,1,,

@@ -1,0 +1,36 @@
+# For PCBs designed using KiCad: https://www.kicad.org/
+# Format documentation: https://kicad.org/help/file-formats/
+
+
+# Kibot
+kibot_errors.filter
+*-drc.txt
+*-drc.html
+
+# Freerouting
+freerouting/freerouting-*.jar
+freerouting/freerouting.log
+
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups
+*-backups/*
+*.sch-bak
+*~
+_autosave-*
+*.tmp
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+*.lck
+logs
+
+
+# Exported BOM files
+*.xml
+!log4j2.xml
+*.csv

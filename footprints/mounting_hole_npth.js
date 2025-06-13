@@ -6,6 +6,10 @@
 //
 // Author: @ceoloide
 //
+// change by @huntercook 2025-06-07
+// Add attribute to hide from schematic.
+//
+//
 // Description:
 //  A non-plated, mechanical through-hole to be used for screws, standoffs or
 //  other mounting options. Both the drill size and pad size can be independently
@@ -36,6 +40,7 @@ module.exports = {
       ${p.ref_hide}
       (effects (font (size 1 1) (thickness 0.15)))
     )
+    (attr board_only)
     (pad "" np_thru_hole circle
       (at 0 0 ${p.r})
       (size ${p.hole_size} ${p.hole_size})
