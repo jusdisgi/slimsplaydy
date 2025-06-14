@@ -3110,7 +3110,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "ceoloide:battery_connector_molex_pico_ezmate_1x02"
+		(property "Footprint" "Molex_Pico_EZMate_Plus_1x02"
 			(at 114.3 182.88 0)
 			(effects
 				(font
@@ -4367,7 +4367,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PCM_marbastlib-xp-promicroish:nice_nano_AH_USBup"
+		(property "Footprint" "ceoloide:mcu_nice_nano"
 			(at 73.66 160.02 0)
 			(effects
 				(font

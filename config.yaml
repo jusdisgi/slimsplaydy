@@ -198,7 +198,7 @@ points:
     m2_1:
       anchor:
         - ref: finger_inner_top
-          shift: [30.5,8]
+          shift: [30.8,8]
     m2_3:
       anchor:
         - ref: finger_inner_bottom
@@ -219,11 +219,11 @@ points:
     m2_8:      
       anchor:
         - ref: thumb_tucky_fan
-          shift: [-6,-10.5]
+          shift: [-6,-11]
     m2_10:      
       anchor:
         - ref: finger_middle_bottom
-          shift: [-6,-11.5]
+          shift: [-6,-13]
     m2_12:      
       anchor:
         - ref: finger_middle_bottom
@@ -232,16 +232,16 @@ points:
     m2_13:      
       anchor:
         - ref: finger_pinky_bottom
-          shift: [-9.5,-10.7]
+          shift: [-10,-10.7]
     m1_14:      
       anchor:
         - ref: finger_pinky_home
-          shift: [-10.7,0]
+          shift: [-11,0]
     #Top Left Corner
     m2_15:      
       anchor:
         - ref: finger_pinky_top
-          shift: [-9.8,10.5]
+          shift: [-10,10.5]
     m2_16:      
       anchor:
         - ref: finger_ring_top
@@ -257,7 +257,7 @@ points:
     m1_19:      
       anchor:
         - ref: finger_inner_top
-          shift: [6,10.3]
+          shift: [6,10.5]
 
   mirror:
     ref: thumb_reachy_fan
@@ -292,13 +292,14 @@ outlines:
       operation: stack
       points:
         - ref: finger_inner_top
-          shift: [13,10.71]
+          shift: [12.75,10.71]
         - ref: finger_inner_top
-          shift: [13,-23]
+          shift: [12.75,-21]
         - ref: finger_inner_top
-          shift: [25,-23]
+          shift: [25.25,-21]
         - ref: finger_inner_top
-          shift: [25,10.71]
+          shift: [25.25,10.71]
+      fillet: 2
   batt_slot_left:
     - what: polygon
       operation: stack
@@ -340,13 +341,14 @@ outlines:
       operation: stack
       points:
         - ref: mirror_finger_inner_top
-          shift: [13,10.71]
+          shift: [12.75,10.71]
         - ref: mirror_finger_inner_top
-          shift: [13,-23]
+          shift: [12.75,-21]
         - ref: mirror_finger_inner_top
-          shift: [25,-23]
+          shift: [25.25,-21]
         - ref: mirror_finger_inner_top
-          shift: [25,10.71]
+          shift: [25.25,10.71]
+      fillet: 2
   batt_slot_right:
     - what: polygon
       operation: stack

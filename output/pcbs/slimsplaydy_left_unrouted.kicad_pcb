@@ -11,7 +11,7 @@
   (paper "A3")
   (title_block
     (title "slimsplaydy_left_unrouted")
-    (date "2025-06-13")
+    (date "2025-06-14")
     (rev "0.1")
     (company "huntercook")
   )
@@ -798,7 +798,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at -12.961810999999999 -15.345405 8)
+    (at -13.258891499999999 -15.303653099999998 8)
     (property "Reference" "MH2"
       (at 0 2.55 8)
       (layer "F.SilkS")
@@ -836,7 +836,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 77.0478765 -57.7502446 0)
+    (at 77.0478765 -57.950244600000005 0)
     (property "Reference" "MH4"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -855,7 +855,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 101.5478765 -55.450244600000005 0)
+    (at 101.8478765 -55.450244600000005 0)
     (property "Reference" "MH5"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -931,7 +931,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 60.0347216 15.139062299999999 -15)
+    (at 59.905312 15.6220252 -15)
     (property "Reference" "MH9"
       (at 0 2.55 -15)
       (layer "F.SilkS")
@@ -950,7 +950,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at 29.0478764 -8.9502445 0)
+    (at 29.0478764 -7.4502445 0)
     (property "Reference" "MH10"
       (at 0 2.55 0)
       (layer "F.SilkS")
@@ -988,7 +988,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at -7.9183945 11.9180128 8)
+    (at -8.4135285 11.9875993 8)
     (property "Reference" "MH12"
       (at 0 2.55 8)
       (layer "F.SilkS")
@@ -1007,7 +1007,7 @@
 
   (footprint "ceoloide:mounting_hole_npth"
     (layer "F.Cu")
-    (at -15.897829999999999 -42.703032699999994 8)
+    (at -16.0958836 -42.675198099999996 8)
     (property "Reference" "MH13"
       (at 0 2.55 8)
       (layer "F.SilkS")
@@ -1068,20 +1068,24 @@
 (gr_line (start -16.89015773531917 -44.78894661995873) (end 24.40016245107206 -66.11569556183292) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 25.7768870313585 -66.4502445) (end 44.732180690054186 -66.4502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 45.35665676969428 -66.38452970433299) (end 83.73909613030581 -58.21595939566699) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 96.0478765 -58.15024460000001) (end 101.0478765 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 84.3635722099459 -58.15024460000001) (end 85.5981267 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 94.49762630000001 -58.15024460000001) (end 101.0478765 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 104.0478765 -55.15024460000001) (end 104.0478765 11.946543806493537) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 90.6457768654196 30.77590257780282) (mid 92.7553924654196 30.84087507780282) (end 94.38570266541961 29.50043177780282) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start -10.994404059404069 11.586956911966597) (mid -10.014194059404069 13.413882911966597) (end -8.083260859404069 14.168844311966597) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start -16.890157755032746 -44.78894665812581) (mid -18.178283655032743 -43.50138225812581) (end -18.484237355032747 -41.70597625812581) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 25.7768870313585 -66.4502445) (mid 25.068492131358497 -66.36540769999999) (end 24.4001624313585 -66.1156956) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 45.35665679005419 -66.3845297) (mid 45.04614279005418 -66.4337706) (end 44.732180690054186 -66.4502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 83.7390961099459 -58.21595940000001) (mid 83.9280699099459 -58.182023300000004) (end 84.1188274099459 -58.160244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 83.7390961099459 -58.21595940000001) (mid 84.0496101099459 -58.16671850000001) (end 84.3635722099459 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 104.0478765 -55.15024460000001) (mid 103.1691968 -57.27156490000001) (end 101.0478765 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 103.6465458 13.445516006493538) (mid 103.9458075 12.722427806493537) (end 104.0478765 11.946543806493537) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 84.1188274099459 -58.160244600000006) (end 84.0478765 -58.160244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 84.0478765 -58.160244600000006) (end 84.0478765 -24.450244600000005) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 84.0478765 -24.450244600000005) (end 96.0478765 -24.450244600000005) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 96.0478765 -24.450244600000005) (end 96.0478765 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 83.7978765 -56.160244600000006) (end 83.7978765 -28.450244600000005) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 85.7978765 -26.450244600000005) (end 94.2978765 -26.450244600000005) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 96.2978765 -28.450244600000005) (end 96.2978765 -56.160244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 85.5981267 -58.15024460000001) (mid 84.31472120000001 -57.50197860000001) (end 83.7978765 -56.160244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 83.7978765 -28.450244600000005) (mid 84.3836629 -27.036031000000005) (end 85.7978765 -26.450244600000005) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 94.2978765 -26.450244600000005) (mid 95.7120901 -27.036031000000005) (end 96.2978765 -28.450244600000005) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 96.2978765 -56.160244600000006) (mid 95.7810319 -57.50197860000001) (end 94.49762630000001 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 10.5478764 14.539434268083982) (end 10.5478764 -3.9502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 10.5478764 -3.9502445) (end 57.0478764 -3.9502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 57.0478764 -3.9502445) (end 57.0478764 16.95553553596316) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
