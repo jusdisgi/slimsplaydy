@@ -11,7 +11,7 @@
   (paper "A3")
   (title_block
     (title "slimsplaydy_right_unrouted")
-    (date "2025-06-14")
+    (date "2025-06-16")
     (rev "0.1")
     (company "huntercook")
   )
@@ -138,7 +138,7 @@
     
   (footprint "ceoloide:mcu_nice_nano"
     (layer "F.Cu")
-    (at 134.9492103 -41.450244600000005 0)
+    (at 134.9492103 -41.65024460000001 0)
     (property "Reference" "MCU1"
       (at 0 -15 0)
       (layer "F.SilkS")
@@ -161,8 +161,8 @@
     
     
     
-    (pad "24" smd circle (at -7.62 -12.7 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 1 "RAW"))
-    (pad "1" smd circle (at 7.62 -12.7 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 13 "mirror_finger_inner_home"))
+    (pad "24" smd circle (at -7.62 -12.7 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 1 "RAW"))
+    (pad "1" smd circle (at 7.62 -12.7 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 13 "mirror_finger_inner_home"))
       
     (fp_text user "RAW" (at -9.7 -12.7 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -173,8 +173,8 @@
     )
             
     
-    (pad "23" smd circle (at -7.62 -10.16 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 2 "GND"))
-    (pad "2" smd circle (at 7.62 -10.16 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 14 "D0"))
+    (pad "23" smd circle (at -7.62 -10.16 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 2 "GND"))
+    (pad "2" smd circle (at 7.62 -10.16 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 14 "D0"))
       
     (fp_text user "GND" (at -9.7 -10.16 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -185,8 +185,8 @@
     )
             
     
-    (pad "22" smd circle (at -7.62 -7.619999999999999 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 3 "RST"))
-    (pad "3" smd circle (at 7.62 -7.619999999999999 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 2 "GND"))
+    (pad "22" smd circle (at -7.62 -7.619999999999999 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 3 "RST"))
+    (pad "3" smd circle (at 7.62 -7.619999999999999 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 2 "GND"))
       
     (fp_text user "RST" (at -9.7 -7.619999999999999 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -197,8 +197,8 @@
     )
             
     
-    (pad "21" smd circle (at -7.62 -5.079999999999999 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 4 "3V3"))
-    (pad "4" smd circle (at 7.62 -5.079999999999999 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 2 "GND"))
+    (pad "21" smd circle (at -7.62 -5.079999999999999 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 4 "3V3"))
+    (pad "4" smd circle (at 7.62 -5.079999999999999 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 2 "GND"))
       
     (fp_text user "3V3" (at -9.7 -5.079999999999999 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -209,8 +209,8 @@
     )
             
     
-    (pad "20" smd circle (at -7.62 -2.539999999999999 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 5 "mirror_finger_inner_top"))
-    (pad "5" smd circle (at 7.62 -2.539999999999999 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 15 "mirror_finger_pinky_bottom"))
+    (pad "20" smd circle (at -7.62 -2.539999999999999 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 5 "mirror_finger_inner_top"))
+    (pad "5" smd circle (at 7.62 -2.539999999999999 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 15 "mirror_finger_pinky_bottom"))
       
     (fp_text user "D21" (at -9.7 -2.539999999999999 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -221,8 +221,8 @@
     )
             
     
-    (pad "19" smd circle (at -7.62 0 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 6 "mirror_finger_index_top"))
-    (pad "6" smd circle (at 7.62 0 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 16 "mirror_finger_ring_bottom"))
+    (pad "19" smd circle (at -7.62 0 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 6 "mirror_finger_index_top"))
+    (pad "6" smd circle (at 7.62 0 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 16 "mirror_finger_ring_bottom"))
       
     (fp_text user "D20" (at -9.7 0 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -233,8 +233,8 @@
     )
             
     
-    (pad "18" smd circle (at -7.62 2.540000000000001 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 7 "mirror_finger_middle_top"))
-    (pad "7" smd circle (at 7.62 2.540000000000001 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 17 "mirror_finger_middle_bottom"))
+    (pad "18" smd circle (at -7.62 2.540000000000001 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 7 "mirror_finger_middle_top"))
+    (pad "7" smd circle (at 7.62 2.540000000000001 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 17 "mirror_finger_middle_bottom"))
       
     (fp_text user "D19" (at -9.7 2.540000000000001 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -245,8 +245,8 @@
     )
             
     
-    (pad "17" smd circle (at -7.62 5.080000000000002 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 8 "mirror_finger_ring_top"))
-    (pad "8" smd circle (at 7.62 5.080000000000002 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 18 "mirror_finger_index_bottom"))
+    (pad "17" smd circle (at -7.62 5.080000000000002 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 8 "mirror_finger_ring_top"))
+    (pad "8" smd circle (at 7.62 5.080000000000002 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 18 "mirror_finger_index_bottom"))
       
     (fp_text user "D18" (at -9.7 5.080000000000002 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -257,8 +257,8 @@
     )
             
     
-    (pad "16" smd circle (at -7.62 7.620000000000001 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 9 "mirror_finger_pinky_home"))
-    (pad "9" smd circle (at 7.62 7.620000000000001 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 19 "mirror_finger_inner_bottom"))
+    (pad "16" smd circle (at -7.62 7.620000000000001 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 9 "mirror_finger_pinky_home"))
+    (pad "9" smd circle (at 7.62 7.620000000000001 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 19 "mirror_finger_inner_bottom"))
       
     (fp_text user "D15" (at -9.7 7.620000000000001 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -269,8 +269,8 @@
     )
             
     
-    (pad "15" smd circle (at -7.62 10.16 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 10 "mirror_finger_ring_home"))
-    (pad "10" smd circle (at 7.62 10.16 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 20 "mirror_finger_pinky_top"))
+    (pad "15" smd circle (at -7.62 10.16 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 10 "mirror_finger_ring_home"))
+    (pad "10" smd circle (at 7.62 10.16 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 20 "mirror_finger_pinky_top"))
       
     (fp_text user "D14" (at -9.7 10.16 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -281,8 +281,8 @@
     )
             
     
-    (pad "14" smd circle (at -7.62 12.7 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 11 "mirror_finger_middle_home"))
-    (pad "11" smd circle (at 7.62 12.7 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 21 "mirror_thumb_tucky_fan"))
+    (pad "14" smd circle (at -7.62 12.7 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 11 "mirror_finger_middle_home"))
+    (pad "11" smd circle (at 7.62 12.7 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 21 "mirror_thumb_tucky_fan"))
       
     (fp_text user "D16" (at -9.7 12.7 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -293,8 +293,8 @@
     )
             
     
-    (pad "13" smd circle (at -7.62 15.240000000000002 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 12 "mirror_finger_index_home"))
-    (pad "12" smd circle (at 7.62 15.240000000000002 0) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 22 "mirror_thumb_reachy_fan"))
+    (pad "13" smd circle (at -7.62 15.240000000000002 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 12 "mirror_finger_index_home"))
+    (pad "12" smd circle (at 7.62 15.240000000000002 0) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") (net 22 "mirror_thumb_reachy_fan"))
       
     (fp_text user "D10" (at -9.7 15.240000000000002 0) (layer "F.SilkS")
       (effects (font (size 1 .5) (thickness 0.1)))
@@ -1068,27 +1068,29 @@
 (gr_line (start 241.88724453531918 -44.788946619958736) (end 200.59692434892793 -66.11569556183292) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 199.2201997686415 -66.4502445) (end 180.26490610994585 -66.4502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 179.64043003030574 -66.384529704333) (end 141.25799066969427 -58.215959395667) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 140.63351459005412 -58.15024460000001) (end 139.3989601 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 130.4994605 -58.15024460000001) (end 123.9492103 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 128.8497116 -58.15024460000001) (end 123.9492103 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_line (start 120.9492103 -55.15024460000001) (end 120.9492103 11.946543806493537) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 130.61138423458036 29.500431777802792) (mid 132.24169433458036 30.840875077802792) (end 134.35130993458037 30.77590247780279) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 233.08034765940405 14.168844311966597) (mid 235.01128095940405 13.413882911966597) (end 235.99149085940405 11.586956911966597) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 243.48132415503275 -41.705976258125794) (mid 243.17537045503275 -43.501382258125794) (end 241.88724455503274 -44.788946658125795) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 200.59692436864148 -66.1156956) (mid 199.9285946686415 -66.3654078) (end 199.2201997686415 -66.4502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 180.26490610994585 -66.4502445) (mid 179.95094400994586 -66.4337706) (end 179.64043000994585 -66.3845297) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 140.63351459005412 -58.15024460000001) (mid 140.94747669005412 -58.16671850000001) (end 141.25799069005413 -58.21595940000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 140.87825939005413 -58.160244600000006) (mid 141.06901689005412 -58.182023300000004) (end 141.25799069005413 -58.21595940000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 123.9492103 -58.15024460000001) (mid 121.82789000000001 -57.27156490000001) (end 120.9492103 -55.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 (gr_arc (start 120.9492103 11.946543806493537) (mid 121.0512793 12.722427806493537) (end 121.350541 13.445516006493538) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 141.1992103 -56.160244600000006) (end 141.1992103 -28.450244600000005) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 139.1992103 -26.450244600000005) (end 130.6992103 -26.450244600000005) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 128.6992103 -28.450244600000005) (end 128.6992103 -56.160244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 141.1992103 -56.160244600000006) (mid 140.6823657 -57.50197860000001) (end 139.3989601 -58.15024460000001) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 139.1992103 -26.450244600000005) (mid 140.61342390000002 -27.036031000000005) (end 141.1992103 -28.450244600000005) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 128.6992103 -28.450244600000005) (mid 129.2849967 -27.036031000000005) (end 130.6992103 -26.450244600000005) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_arc (start 130.4994605 -58.15024460000001) (mid 129.216055 -57.50197860000001) (end 128.6992103 -56.160244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 214.4492104 14.539434268083982) (end 214.4492104 -3.9502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 214.4492104 -3.9502445) (end 167.9492104 -3.9502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
-(gr_line (start 167.9492104 -3.9502445) (end 167.9492104 16.95553553596318) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 140.87825939005413 -58.160244600000006) (end 140.9492103 -58.160244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 141.4492103 -57.660244600000006) (end 141.4492103 -25.550244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 140.9492103 -25.050244600000006) (end 128.9492103 -25.050244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 128.4492103 -25.550244600000006) (end 128.4492103 -57.660244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 141.4492103 -57.660244600000006) (mid 141.3027637 -58.01379800000001) (end 140.9492103 -58.160244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 140.9492103 -25.050244600000006) (mid 141.3027637 -25.196691200000007) (end 141.4492103 -25.550244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 128.4492103 -25.550244600000006) (mid 128.5956569 -25.196691200000007) (end 128.9492103 -25.050244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 128.8497116 -58.15024460000001) (mid 128.5620738 -57.976670500000004) (end 128.4492103 -57.660244600000006) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 214.4492104 14.539434268083982) (end 214.4492104 -3.4502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 213.9492104 -3.9502445) (end 168.4492104 -3.9502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_line (start 167.9492104 -3.4502445) (end 167.9492104 16.95553553596318) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 214.4492104 -3.4502445) (mid 214.3027638 -3.8037979) (end 213.9492104 -3.9502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
+(gr_arc (start 168.4492104 -3.9502445) (mid 168.095657 -3.8037979) (end 167.9492104 -3.4502445) (layer Edge.Cuts) (stroke (width 0.15) (type default)))
 
 )
 

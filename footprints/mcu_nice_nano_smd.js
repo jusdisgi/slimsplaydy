@@ -4,7 +4,16 @@
 //
 // To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
 //
-// Author: @infused-kim + @ceoloide improvements
+//
+//
+// Author: @infused-kim + @ceoloide improvements + @huntercook SMD alteration
+//
+//
+// SMD version hacked together by @huntercook https://github.com/jusdisgi
+// Very little magic happening here...I just changed the pads from thru-hole to SMD and
+// the diameter from 1.7 to 1.3
+//
+//
 //
 // Description:
 //  A single-side or reversible footprint for the nice!nano (or any pro-micro compatible
@@ -267,8 +276,8 @@ module.exports = {
 
       let socket_row_base = `
     ${''/* Socket Holes */}
-    (pad "${socket_hole_num_left}" smd circle (at -7.62 ${-12.7 + row_offset_y} ${p.r}) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.reversible && (row_num < 4 || !p.only_required_jumpers) ? p.local_net(socket_hole_num_left).str : net_left})
-    (pad "${socket_hole_num_right}" smd circle (at 7.62 ${-12.7 + row_offset_y} ${p.r}) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.reversible && (row_num < 4 || !p.only_required_jumpers) ? p.local_net(socket_hole_num_right).str : net_right})
+    (pad "${socket_hole_num_left}" smd circle (at -7.62 ${-12.7 + row_offset_y} ${p.r}) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.reversible && (row_num < 4 || !p.only_required_jumpers) ? p.local_net(socket_hole_num_left).str : net_left})
+    (pad "${socket_hole_num_right}" smd circle (at 7.62 ${-12.7 + row_offset_y} ${p.r}) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.reversible && (row_num < 4 || !p.only_required_jumpers) ? p.local_net(socket_hole_num_right).str : net_right})
       `
       let socket_row_vias = `
     ${''/* Inside VIAS */}
@@ -557,13 +566,13 @@ module.exports = {
     const traces = gen_traces()
 
     const extra_pins = `
-    (pad "25" smd circle (at ${invert_pins ? '' : '-'}5.08 10.16 ${p.r}) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.P101})
-    (pad "26" smd circle (at ${invert_pins ? '' : '-'}2.54 10.16 ${p.r}) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.P102})
-    (pad "27" smd circle (at 0 10.16 ${p.r}) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.P107})
+    (pad "25" smd circle (at ${invert_pins ? '' : '-'}5.08 10.16 ${p.r}) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.P101})
+    (pad "26" smd circle (at ${invert_pins ? '' : '-'}2.54 10.16 ${p.r}) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.P102})
+    (pad "27" smd circle (at 0 10.16 ${p.r}) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.P107})
     `
     const extra_pins_reversible = `
-    (pad "28" smd circle (at ${invert_pins ? '-' : ''}5.08 10.16 ${p.r}) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.P101})
-    (pad "29" smd circle (at ${invert_pins ? '-' : ''}2.54 10.16 ${p.r}) (size 1.7 1.7) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.P102})
+    (pad "28" smd circle (at ${invert_pins ? '-' : ''}5.08 10.16 ${p.r}) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.P101})
+    (pad "29" smd circle (at ${invert_pins ? '-' : ''}2.54 10.16 ${p.r}) (size 1.3 1.3) (drill 1) (layers "F.Cu" "F.Mask" "F.Paste") ${p.P102})
     `
 
     const mcu_3dmodel = `

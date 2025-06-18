@@ -4,6 +4,11 @@
 	(generator_version "9.0")
 	(uuid "f2a40313-8665-4ef9-880b-44e86cbbd83a")
 	(paper "A4")
+	(title_block
+		(title "slimsplaydy_left")
+		(date "2025-06-18")
+		(rev "1.0")
+	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Socket"
 			(pin_names

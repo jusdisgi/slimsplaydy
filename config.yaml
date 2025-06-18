@@ -292,14 +292,14 @@ outlines:
       operation: stack
       points:
         - ref: finger_inner_top
-          shift: [12.75,10.71]
+          shift: [12.5,10.71]
         - ref: finger_inner_top
-          shift: [12.75,-21]
+          shift: [12.5,-22.4]
         - ref: finger_inner_top
-          shift: [25.25,-21]
+          shift: [25.5,-22.4]
         - ref: finger_inner_top
-          shift: [25.25,10.71]
-      fillet: 2
+          shift: [25.5,10.71]
+      fillet: 0.5
   batt_slot_left:
     - what: polygon
       operation: stack
@@ -312,6 +312,7 @@ outlines:
           shift: [22,-16.5]
         - ref: finger_middle_bottom
           shift: [22,-40]
+      fillet: 0.5
 
   shape_right:
     - what: polygon
@@ -341,14 +342,14 @@ outlines:
       operation: stack
       points:
         - ref: mirror_finger_inner_top
-          shift: [12.75,10.71]
+          shift: [12.5,10.71]
         - ref: mirror_finger_inner_top
-          shift: [12.75,-21]
+          shift: [12.5,-22.4]
         - ref: mirror_finger_inner_top
-          shift: [25.25,-21]
+          shift: [25.5,-22.4]
         - ref: mirror_finger_inner_top
-          shift: [25.25,10.71]
-      fillet: 2
+          shift: [25.5,10.71]
+      fillet: 0.5
   batt_slot_right:
     - what: polygon
       operation: stack
@@ -361,6 +362,7 @@ outlines:
           shift: [22,-16.5]
         - ref: mirror_finger_middle_bottom
           shift: [22,-40]
+      fillet: 0.5
 
 # These are the actual outlines the PCBs use
   board_left:
@@ -450,7 +452,7 @@ pcbs:
           what: mcu_nice_nano_smd
           where:
             ref: finger_inner_top
-            shift: [19,-6]
+            shift: [19,-5.8]
           params:
             reverse_mount: true
             P1: finger_inner_home
@@ -583,7 +585,7 @@ pcbs:
           what: mcu_nice_nano_smd
           where:
             ref: mirror_finger_inner_top
-            shift: [19,-6]
+            shift: [19,-5.8]
           params:
             reverse_mount: true
             P1: mirror_finger_inner_home

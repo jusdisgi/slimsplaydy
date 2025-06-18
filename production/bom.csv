@@ -1,6 +1,7 @@
 ﻿Designator,Footprint,Quantity,Value,LCSC Part #
-CONN1,battery_connector_molex_pico_ezmate_1x02,1,,
-"MH1, MH10, MH11, MH12, MH13, MH14, MH15, MH16, MH17, MH18, MH19, MH2, MH3, MH4, MH5, MH6, MH7, MH8, MH9",mounting_hole_npth,19,,
-PWR1,power_switch_smd_side,1,,
-RST1,reset_switch_smd_side,1,,
-"S1, S10, S11, S12, S13, S14, S15, S16, S17, S2, S3, S4, S5, S6, S7, S8, S9",PG1316S,17,,
+CONN1,Molex_Pico_EZMate_Plus_1x02,1,Battery Connector,
+MAG1,magsafe,1,,
+"MH1, MH10, MH11, MH12, MH13, MH14, MH15, MH2, MH3, MH4, MH5, MH6, MH7, MH8, MH9",mounting_hole_npth,15,,
+PWR1,power_switch_smd_side,1,Power SW,
+RST1,reset_switch_smd_side,1,Reset SW,
+"S1, S10, S11, S12, S13, S14, S15, S16, S17, S2, S3, S4, S5, S6, S7, S8, S9",PG1316S,17,PG1316S,
