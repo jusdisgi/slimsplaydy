@@ -545,12 +545,17 @@ pcbs:
           reset_switch_3dmodel_filename: '\${INFUSED_KIM_MODELS}/Switch_Reset.step'
           reset_switch_3dmodel_xyz_rotation: [-90, 0, 180]
       battcon:
-      # Not to be confused with the regular EZMate (not Plus) which has different pitch!
-      # For that other connector use the ceoloide footprint.
-        what: conn_molex_pico_ezmate_plus_1x02 
+      # Regular Molex Pico-EZmate, 1.20mm pitch (ceoloide footprint). The routed
+      # board was HAND-SWAPPED from the 1.0mm EZmate *Plus* to this part for PCBA
+      # (the 1.0mm Plus is uncommon and unavailable for JLC assembly). LCSC C505023.
+      # This config block was updated to match the routed PCB AFTER routing — do
+      # NOT regenerate slimsplaydy from ergogen (it is routed + PCBA-tested).
+      # Pads: 1 = GND (BAT_N), 2 = BAT_P — matches routed CONN1. No 3D model in
+      # this footprint. Third-party (CC-BY-NC-SA), lives only in local footprints/.
+        what: battery_connector_molex_pico_ezmate_1x02
         params:
-          conn_3dmodel_filename: '\${HLC_MODELS}/Molex_Pico_EZMate_Plus_1x02.stp'
-          conn_3dmodel_xyz_offset: [0.5, -2.5, 0]
+          BAT_P: BAT_P
+          BAT_N: GND
         where:
           ref: finger_middle_bottom
           shift: [5,-12]
@@ -678,12 +683,14 @@ pcbs:
           reset_switch_3dmodel_filename: '\${INFUSED_KIM_MODELS}/Switch_Reset.step'
           reset_switch_3dmodel_xyz_rotation: [-90, 0, 180]
       battcon:
-      # Not to be confused with the regular EZMate (not Plus) which has different pitch!
-      # For that other connector use the ceoloide footprint.
-        what: conn_molex_pico_ezmate_plus_1x02 
+      # Regular Molex Pico-EZmate, 1.20mm pitch (ceoloide footprint). See the left
+      # half's battcon comment: hand-swapped from the 1.0mm EZmate *Plus* for PCBA.
+      # Pads: 1 = GND (BAT_N), 2 = BAT_P — matches routed CONN1. No 3D model.
+      # Do NOT regenerate — slimsplaydy is routed + PCBA-tested.
+        what: battery_connector_molex_pico_ezmate_1x02
         params:
-          conn_3dmodel_filename: '\${HLC_MODELS}/Molex_Pico_EZMate_Plus_1x02.stp'
-          conn_3dmodel_xyz_offset: [0.5, -2.5, 0]
+          BAT_P: BAT_P
+          BAT_N: GND
         where:
           ref: mirror_finger_middle_bottom
           shift: [5,-12]

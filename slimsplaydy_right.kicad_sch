@@ -640,7 +640,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "huntercooh:PG1316S"
+		(symbol "huntercook:PG1316S"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -841,7 +841,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "huntercooh:nice_nano_raw21"
+		(symbol "huntercook:nice_nano_raw21"
 			(exclude_from_sim no)
 			(in_bom no)
 			(on_board yes)
@@ -3225,7 +3225,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 185.42 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3296,7 +3296,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 200.66 119.38 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3567,7 +3567,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 231.14 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3638,7 +3638,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 185.42 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3709,7 +3709,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 200.66 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3847,7 +3847,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 246.38 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3918,7 +3918,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 185.42 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4063,7 +4063,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 200.66 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4134,7 +4134,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 231.14 119.38 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4205,7 +4205,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 215.9 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4347,7 +4347,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:nice_nano_raw21")
+		(lib_id "huntercook:nice_nano_raw21")
 		(at 73.66 129.54 0)
 		(mirror y)
 		(unit 1)
@@ -4496,7 +4496,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 215.9 119.38 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4567,7 +4567,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 231.14 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4705,7 +4705,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 246.38 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4776,7 +4776,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 215.9 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4914,7 +4914,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 200.66 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4985,7 +4985,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 185.42 119.38 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5056,7 +5056,7 @@
 		)
 	)
 	(symbol
-		(lib_id "huntercooh:PG1316S")
+		(lib_id "huntercook:PG1316S")
 		(at 246.38 119.38 0)
 		(unit 1)
 		(exclude_from_sim no)

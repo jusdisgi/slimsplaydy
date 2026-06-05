@@ -1,0 +1,71 @@
+{
+  "$comment": "KiKit panelization preset for slimsplaydy (JLCPCB PCBA). Runs on Hunter's machine (needs pcbnew). The source _both board already contains BOTH halves as two disjoint outlines, so KiKit treats one panel unit = one full keyboard (L+R). Tune 'layout.cols/rows' to put more keyboards per panel. See command + notes in chat / README.",
+
+  "page": {
+    "type": "inferred",
+    "anchor": "mt",
+    "posx": "0mm",
+    "posy": "0mm"
+  },
+
+  "layout": {
+    "type": "grid",
+    "rows": 1,
+    "cols": 1,
+    "hspace": "2.5mm",
+    "vspace": "2.5mm",
+    "rotation": "0deg",
+    "renamenet": "{n}",
+    "renameref": "{orig}"
+  },
+
+  "tabs": {
+    "type": "spacing",
+    "width": "3mm",
+    "spacing": "12mm"
+  },
+
+  "cuts": {
+    "type": "mousebites",
+    "drill": "0.5mm",
+    "spacing": "0.75mm",
+    "offset": "0.15mm",
+    "prolong": "0.3mm"
+  },
+
+  "framing": {
+    "type": "railstb",
+    "width": "5mm",
+    "space": "3mm",
+    "mintotalheight": "0mm"
+  },
+
+  "tooling": {
+    "type": "4hole",
+    "hoffset": "2.5mm",
+    "voffset": "2.5mm",
+    "size": "1.52mm"
+  },
+
+  "fiducials": {
+    "type": "4fid",
+    "hoffset": "4mm",
+    "voffset": "2.5mm",
+    "coppersize": "1mm",
+    "opening": "2mm"
+  },
+
+  "text": {
+    "type": "simple",
+    "text": "SlimSplaydy v0.1  JLCJLCJLCJLC",
+    "anchor": "mt",
+    "voffset": "2.5mm",
+    "hjustify": "center",
+    "vjustify": "center"
+  },
+
+  "post": {
+    "millradius": "1mm",
+    "origin": "tl"
+  }
+}
