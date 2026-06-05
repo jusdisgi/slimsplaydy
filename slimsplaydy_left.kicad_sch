@@ -4132,7 +4132,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PCM_marbastlib-xp-promicroish:nice_nano_AH_USBup"
+		(property "Footprint" "ceoloide:mcu_nice_nano"
 			(at 204.47 101.6 0)
 			(effects
 				(font

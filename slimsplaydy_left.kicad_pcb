@@ -155,6 +155,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d5c18900-93cf-426d-a281-2b976c3da437")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/e07874ee-c972-4eec-8a9c-23500668aedc")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -398,6 +411,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b9125117-7ed1-46c7-9df2-5ddb18e5a096")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/ecb990eb-1a92-43d2-9e9e-14ccbdd4444a")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -630,7 +656,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Generic connector, single row, 01x02, script generated"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -638,6 +664,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C505023"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "afd70fe8-9fdd-45c8-86c6-4547709fae25")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -996,6 +1035,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 345)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cba46666-e8b1-4230-bd1e-35d6e45f25dd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/d5745e74-ba05-44c4-acc0-45cfc2548253")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -1176,6 +1228,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "db4df2a6-596f-43e8-9126-ca6662995e34")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -1423,6 +1488,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 3)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f00de7e-0637-4d35-9e7b-78e28d9a59d7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/ea4cc481-5d01-4e9d-8834-17a709d863f9")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -1607,6 +1685,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 330)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a62dcf41-4c66-4e8b-a93c-dd6f4b642fe2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/cfdb91ca-4eb3-4e47-92d0-eb6602d63b29")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -1787,6 +1878,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C79174"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5240f37c-0503-4bb9-a390-6f5a71d6405b")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -2167,6 +2271,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c3be50b2-fb75-41b6-9a09-bb7ee2ca6724")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/e7dcb5aa-c4f5-41a8-abb8-9fa626c3304b")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -2471,6 +2588,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "132b6996-8359-4157-9b30-e2b66d06f781")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/f653326b-c27e-4982-ba46-67863be2301d")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -2653,6 +2783,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e054cbcb-2bc3-4183-958a-b7256f00c073")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/dad612a3-aa03-4ed0-9e99-e6f0397d3fd6")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -2831,6 +2974,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 8)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b4f1a0ec-765b-4c49-ae7d-d202ec0bec71")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -3080,6 +3236,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 3)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2465fea9-aa09-4003-a85e-2d559e99ebe5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/22cb988c-99df-4d44-9c84-fc159ad004ba")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -3325,10 +3494,23 @@
 				)
 			)
 		)
+		(property "LCSC" "DNP"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9a12adc1-c23f-46c1-b685-a0e24872887c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/8f07d012-7ecd-46b9-8e6b-9fbb2eb08a0a")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom)
+		(attr exclude_from_pos_files exclude_from_bom dnp)
 		(fp_line
 			(start -8.95 -14.03)
 			(end -8.95 16.57)
@@ -3777,7 +3959,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 2 "GND")
 			(pinfunction "GND")
-			(pintype "power_out")
+			(pintype "power_in")
 			(uuid "7ea6cca0-1e23-46ab-aef8-28d74c6d61c3")
 		)
 		(pad "4" smd circle
@@ -3786,7 +3968,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 2 "GND")
 			(pinfunction "GND")
-			(pintype "power_out")
+			(pintype "power_in")
 			(uuid "42808f2a-eaed-4cd6-a8e2-dc2ecaf16c83")
 		)
 		(pad "5" smd circle
@@ -3957,7 +4139,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net 2 "GND")
 			(pinfunction "GND")
-			(pintype "power_out")
+			(pintype "power_in")
 			(uuid "7ad3e792-f32e-4682-8008-6d8597bf3f3f")
 		)
 		(pad "24" smd circle
@@ -4029,6 +4211,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 3)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dbd43d97-1a91-4325-b72c-9c443239ca92")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -4213,6 +4408,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "30ae9a2b-8d63-4883-88c8-7fbf328bc64c")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -4582,6 +4790,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 8)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f522562c-f032-45c6-b5cd-9a4f090848e6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/5e009ebf-391f-4a7d-b4bf-1a099e4f977f")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -4762,6 +4983,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 8)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "907e5c67-c089-45a3-ad28-c8c522bf43c6")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -5011,6 +5245,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5575d923-18f6-49b0-96ea-70328d179841")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/984b526b-6058-4e94-ba6d-243e7314dada")
 		(sheetname "/")
 		(sheetfile "slimsplaydy_left.kicad_sch")
@@ -5189,6 +5436,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C2911519"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cde2ae6f-bad6-4368-af09-91de2e840614")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -5494,6 +5754,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C9900170245"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb3e2272-7e36-4072-9b5f-84706db30d92")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
