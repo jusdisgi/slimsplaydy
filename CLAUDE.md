@@ -94,23 +94,86 @@ vendored, local-only** (NOT in `../ergogen-footprints`): `mcu_nice_nano_smd`, `p
 `reset_switch_smd_side`, and `battery_connector_molex_pico_ezmate_1x02` (ceoloide, CC-BY-NC-SA — the
 1.20 mm EZmate; the matching copy lives in `../xiphos/footprints/`).
 
-## Panelization (KiKit, JLCPCB) — chosen workflow
+## Symbols, the nice!nano, and ERC/DRC (2026-06-05 — read before touching the MCU symbol)
 
-Decided 2026-06-04 (**Option B**): do **not** resurrect the hand-merged `_both*` files (archive them).
-Instead build a fab-only combined board with KiCad **File → Append Board** (preserves routing), then run
-the declarative **`kikit panelize` CLI**, then **`kikit fab jlcpcb`** (which dedups the duplicate
-CONN1/S1… designators in the CPL/BOM, so no hand-renaming). Steps + commands: **`panel/README.md`**;
-preset: **`panel/slimsplaydy_panel.json`**. Per-half outline ≈ **123 × 98 mm**; side-by-side nest
-≈ 250 × 110 mm panel (well inside JLC tiers). KiKit runs on Hunter's machine (needs `pcbnew`).
+- **Symbol library is its own repo now:** `huntercook` lives in **`KiCad_Symbols`**
+  (`https://github.com/jusdisgi/KiCad_Symbols`), file **`huntercook.kicad_sym`** (typo `huntercooh`
+  killed). Reference it on every machine via KiCad path var **`${HLC_SYMBOLS}`** → the repo dir
+  (Preferences → Configure Paths), library entry `${HLC_SYMBOLS}/huntercook.kicad_sym`, nickname
+  **`huntercook`**. Schematic `lib_id`s are `huntercook:nice_nano_raw21` / `huntercook:PG1316S`.
+- **The library symbols are CUSTOMIZED STARTING POINTS, not the source of truth.** The real
+  board-specific symbol (e.g. the upside-down nano with the three middle pads dropped) was tailored
+  **in the schematic**. **Do NOT blind-run "Update Symbols from Library"** — it overwrites those
+  customizations: it re-added phantom pins and **reset MCU1's Footprint field** to a generic 28-pad
+  footprint, which is what spawned the "changing footprint" + "missing pads 25-29" mess this session.
+  If you must update, **uncheck the reset-fields options** and re-confirm MCU1's Footprint field after.
+- **nice!nano GND pins** are now **`power_input`** (were `power_output`, which caused
+  "power output + power output connected" ERC errors when the three GND pins tied together). A single
+  **PWR_FLAG on GND** now drives the net. Fixed in the library symbol, so xiphos/lightfury inherit it
+  on their next Update-Symbols.
+- **MCU1 footprint is `ceoloide:mcu_nice_nano`** (29-pad, embedded as a local override; the ergogen
+  module `mcu_nice_nano_smd.js` emits that name). The symbol's Footprint field must read exactly
+  `ceoloide:mcu_nice_nano` or F8 tries to swap it. `ceoloide` is **not** in the fp-lib-table → benign
+  `lib_footprint_issues` warnings on MCU1/PWR1/RST1/all MH. The board's **embedded** copy is what's
+  fabbed — **never "Update Footprints from Library"** on these routed boards.
+- **LCSC fields**: populated in both schematics **and** pushed to the PCB footprints (both halves).
+- **ERC clean. DRC = 0 errors.** The ~30 remaining DRC items are all **warnings, by-design**:
+  `silk_edge_clearance` + `silk_overlap` on MCU1 (silk crosses the nano cutout / its own labels) and
+  the `ceoloide` `lib_footprint_issues`. **Exclude** them (same as LightFury's RE1) — don't "fix."
+
+## Panelization (KiKit, JLCPCB) — scripted pipeline (ported from LightFury 2026-06-19)
+
+The old **Option B** plan (hand-`_both` files / KiCad *Append Board* / `kikit fab jlcpcb --assembly`)
+is **superseded** — `kikit fab --assembly` needs a schematic the panel's duplicate `_2` refs can't
+match. Use the **scripted** pipeline in **`panel/README.md`** instead (modeled on LightFury, which
+debugged this end-to-end). On Hunter's machine (needs `pcbnew`; `kikit.exe` in
+`...KiCad\9.0\3rdparty\Python311\Scripts`, add to PATH for the session). Per-half outline
+≈ **122.5 × 97.3 mm**; side-by-side nest ≈ 250 × 110 mm panel.
+
+1. `python panel/merge_both.py` → `slimsplaydy_both.kicad_pcb`. Side-by-side nest, **no rotation/tilt**
+   (every part is already on a whole degree — slimsplaydy needs neither LightFury's 180° flip nor its
+   integer `TILT`). Right refs → `*_2`, nets → `L_`/`R_`. Build artifact — don't hand-edit; fix the
+   half and re-run.
+2. `kikit panelize -p panel/slimsplaydy_panel.json …` — **fixed** tabs + full **frame** + mouse-bites
+   (preset switched off `spacing` tabs, which error on the splayed outlines).
+3. **Fabrication Toolkit** on `panel/slimsplaydy_panel.kicad_pcb` — **GERBERS only** (not `kikit fab`,
+   not its CPL/BOM).
+4. `python panel/gen_cpl.py panel/slimsplaydy_panel.kicad_pcb panel/cpl_build` — writes
+   `positions.csv` + `bom.csv` (position = footprint origin; pure-Python, no pcbnew). **No RESW
+   injection** (slimsplaydy has no encoder — that's a LightFury-only step). Then
+   `python panel/render_cpl.py …` and eyeball `verify_*.png` before uploading.
+
+Places 20 parts/half: 17× PG1316S (consigned `C9900170245`) + CONN1 (`C505023`) + PWR1 (`C2911519`)
++ RST1 (`C79174`). Excludes MCU1 (DNP), MH1–15 (NPTH), MAG1 (silk). Scripts: `merge_both.py`,
+`gen_cpl.py`, `render_cpl.py`, `kicad_panel.py` (the last two copied verbatim from LightFury).
 
 ## TODO / open items
 
-- Run the panel workflow above; tune tabs/mousebites from the first KiKit preview (irregular trapezoid
-  edges + the MCU/batt cutouts — keep tabs on straight outer edges).
-- `kikit fab jlcpcb --assembly` reads an `LCSC` footprint field for the BOM; the footprints don't carry
-  it yet (production csvs show blank LCSC). Either add the field or keep assigning LCSC in JLC's app.
+- **Panelize** (scripts ready 2026-06-19): run the 5-step pipeline in `panel/README.md` on Hunter's
+  machine, then the **one-time JLC rotation pass** — confirm CONN1 (`C505023`), PWR1 (`C2911519`),
+  RST1 (`C79174`) in JLC's assembly preview and bake into `gen_cpl.py`'s `ROT_CORR` (power/reset start
+  at 90 from LightFury — re-confirm; Molex starts at 0). Then add slimsplaydy to the JLC order
+  alongside LightFury (separate panel, same cart) — remember the 0.8 mm blind-slot order note.
+- **LCSC fields: DONE.** Populated in both schematics and pushed to the PCB footprints, so
+  `kikit fab jlcpcb --assembly` can now read them (field name `LCSC`).
+- Optional: exclude the by-design DRC silk/`ceoloide` warnings for a fully-green report (see Symbols
+  section). Not required for fab.
 - Blind-slot via: re-examined the left-half routing screenshot — B.Cu is clear of the ring and no free
   via sits in the band; the earlier "1 via" was a boundary-sampling false positive. **Closed.**
+
+## Session log
+
+- **2026-06-19:** Ported LightFury's scripted panel pipeline into `panel/` (`merge_both.py`,
+  `gen_cpl.py`, `render_cpl.py`, `kicad_panel.py`); rewrote `panel/README.md` and switched the preset
+  to fixed-tabs + frame. slimsplaydy is simpler than LightFury (no LCD/encoder → no RESW injection, no
+  flip/tilt). Smoke-tested `gen_cpl.py` against the left half: 20 parts placed, MCU/MH/MAG excluded,
+  BOM/LCSC correct. Remaining: run the pipeline + one JLC rotation pass, then order with LightFury.
+- **2026-06-05:** LCSC fields added (sch+pcb, both halves); nice!nano GND pins → `power_input` + GND
+  PWR_FLAG (ERC fix); MCU1 Footprint field pinned to `ceoloide:mcu_nice_nano`; `huntercook` symbol lib
+  extracted to the new **`KiCad_Symbols`** repo (typo `huntercooh`→`huntercook`). ERC clean, DRC 0
+  errors. Pushed from the laptop: `slimsplaydy` + `KiCad_Symbols`.
+- **2026-06-04:** Connector config rectified (EZmate Plus→1.20 mm); CLAUDE.md written; KiKit panel
+  workflow + preset added.
 
 ## git — hands off
 

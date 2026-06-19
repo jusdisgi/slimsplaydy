@@ -1,60 +1,51 @@
 {
-  "$comment": "KiKit panelization preset for slimsplaydy (JLCPCB PCBA). Runs on Hunter's machine (needs pcbnew). The source _both board already contains BOTH halves as two disjoint outlines, so KiKit treats one panel unit = one full keyboard (L+R). Tune 'layout.cols/rows' to put more keyboards per panel. See command + notes in chat / README.",
-
-  "page": {
-    "type": "inferred",
-    "anchor": "mt",
-    "posx": "0mm",
-    "posy": "0mm"
-  },
+  "$comment": "KiKit panelization preset for slimsplaydy (JLCPCB PCBA). Runs on Hunter's machine (needs pcbnew). Source = slimsplaydy_both.kicad_pcb (built by merge_both.py): both halves nested side-by-side as two disjoint outlines, so one panel unit = one full keyboard (L+R). Modeled on LightFury's proven preset: FIXED tabs + full FRAME (KiKit 'spacing' tabs error on the irregular/splayed outlines; fixed tabs to the frame are reliable). See panel/README.md.",
 
   "layout": {
     "type": "grid",
     "rows": 1,
     "cols": 1,
-    "hspace": "2.5mm",
-    "vspace": "2.5mm",
-    "rotation": "0deg",
-    "renamenet": "{n}",
-    "renameref": "{orig}"
+    "hspace": "3mm",
+    "vspace": "3mm",
+    "rotation": "0deg"
   },
-
+  "source": {
+    "type": "auto",
+    "tolerance": "5mm"
+  },
   "tabs": {
-    "type": "spacing",
+    "type": "fixed",
     "width": "3mm",
-    "spacing": "12mm"
+    "vcount": 2,
+    "hcount": 2
   },
-
   "cuts": {
     "type": "mousebites",
     "drill": "0.5mm",
-    "spacing": "0.75mm",
-    "offset": "0.15mm",
+    "spacing": "0.8mm",
+    "offset": "0.2mm",
     "prolong": "0.3mm"
   },
-
   "framing": {
-    "type": "railstb",
+    "type": "frame",
     "width": "5mm",
     "space": "3mm",
-    "mintotalheight": "0mm"
+    "fillet": "1mm",
+    "cuts": "both"
   },
-
   "tooling": {
     "type": "4hole",
     "hoffset": "2.5mm",
     "voffset": "2.5mm",
     "size": "1.52mm"
   },
-
   "fiducials": {
     "type": "4fid",
-    "hoffset": "4mm",
+    "hoffset": "5mm",
     "voffset": "2.5mm",
     "coppersize": "1mm",
     "opening": "2mm"
   },
-
   "text": {
     "type": "simple",
     "text": "SlimSplaydy v0.1  JLCJLCJLCJLC",
@@ -63,7 +54,6 @@
     "hjustify": "center",
     "vjustify": "center"
   },
-
   "post": {
     "millradius": "1mm",
     "origin": "tl"
