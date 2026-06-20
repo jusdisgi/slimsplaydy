@@ -170,14 +170,16 @@ Places 20 parts/half: 17× PG1316S (consigned `C9900170245`) + CONN1 (`C505023`)
   openings. Switched to **annotation tabs**: `merge_both.py` places 8 `kikit:Tab` markers
   (`UPPER_TABS`/`LOWER_TABS`, all half→frame, no half-to-half) on the convex BB edges; preset uses
   `tabs.type: annotation`. Tab geometry per KiKit source: direction = (cos θ, −sin θ); width via a
-  mandatory `KIKIT: width:` text field. **Mill-channel gotcha:** the 2 mm router (2 × `millradius`
-  1 mm) must sweep the whole inter-half channel; any spot it can't reach is left bridged with a
-  one-sided cut. `PITCH=79` fused (1.17 mm gap); `PITCH=81/XOFF=-15` still bridged the **right-lobe**
-  region (~3.1 mm, a concave pocket). Settled on **`PITCH=82` / `XOFF=-17`** → ≥3.69 mm everywhere,
-  4.96 mm in the right lobes — clean separation. Also added 2 frame tabs (`GreenL` upper-left,
-  `GreenR` lower-right) so **each half is held on 3 sides, no half-to-half tabs** (10 total).
-  `LOWER_TABS` auto-shift with the nest. Tuning: more-negative `XOFF` opens the right channel /
-  pinches the left.
+  mandatory `KIKIT: width:` text field. Added 2 frame tabs (`GreenL` upper-left, `GreenR`
+  lower-right) so **each half is held on 3 sides, no half-to-half annotation tabs** (10 total);
+  `LOWER_TABS` auto-shift with the nest. **KiKit auto-stitch gotcha (the real one):** KiKit treats
+  `_both` as ONE board with two disjoint outlines and auto-adds a tab joining them at their single
+  **closest approach** (the right shoulder of the tuck), regardless of our annotations — a one-sided
+  bridge. Confirmed by extracting the committed panel from git (working-tree copy on the sandbox mount
+  was stale; `.git` was current). Cause is proximity, not the mill: nearest approach was ~3.5 mm at
+  `PITCH=82`. Opened to **`PITCH=85` / `XOFF=-17`** → ~6.6 mm nearest approach (right shoulder ~7.6).
+  If it still stitches, go **multiboard** (`kikit:Board` annotation per half = two separate boards,
+  never joined). Earlier steps: `PITCH=79` fused (1.17 mm); `81/-15` and `82/-17` left it ~3 mm.
 - **2026-06-19:** Ported LightFury's scripted panel pipeline into `panel/` (`merge_both.py`,
   `gen_cpl.py`, `render_cpl.py`, `kicad_panel.py`); rewrote `panel/README.md` and switched the preset
   to fixed-tabs + frame. slimsplaydy is simpler than LightFury (no LCD/encoder → no RESW injection, no

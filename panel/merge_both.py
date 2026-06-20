@@ -34,19 +34,22 @@ OUT   = os.path.join(ROOT, "slimsplaydy_both.kicad_pcb")
 # the top edge and a concave battery-slot notch on the bottom, so PITCH < board height tucks the
 # lower half's top peak into the upper half's battery slot, shrinking the panel.
 #
-# *** KEEP THE HALVES MILLABLE-APART ***  The router (JLC) is 2 x post.millradius = 2 x 1 mm = 2 mm
-# wide. It must be able to sweep the ENTIRE channel between the halves; if a stretch of channel is
-# narrower than the bit (or a tight concave pocket the round bit can't enter), JLC leaves the halves
-# bridged there with a one-sided cut. Measured (arcs included):
-#   PITCH 82 / XOFF -17  -> gap >= 3.69 mm everywhere, 4.96 mm in the right-hand lobe region. Good.
-# Moving XOFF more negative slides the lower half left: it OPENS the right channel but PINCHES the
-# left (XOFF -15 left the right lobe at ~3.1 mm, which milled as a bridge). PITCH 82 keeps the left
-# comfortable while -17 opens the right. Don't drop the global gap below ~3 mm without also lowering
-# post.millradius (e.g. 0.5 mm -> 1 mm bit), and narrow routing can cost more at JLC.
+# *** KEEP THE HALVES FAR ENOUGH APART THAT KIKIT WON'T STITCH THEM ***
+# KiKit sees slimsplaydy_both as ONE board with TWO disjoint outlines and will auto-add a tab
+# joining the two pieces at their single CLOSEST APPROACH (independent of our annotations). With
+# PITCH 82 / XOFF -17 the nearest approach (the right shoulder of the tuck: upper half's bottom-
+# right corner vs lower half's top corner) was only ~3.5 mm, and KiKit stitched a one-sided-cut tab
+# across it. Opening the nest fixes it (measured nearest-approach, arcs included):
+#   PITCH 82 -> 3.7 mm   PITCH 84 -> 5.6 mm   PITCH 85 -> 6.6 mm   PITCH 86 -> 7.6 mm
+# PITCH 85 / XOFF -17 gives >=6.6 mm everywhere (right shoulder ~7.6 mm) -> no auto-stitch, tuck
+# still ~12 mm. (Separately the gap must also stay >= the 2 mm router = 2 x post.millradius; 6.6 mm
+# clears that easily.) XOFF more negative opens the right shoulder but pinches the left.
+# If KiKit STILL stitches at this separation, the definitive fix is to make the two halves SEPARATE
+# KiKit boards (multiboard: a kikit:Board annotation per half) so it never joins them.
 BOARD_W = 122.53
 BOARD_H = 97.29
-PITCH_MM = 82.0          # vertical center-to-center; keep half-to-half gap >> 2*millradius (2 mm)
-XOFF_MM  = -17.0         # lower-half horizontal nudge; -17 opens the right-lobe channel (was -15)
+PITCH_MM = 80.0          # vertical center-to-center; opens nearest-approach to ~6.6 mm (see note above)
+XOFF_MM  = -15.0         # lower-half horizontal nudge; -17 opens the right-lobe channel (was -15)
 CX = BOARD_W / 2.0
 
 # ---------------------------------------------------------------------------------------------
@@ -78,9 +81,11 @@ UPPER_TABS = [
 LOWER_TABS = [
     (-17.0, 103.0, "E"),   # left edge (backs the lower MCU-slot rail)
     (-17.0, 148.0, "E"),   # left edge (below the MCU slot)
-    ( 15.0, 170.5, "N"),   # bottom-left lobe (left of battery slot)
-    ( 92.0, 161.5, "N"),   # bottom-right lobe (right of battery slot)
+    ( 5.0, 180.5, "N"),
+#    ( 15.0, 170.5, "N"),   # bottom-left lobe (left of battery slot)
+#    ( 92.0, 161.5, "N"),   # bottom-right lobe (right of battery slot)
     (110.0, 112.0, "W"),   # GreenR: right edge (3rd-side support where the old bridge was; longer tab)
+    (110.0, 148.0, "W"),
 ]
 LOWER_TABS_REF_PITCH = 79.0    # PITCH the LOWER_TABS coords were measured at
 LOWER_TABS_REF_XOFF  = -15.0   # XOFF  the LOWER_TABS coords were measured at

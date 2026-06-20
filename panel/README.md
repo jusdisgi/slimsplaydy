@@ -99,17 +99,17 @@ hand-routed clear of the ring — keep it clear on any re-route.
   E/N/W/S)`), re-run step 1, re-preview. **If a tab doesn't appear, flip its direction 180°** — the
   ray pointed the wrong way. You can also drop `kikit:Tab` footprints by hand in KiCad (lib must be
   literally `kikit`; add a text field `KIKIT: width: 3mm`).
-- **Mill-channel rule (why the halves stay separate):** the router is **2 × `post.millradius` = 2 mm**
-  wide and must sweep the *entire* channel between the halves. Any stretch narrower than the bit — or a
-  tight concave pocket the round bit can't enter — gets left bridged with a **one-sided cut**. It's not
-  just the straight-line gap: the right-hand lobe region was the tight spot. The nest **PITCH 82 /
-  XOFF −17** gives ≥ 3.69 mm everywhere (4.96 mm in the right lobes) — comfortably millable. Moving
-  `XOFF_MM` more negative opens the right channel but pinches the left; `PITCH 82` keeps the left
-  clear. Keep the global gap well above 2 mm, or also drop `post.millradius` (e.g. 0.5 mm → 1 mm bit)
-  for a tighter tuck — but narrow routing can cost more at JLC.
+- **Don't let KiKit stitch the halves:** KiKit treats `slimsplaydy_both` as ONE board with two
+  disjoint outlines and auto-adds a tab joining the two pieces at their single **closest approach**
+  (independent of our annotations) — it shows up as a one-sided-cut bridge at the right shoulder of
+  the tuck. The fix is separation: **PITCH 85 / XOFF −17** opens the nearest approach to ~6.6 mm
+  (right shoulder ~7.6 mm, was 3.5 mm at PITCH 82) so KiKit leaves them apart. Tuck is still ~12 mm.
+  (This also clears the **2 mm router** = 2 × `post.millradius` with room to spare.) If KiKit still
+  stitches them at this gap, the definitive fix is the **multiboard** route — a `kikit:Board`
+  annotation per half so KiKit treats them as two separate boards and never joins them.
 - Tune the nest in `merge_both.py`: `PITCH_MM` (vertical center-to-center; smaller = deeper tuck =
-  shorter panel, down to the mill-channel floor above) and `XOFF_MM` (slide the lower half: more
-  negative opens the right interlock channel, less negative opens the left). Currently 82 / −17.
+  shorter panel, but watch the nearest-approach so KiKit doesn't stitch) and `XOFF_MM` (slide the
+  lower half: more negative opens the right shoulder, less negative opens the left). Currently 85 / −17.
 - **Prereq (done):** the per-half `LCSC` fields are filled and pushed to the PCBs, so the BOM carries
   part numbers. Verified: `gen_cpl.py` reads `C505023 / C2911519 / C79174 / C9900170245` straight off
   the boards.
