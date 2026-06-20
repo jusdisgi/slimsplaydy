@@ -128,14 +128,17 @@ is **superseded** — `kikit fab --assembly` needs a schematic the panel's dupli
 match. Use the **scripted** pipeline in **`panel/README.md`** instead (modeled on LightFury, which
 debugged this end-to-end). On Hunter's machine (needs `pcbnew`; `kikit.exe` in
 `...KiCad\9.0\3rdparty\Python311\Scripts`, add to PATH for the session). Per-half outline
-≈ **122.5 × 97.3 mm**; side-by-side nest ≈ 250 × 110 mm panel.
+≈ **122.5 × 97.3 mm**; halves **stacked vertically and interlocked** (lower half's top peak tucks into
+the upper half's battery slot) for a tighter panel.
 
-1. `python panel/merge_both.py` → `slimsplaydy_both.kicad_pcb`. Side-by-side nest, **no rotation/tilt**
-   (every part is already on a whole degree — slimsplaydy needs neither LightFury's 180° flip nor its
-   integer `TILT`). Right refs → `*_2`, nets → `L_`/`R_`. Build artifact — don't hand-edit; fix the
-   half and re-run.
-2. `kikit panelize -p panel/slimsplaydy_panel.json …` — **fixed** tabs + full **frame** + mouse-bites
-   (preset switched off `spacing` tabs, which error on the splayed outlines).
+1. `python panel/merge_both.py` → `slimsplaydy_both.kicad_pcb`. Vertical interlocked nest, **no
+   rotation/tilt** (every part is already on a whole degree — slimsplaydy needs neither LightFury's
+   180° flip nor its integer `TILT`). Tune `PITCH_MM` / `XOFF_MM` from the KiKit preview. Right refs →
+   `*_2`, nets → `L_`/`R_`. Build artifact — don't hand-edit; fix the half and re-run.
+2. `kikit panelize -p panel/slimsplaydy_panel.json …` — **annotation** tabs + full **frame** +
+   mouse-bites. Tabs are placed by `merge_both.py` (`TAB_ANNOTATIONS`: 8 `kikit:Tab` markers on the
+   convex BB edges, clearing both battery slots, flanking both MCU slots). `fixed`/`spacing` tabs
+   distribute blindly onto the battery-slot openings — that's why we drive tabs by annotation.
 3. **Fabrication Toolkit** on `panel/slimsplaydy_panel.kicad_pcb` — **GERBERS only** (not `kikit fab`,
    not its CPL/BOM).
 4. `python panel/gen_cpl.py panel/slimsplaydy_panel.kicad_pcb panel/cpl_build` — writes
@@ -163,6 +166,18 @@ Places 20 parts/half: 17× PG1316S (consigned `C9900170245`) + CONN1 (`C505023`)
 
 ## Session log
 
+- **2026-06-19 (later):** First panel preview was good but `fixed` tabs landed on the battery-slot
+  openings. Switched to **annotation tabs**: `merge_both.py` places 8 `kikit:Tab` markers
+  (`UPPER_TABS`/`LOWER_TABS`, all half→frame, no half-to-half) on the convex BB edges; preset uses
+  `tabs.type: annotation`. Tab geometry per KiKit source: direction = (cos θ, −sin θ); width via a
+  mandatory `KIKIT: width:` text field. **Mill-channel gotcha:** the 2 mm router (2 × `millradius`
+  1 mm) must sweep the whole inter-half channel; any spot it can't reach is left bridged with a
+  one-sided cut. `PITCH=79` fused (1.17 mm gap); `PITCH=81/XOFF=-15` still bridged the **right-lobe**
+  region (~3.1 mm, a concave pocket). Settled on **`PITCH=82` / `XOFF=-17`** → ≥3.69 mm everywhere,
+  4.96 mm in the right lobes — clean separation. Also added 2 frame tabs (`GreenL` upper-left,
+  `GreenR` lower-right) so **each half is held on 3 sides, no half-to-half tabs** (10 total).
+  `LOWER_TABS` auto-shift with the nest. Tuning: more-negative `XOFF` opens the right channel /
+  pinches the left.
 - **2026-06-19:** Ported LightFury's scripted panel pipeline into `panel/` (`merge_both.py`,
   `gen_cpl.py`, `render_cpl.py`, `kicad_panel.py`); rewrote `panel/README.md` and switched the preset
   to fixed-tabs + frame. slimsplaydy is simpler than LightFury (no LCD/encoder → no RESW injection, no

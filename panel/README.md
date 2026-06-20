@@ -8,7 +8,9 @@ rebuilds the combined board, panel, and CPL/BOM from them, so re-run it any time
 > **Supersedes** the old "Option B / KiCad *Append Board*" plan and the hand-merged
 > `slimsplaydy_both*` files. Don't use those.
 
-Per-half outline ≈ **122.5 × 97.3 mm** → side-by-side nest ≈ **250 × 110 mm** panel (inside JLC tiers).
+Per-half outline ≈ **122.5 × 97.3 mm**. The halves **stack vertically, interlocked** — the lower
+half's top peak tucks into the upper half's battery-slot notch — so the nest is much tighter than a
+flat side-by-side. Tune `PITCH_MM` / `XOFF_MM` in `merge_both.py` from the first KiKit preview.
 
 **Environment:** use the **KiCad Command Prompt** (so `python` = KiCad's Python with `pcbnew`).
 KiKit's `kikit.exe` installs to `...KiCad\9.0\3rdparty\Python311\Scripts`, which isn't on PATH by
@@ -24,11 +26,13 @@ set PATH=%PATH%;C:\Users\hunte\Documents\KiCad\9.0\3rdparty\Python311\Scripts
 cd slimsplaydy
 
 # 1. Merge the two halves -> slimsplaydy_both.kicad_pcb. Right-half refs get a _2 suffix,
-#    nets get L_/R_ prefixes so the halves stay electrically distinct. Side-by-side nest,
-#    no rotation/tilt (every part is already on a whole degree). Replaces the by-hand merge.
+#    nets get L_/R_ prefixes so the halves stay electrically distinct. Vertical interlocked
+#    nest, no rotation/tilt (every part is already on a whole degree). Replaces the by-hand
+#    merge. ALSO drops 8 kikit:Tab annotations so the panelizer puts tabs exactly where we want.
+#    Tune PITCH_MM / XOFF_MM / TAB_ANNOTATIONS in the script from the Step-2 preview.
 python panel/merge_both.py
 
-# 2. Frame it into a panel (fixed tabs + full frame; see preset note below).
+# 2. Frame it into a panel (full frame; tabs come from the annotations, see preset note below).
 kikit panelize -p panel/slimsplaydy_panel.json slimsplaydy_both.kicad_pcb panel/slimsplaydy_panel.kicad_pcb
 
 # 3. Export GERBERS from panel/slimsplaydy_panel.kicad_pcb (open in pcbnew -> Fabrication Toolkit
@@ -79,12 +83,33 @@ hand-routed clear of the ring — keep it clear on any re-route.
 
 ## Preset / gotchas
 
-- **`slimsplaydy_panel.json`**: **fixed** tabs (2/edge) + **full frame** + mouse-bites. LightFury
-  found KiKit `spacing` tabs error in concave notches on irregular outlines; fixed tabs to the frame
-  are reliable. Rails 5 mm, mouse-bite 0.5 mm drill @ 0.8 mm, tooling 1.52 mm, fiducials 1 mm copper /
-  2 mm opening, 1 mm mill radius, `JLCJLCJLCJLC` order token, origin `tl`.
-- Tighten `GAP_MM` in `merge_both.py` (currently 2.5 mm) if the halves sit too far apart — tighter =
-  cheaper panel.
+- **`slimsplaydy_panel.json`**: **annotation** tabs + **full frame** + mouse-bites. `fixed`/`spacing`
+  tabs distribute blindly and land on the battery-slot openings (and `spacing` errors on concave
+  outlines); annotation tabs put a tab exactly at each `kikit:Tab` marker. Rails 5 mm, mouse-bite
+  0.5 mm drill @ 0.8 mm, tooling 1.52 mm, fiducials 1 mm copper / 2 mm opening, 1 mm mill radius,
+  `JLCJLCJLCJLC` order token, origin `tl`.
+- **Tabs are placed by `merge_both.py`** (`UPPER_TABS` + `LOWER_TABS`): **10 tabs, each half held on
+  3 sides** — upper: top (2) + right (2) + left (`GreenL`); lower: left (2) + bottom (2) + right
+  (`GreenR`). **Every tab is half→frame; there are NO half-to-half tabs** (fewest connections, and
+  each cut is cleanly two-sided). They clear both battery slots and flank both MCU slots. Six sit on
+  convex bounding-box edges (short tabs); `GreenL`/`GreenR` reach the concave upper-left / lower-right
+  edges and are necessarily longer, because KiKit's partition line follows the bounding box.
+  `LOWER_TABS` auto-shift with the nest, so they stay on the lower half when you change
+  `PITCH_MM`/`XOFF_MM`. To retune: edit a list (each entry is `(x_mm, y_mm, into-board direction
+  E/N/W/S)`), re-run step 1, re-preview. **If a tab doesn't appear, flip its direction 180°** — the
+  ray pointed the wrong way. You can also drop `kikit:Tab` footprints by hand in KiCad (lib must be
+  literally `kikit`; add a text field `KIKIT: width: 3mm`).
+- **Mill-channel rule (why the halves stay separate):** the router is **2 × `post.millradius` = 2 mm**
+  wide and must sweep the *entire* channel between the halves. Any stretch narrower than the bit — or a
+  tight concave pocket the round bit can't enter — gets left bridged with a **one-sided cut**. It's not
+  just the straight-line gap: the right-hand lobe region was the tight spot. The nest **PITCH 82 /
+  XOFF −17** gives ≥ 3.69 mm everywhere (4.96 mm in the right lobes) — comfortably millable. Moving
+  `XOFF_MM` more negative opens the right channel but pinches the left; `PITCH 82` keeps the left
+  clear. Keep the global gap well above 2 mm, or also drop `post.millradius` (e.g. 0.5 mm → 1 mm bit)
+  for a tighter tuck — but narrow routing can cost more at JLC.
+- Tune the nest in `merge_both.py`: `PITCH_MM` (vertical center-to-center; smaller = deeper tuck =
+  shorter panel, down to the mill-channel floor above) and `XOFF_MM` (slide the lower half: more
+  negative opens the right interlock channel, less negative opens the left). Currently 82 / −17.
 - **Prereq (done):** the per-half `LCSC` fields are filled and pushed to the PCBs, so the BOM carries
   part numbers. Verified: `gen_cpl.py` reads `C505023 / C2911519 / C79174 / C9900170245` straight off
   the boards.

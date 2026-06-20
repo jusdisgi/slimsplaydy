@@ -1,6 +1,4 @@
 {
-  "$comment": "KiKit panelization preset for slimsplaydy (JLCPCB PCBA). Runs on Hunter's machine (needs pcbnew). Source = slimsplaydy_both.kicad_pcb (built by merge_both.py): both halves nested side-by-side as two disjoint outlines, so one panel unit = one full keyboard (L+R). Modeled on LightFury's proven preset: FIXED tabs + full FRAME (KiKit 'spacing' tabs error on the irregular/splayed outlines; fixed tabs to the frame are reliable). See panel/README.md.",
-
   "layout": {
     "type": "grid",
     "rows": 1,
@@ -14,10 +12,7 @@
     "tolerance": "5mm"
   },
   "tabs": {
-    "type": "fixed",
-    "width": "3mm",
-    "vcount": 2,
-    "hcount": 2
+    "type": "annotation"
   },
   "cuts": {
     "type": "mousebites",
