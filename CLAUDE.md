@@ -141,22 +141,38 @@ the upper half's battery slot) for a tighter panel.
    distribute blindly onto the battery-slot openings — that's why we drive tabs by annotation.
 3. **Fabrication Toolkit** on `panel/slimsplaydy_panel.kicad_pcb` — **GERBERS only** (not `kikit fab`,
    not its CPL/BOM).
-4. `python panel/gen_cpl.py panel/slimsplaydy_panel.kicad_pcb panel/cpl_build` — writes
-   `positions.csv` + `bom.csv` (position = footprint origin; pure-Python, no pcbnew). **No RESW
-   injection** (slimsplaydy has no encoder — that's a LightFury-only step). Then
-   `python panel/render_cpl.py …` and eyeball `verify_*.png` before uploading.
+4. `python panel/gen_cpl.py panel/slimsplaydy_panel.kicad_pcb production-panel` — writes
+   `positions.csv` + `bom.csv` straight into the canonical order folder (position = footprint origin;
+   pure-Python, no pcbnew). **No RESW injection** (slimsplaydy has no encoder). Then
+   `python panel/render_cpl.py … panel/verify` and eyeball `verify_*.png` before uploading.
 
 Places 20 parts/half: 17× PG1316S (consigned `C9900170245`) + CONN1 (`C505023`) + PWR1 (`C2911519`)
 + RST1 (`C79174`). Excludes MCU1 (DNP), MH1–15 (NPTH), MAG1 (silk). Scripts: `merge_both.py`,
 `gen_cpl.py`, `render_cpl.py`, `kicad_panel.py` (the last two copied verbatim from LightFury).
 
+## Repo layout / production files (mirrors LightFury)
+
+- **`production-panel/`** — canonical JLCPCB order set: `slimsplaydy_panel.zip` (gerbers), `bom.csv`,
+  `positions.csv`, `SlimSplaydy_BlindSlot_Both.png`, README. **Order from here.** The two CSVs are
+  force-tracked in `.gitignore` (the global `*.csv` ignore would otherwise drop them).
+- **`panel/`** — the scripted pipeline (`merge_both.py`, `gen_cpl.py`, `render_cpl.py`,
+  `kicad_panel.py`, `slimsplaydy_panel.json`, `CPL_WORKFLOW.md`, the panel `.kicad_pcb`).
+- **`panel/production/`** — Fabrication Toolkit scratch, **gitignored**, overwritten each run. Not for ordering.
+- **`panel/verify/`** — local placement-check PNGs from `render_cpl.py`.
+- **`old_cruft/`** — superseded test-order files (`Production_JLCPCBA/`, the May `production_root_may/`,
+  retired `cpl_build_retired/`, `REVIEW-KICKOFF.md`). Reference only; don't fab from them.
+- Final nest: **PITCH 80 / XOFF −15** in `merge_both.py`; PWR `C2911519` carries a −0.3 mm local-x
+  `POS_OVERRIDE`. Panelizes clean (verified against the real committed panel).
+
 ## TODO / open items
 
-- **Panelize** (scripts ready 2026-06-19): run the 5-step pipeline in `panel/README.md` on Hunter's
-  machine, then the **one-time JLC rotation pass** — confirm CONN1 (`C505023`), PWR1 (`C2911519`),
-  RST1 (`C79174`) in JLC's assembly preview and bake into `gen_cpl.py`'s `ROT_CORR` (power/reset start
-  at 90 from LightFury — re-confirm; Molex starts at 0). Then add slimsplaydy to the JLC order
-  alongside LightFury (separate panel, same cart) — remember the 0.8 mm blind-slot order note.
+- **Panel + CPL/BOM: DONE.** Pipeline run, panel verified clean, order set assembled in
+  `production-panel/`. slimsplaydy is in the JLC cart alongside LightFury (separate panel, same order).
+- **At order time, don't forget:** (a) attach `production-panel/SlimSplaydy_BlindSlot_Both.png` and
+  request the **0.8 mm back-pocket** in the order remarks (not in gerbers); (b) **PG1316S consigned**
+  (your reel) — declare as customer-supplied; (c) **nice!nano = DNP** / hand-soldered; (d) glance at
+  the three oriented parts (`C505023` Molex, `C2911519`, `C79174`) in JLC's assembly preview — `C505023`
+  rotation was never independently confirmed (starts at 0).
 - **LCSC fields: DONE.** Populated in both schematics and pushed to the PCB footprints, so
   `kikit fab jlcpcb --assembly` can now read them (field name `LCSC`).
 - Optional: exclude the by-design DRC silk/`ceoloide` warnings for a fully-green report (see Symbols
@@ -166,6 +182,13 @@ Places 20 parts/half: 17× PG1316S (consigned `C9900170245`) + CONN1 (`C505023`)
 
 ## Session log
 
+- **2026-06-21:** Order-ready. Final nest **PITCH 80 / XOFF −15**, 10 frame tabs (each half held on
+  3 sides, no half-to-half), PWR `C2911519` −0.3 mm local-x nudge. Assembled `production-panel/`
+  (gerbers + CPL + BOM + blind-slot drawing), added `panel/verify/` renders and `panel/CPL_WORKFLOW.md`,
+  demoted `panel/production/` to gitignored FT scratch, moved test-order cruft to `old_cruft/`, updated
+  `.gitignore` (mirrors LightFury). CPL/BOM verified against the real committed panel (40 placements).
+  Working-tree generated files don't sync to the sandbox, so verification was done by reading the
+  committed panel out of `.git` — commit + push before asking for a re-verify.
 - **2026-06-19 (later):** First panel preview was good but `fixed` tabs landed on the battery-slot
   openings. Switched to **annotation tabs**: `merge_both.py` places 8 `kikit:Tab` markers
   (`UPPER_TABS`/`LOWER_TABS`, all half→frame, no half-to-half) on the convex BB edges; preset uses

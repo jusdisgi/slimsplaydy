@@ -1,7 +1,0 @@
-﻿Designator,Footprint,Quantity,Value,LCSC Part #
-"CONN1, R_CONN1",Molex_Pico-EZmate_78171-0002_1x02-1MP_P1.20mm_Vertical,2,Battery Connector,
-"MAG1_2, MAG1",magsafe,2,,
-"MH1_2, MH1, MH10_2, MH10, MH11_2, MH11, MH12_2, MH12, MH13_2, MH13, MH14_2, MH14, MH15_2, MH15, MH2_2, MH2, MH3_2, MH3, MH4_2, MH4, MH5_2, MH5, MH6_2, MH6, MH7_2, MH7, MH8_2, MH8, MH9_2, MH9",mounting_hole_npth,30,,
-"PWR1, R_PWR1",power_switch_smd_side,2,Power SW,
-"RST1, R_RST1",reset_switch_smd_side,2,Reset SW,
-"R_S1, R_S10, R_S11, R_S12, R_S13, R_S14, R_S15, R_S16, R_S17, R_S2, R_S3, R_S4, R_S5, R_S6, R_S7, R_S8, R_S9, S1, S10, S11, S12, S13, S14, S15, S16, S17, S2, S3, S4, S5, S6, S7, S8, S9",PG1316S,34,PG1316S,

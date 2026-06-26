@@ -280,55 +280,7 @@
     "netclass_patterns": [
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_finger_inner_top"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_thumb_tucky_fan"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_finger_ring_home"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_BAT_P"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_inner_home"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_index_bottom"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_thumb_tucky_fan"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_index_top"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_pinky_home"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_inner_top"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_RST"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_thumb_reachy_fan"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_pinky_bottom"
+        "pattern": "Board_0-R_mirror_finger_middle_bottom"
       },
       {
         "netclass": "Board_0-Default",
@@ -336,11 +288,31 @@
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_finger_index_bottom"
+        "pattern": "Board_0-R_mirror_finger_ring_bottom"
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_finger_pinky_top"
+        "pattern": "Board_0-L_finger_middle_bottom"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_finger_ring_home"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-R_mirror_finger_index_bottom"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-R_mirror_finger_pinky_home"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-R_mirror_finger_ring_top"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-R_mirror_finger_middle_home"
       },
       {
         "netclass": "Board_0-Default",
@@ -348,23 +320,47 @@
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_unconnected-(MCU1-3V3-Pad21)"
+        "pattern": "Board_0-L_finger_pinky_top"
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_unconnected-(MCU1-3V3-Pad21)"
+        "pattern": "Board_0-L_finger_inner_top"
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_unconnected-(PWR1-C-Pad3)"
+        "pattern": "Board_0-L_finger_inner_bottom"
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_unconnected-(MCU1-P0.08-Pad2)"
+        "pattern": "Board_0-R_mirror_finger_middle_top"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_thumb_reachy_fan"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-R_mirror_thumb_tucky_fan"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_finger_index_bottom"
       },
       {
         "netclass": "Board_0-Default",
         "pattern": "Board_0-L_finger_middle_home"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_RAW"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_finger_index_top"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_thumb_tucky_fan"
       },
       {
         "netclass": "Board_0-Default",
@@ -376,31 +372,15 @@
       },
       {
         "netclass": "Board_0-Default",
+        "pattern": "Board_0-R_unconnected-(MCU1-3V3-Pad21)"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-R_mirror_finger_index_top"
+      },
+      {
+        "netclass": "Board_0-Default",
         "pattern": "Board_0-L_finger_pinky_bottom"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_middle_top"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_GND"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_middle_bottom"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_ring_bottom"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_ring_top"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_finger_ring_top"
       },
       {
         "netclass": "Board_0-Default",
@@ -408,27 +388,11 @@
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_thumb_reachy_fan"
+        "pattern": "Board_0-L_RST"
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_finger_middle_bottom"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_finger_inner_bottom"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_mirror_finger_middle_home"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_RST"
-      },
-      {
-        "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_unconnected-(PWR1-A-Pad1)"
+        "pattern": "Board_0-L_GND"
       },
       {
         "netclass": "Board_0-Default",
@@ -436,19 +400,19 @@
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_finger_inner_home"
+        "pattern": "Board_0-R_mirror_finger_inner_home"
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_finger_index_top"
+        "pattern": "Board_0-R_mirror_finger_pinky_bottom"
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-R_GND"
+        "pattern": "Board_0-R_unconnected-(PWR1-C-Pad3)"
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_finger_ring_bottom"
+        "pattern": "Board_0-R_RST"
       },
       {
         "netclass": "Board_0-Default",
@@ -456,7 +420,15 @@
       },
       {
         "netclass": "Board_0-Default",
+        "pattern": "Board_0-R_GND"
+      },
+      {
+        "netclass": "Board_0-Default",
         "pattern": "Board_0-L_finger_pinky_home"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-R_mirror_thumb_reachy_fan"
       },
       {
         "netclass": "Board_0-Default",
@@ -464,11 +436,39 @@
       },
       {
         "netclass": "Board_0-Default",
-        "pattern": "Board_0-L_RAW"
+        "pattern": "Board_0-L_finger_ring_bottom"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_unconnected-(MCU1-P0.08-Pad2)"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_finger_inner_home"
       },
       {
         "netclass": "Board_0-Default",
         "pattern": "Board_0-L_finger_index_home"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_unconnected-(MCU1-3V3-Pad21)"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_finger_ring_top"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_BAT_P"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-R_mirror_finger_inner_top"
+      },
+      {
+        "netclass": "Board_0-Default",
+        "pattern": "Board_0-L_unconnected-(PWR1-A-Pad1)"
       }
     ]
   },

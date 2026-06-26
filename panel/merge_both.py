@@ -34,6 +34,9 @@ OUT   = os.path.join(ROOT, "slimsplaydy_both.kicad_pcb")
 # the top edge and a concave battery-slot notch on the bottom, so PITCH < board height tucks the
 # lower half's top peak into the upper half's battery slot, shrinking the panel.
 #
+# FINAL: PITCH 80 / XOFF -15 (below) panelizes clean - tabs rearranged so the halves separate
+# cleanly at the tight tuck; the larger separations discussed below were a conservative detour.
+#
 # *** KEEP THE HALVES FAR ENOUGH APART THAT KIKIT WON'T STITCH THEM ***
 # KiKit sees slimsplaydy_both as ONE board with TWO disjoint outlines and will auto-add a tab
 # joining the two pieces at their single CLOSEST APPROACH (independent of our annotations). With
@@ -48,8 +51,8 @@ OUT   = os.path.join(ROOT, "slimsplaydy_both.kicad_pcb")
 # KiKit boards (multiboard: a kikit:Board annotation per half) so it never joins them.
 BOARD_W = 122.53
 BOARD_H = 97.29
-PITCH_MM = 80.0          # vertical center-to-center; opens nearest-approach to ~6.6 mm (see note above)
-XOFF_MM  = -15.0         # lower-half horizontal nudge; -17 opens the right-lobe channel (was -15)
+PITCH_MM = 80.0          # vertical center-to-center
+XOFF_MM  = -15.0         # lower-half horizontal nudge; nesting the halves
 CX = BOARD_W / 2.0
 
 # ---------------------------------------------------------------------------------------------
@@ -82,8 +85,6 @@ LOWER_TABS = [
     (-17.0, 103.0, "E"),   # left edge (backs the lower MCU-slot rail)
     (-17.0, 148.0, "E"),   # left edge (below the MCU slot)
     ( 5.0, 180.5, "N"),
-#    ( 15.0, 170.5, "N"),   # bottom-left lobe (left of battery slot)
-#    ( 92.0, 161.5, "N"),   # bottom-right lobe (right of battery slot)
     (110.0, 112.0, "W"),   # GreenR: right edge (3rd-side support where the old bridge was; longer tab)
     (110.0, 148.0, "W"),
 ]

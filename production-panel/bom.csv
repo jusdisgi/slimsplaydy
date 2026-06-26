@@ -1,0 +1,5 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+"CONN1, CONN1_2",Connector_Molex:Molex_Pico-EZmate_78171-0002_1x02-1MP_P1.20mm_Vertical,2,Battery Connector,C505023
+"S1, S10, S10_2, S11, S11_2, S12, S12_2, S13, S13_2, S14, S14_2, S15, S15_2, S16, S16_2, S17, S17_2, S1_2, S2, S2_2, S3, S3_2, S4, S4_2, S5, S5_2, S6, S6_2, S7, S7_2, S8, S8_2, S9, S9_2",PG1316S,34,PG1316S,C9900170245
+"PWR1, PWR1_2",ceoloide:power_switch_smd_side,2,Power SW,C2911519
+"RST1, RST1_2",ceoloide:reset_switch_smd_side,2,Reset SW,C79174

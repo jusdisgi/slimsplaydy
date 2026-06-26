@@ -44,7 +44,9 @@ ROT_CORR = {
 # optional per-LCSC position datum override, in part-LOCAL mm (applied before rotation).
 # Use ONLY if the JLC preview shows a part's body off its pads. Empty = footprint origin (correct).
 POS_OVERRIDE = {
-    # e.g. "C2911519": (-0.30, +0.14),   # in part-LOCAL mm; applies to BOTH halves automatically
+    "C2911519": (-0.3, 0.0),   # PWR1: nudge 0.1 mm WEST. Part-LOCAL, so it follows each instance's
+                               # orientation -> PWR1 (left, 0deg) moves board-west, PWR1_2 (right,
+                               # 180deg) moves board-east: the mirror-consistent datum correction.
 }
 
 # never place these (no JLC part / DNP / mechanical), even if they carry a stray field.

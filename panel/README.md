@@ -39,16 +39,30 @@ kikit panelize -p panel/slimsplaydy_panel.json slimsplaydy_both.kicad_pcb panel/
 #    plugin, or KiCad Plot). Use the toolkit for GERBERS ONLY — NOT `kikit fab jlcpcb --assembly`
 #    (it needs a schematic the panel's _2 refs can't match) and NOT the toolkit's own CPL/BOM.
 
-# 4. Generate the CPL + BOM from the SAME panel file (position = footprint origin; no pcbnew needed).
-python panel/gen_cpl.py panel/slimsplaydy_panel.kicad_pcb panel/cpl_build
+# 3b. Copy the toolkit's gerber zip up into the canonical order folder:
+cp panel/production/slimsplaydy_panel.zip production-panel/
+
+# 4. Generate the CPL + BOM from the SAME panel file, straight into production-panel/.
+python panel/gen_cpl.py panel/slimsplaydy_panel.kicad_pcb production-panel
 
 # 5. LOCAL verification — open these and check BEFORE uploading.
-python panel/render_cpl.py panel/slimsplaydy_panel.kicad_pcb panel/cpl_build/positions.csv panel/cpl_build
+python panel/render_cpl.py panel/slimsplaydy_panel.kicad_pcb production-panel/positions.csv panel/verify
 #    verify_overview.png : every red dot must sit on a pad cluster, none off-board
 #    verify_parts.png    : every red ring at body center; orange star = our pin-1
 ```
 
-Upload to JLC: the **gerbers from step 3** + `panel/cpl_build/positions.csv` + `panel/cpl_build/bom.csv`.
+Upload to JLC: the three files in **`../production-panel/`** — `slimsplaydy_panel.zip` +
+`positions.csv` + `bom.csv` (and attach `SlimSplaydy_BlindSlot_Both.png` to the order notes).
+Full CPL/BOM rules + the one-time JLC rotation pass live in **`CPL_WORKFLOW.md`**.
+
+## Where things live (after cleanup)
+
+- **`../production-panel/`** — the canonical JLC upload set (gerber zip + `bom.csv` + `positions.csv`
+  + blind-slot drawing + its own README). **This is what you order from.**
+- **`panel/production/`** — Fabrication Toolkit scratch (gitignored, overwritten each run). Not for ordering.
+- **`panel/verify/`** — local placement-check PNGs from `render_cpl.py`.
+- **`../old_cruft/`** — superseded test-order files (`Production_JLCPCBA/`, the May `production/`,
+  retired `cpl_build/`, `REVIEW-KICKOFF.md`). Kept for reference; don't fab from them.
 
 ## Parts (what JLC places)
 

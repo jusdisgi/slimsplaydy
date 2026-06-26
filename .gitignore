@@ -34,3 +34,11 @@ logs
 *.xml
 !log4j2.xml
 *.csv
+# --- SlimSplaydy production layout (see production-panel/README.md) ---
+# Fabrication Toolkit scratch output; the canonical order set is /production-panel/
+panel/production/
+__pycache__/
+*.pyc
+# ...but DO track the canonical JLC order CSVs (overrides the global *.csv rule above)
+!production-panel/positions.csv
+!production-panel/bom.csv
