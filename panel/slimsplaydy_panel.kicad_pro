@@ -276,7 +276,7 @@
       "version": 4
     },
     "net_colors": null,
-    "netclass_assignments": {},
+    "netclass_assignments": null,
     "netclass_patterns": [
       {
         "netclass": "Board_0-Default",
