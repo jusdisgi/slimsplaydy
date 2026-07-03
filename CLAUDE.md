@@ -48,6 +48,13 @@ board can be while keeping an onboard USB-C port." Enablers:
 - **Depth is specified in the JLC order, NOT the design files.** Ordered **0.8 mm** deep (≈ halfway
   through a 1.6 mm board). At that depth **F.Cu is untouched** — only **B.Cu and vias** in the band
   matter. Back copper was hand-routed clear of the ring; keep it that way on any re-route.
+- **Verified in JLC's confirmation file (2026-07-02):** the pocket shows up in JLC CAM as a
+  controlled-depth layer named **`nmcb_0.8`** (and trips `blindViaHoleFlag=1`, depth 0.8, in the order
+  record) — **expected, not an error.** Its geometry matches the footprint exactly: two annular bands,
+  **ID 44.8 / OD 55.2 mm**, one per half, centers 82.36 mm apart, each sitting directly under its
+  B.SilkS ring (JLC re-origins with Y flipped about the 193.45 mm panel height). If a future
+  confirmation flags a "blind via / 0.8 mm depth" on this 2-layer board, **it's the magnet pockets** —
+  cross-check `nmcb_0.8` ring centers against the silk rings and approve.
 
 ## Board structure (kept as-is — do NOT unify)
 
@@ -168,11 +175,12 @@ Places 20 parts/half: 17× PG1316S (consigned `C9900170245`) + CONN1 (`C505023`)
 
 - **Panel + CPL/BOM: DONE.** Pipeline run, panel verified clean, order set assembled in
   `production-panel/`. slimsplaydy is in the JLC cart alongside LightFury (separate panel, same order).
-- **At order time, don't forget:** (a) attach `production-panel/SlimSplaydy_BlindSlot_Both.png` and
-  request the **0.8 mm back-pocket** in the order remarks (not in gerbers); (b) **PG1316S consigned**
-  (your reel) — declare as customer-supplied; (c) **nice!nano = DNP** / hand-soldered; (d) glance at
-  the three oriented parts (`C505023` Molex, `C2911519`, `C79174`) in JLC's assembly preview — `C505023`
-  rotation was never independently confirmed (starts at 0).
+- **Ordered + confirmed (2026-07-02).** At-order checklist, for the record / next run: (a) the
+  **0.8 mm back-pocket** request landed — it's in JLC's CAM as `nmcb_0.8` (verified against the
+  magsafe footprint); (b) **PG1316S consigned** (your reel) — declared customer-supplied; (c)
+  **nice!nano = DNP** / hand-soldered — correctly absent from the 40-placement CPL; (d) the three
+  oriented parts (`C505023` Molex, `C2911519`, `C79174`) — CONN polarity is moot (Hunter crimps the
+  battery leads himself), and switch rotation can't be wrong (non-polar + keyed footprint).
 - **LCSC fields: DONE.** Populated in both schematics and pushed to the PCB footprints, so
   `kikit fab jlcpcb --assembly` can now read them (field name `LCSC`).
 - Optional: exclude the by-design DRC silk/`ceoloide` warnings for a fully-green report (see Symbols
@@ -182,6 +190,14 @@ Places 20 parts/half: 17× PG1316S (consigned `C9900170245`) + CONN1 (`C505023`)
 
 ## Session log
 
+- **2026-07-02:** JLC returned the **parts-placement + production (CAM) confirmation** for the panel
+  (order `9784265a_y35`, panel 153.56 × 193.45 mm, 2-layer FR-4 1.6 mm, **black mask / white silk**).
+  Reviewed both: assembly CPL = **40 placements** (17× PG1316S ×2 + CONN/PWR/RST ×2), MCU correctly
+  absent (DNP), no DFM warnings. Chased the one oddity — an `nmcb_0.8` controlled-depth layer +
+  `blindViaHoleFlag` in the order record — to ground: **it's the magsafe back-pockets**, geometry
+  matches the footprint to the 0.01 mm (see "Blind slot — fab detail"). Confirmed switch orientation
+  is a non-issue (PG1316S is a non-polar SPST + the footprint is mechanically keyed by asymmetric
+  1.0/1.2 mm leg holes). Hunter confirmed 0.8 mm depth + mask color through the order page.
 - **2026-06-21:** Order-ready. Final nest **PITCH 80 / XOFF −15**, 10 frame tabs (each half held on
   3 sides, no half-to-half), PWR `C2911519` −0.3 mm local-x nudge. Assembled `production-panel/`
   (gerbers + CPL + BOM + blind-slot drawing), added `panel/verify/` renders and `panel/CPL_WORKFLOW.md`,
